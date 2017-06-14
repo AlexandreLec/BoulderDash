@@ -21,6 +21,7 @@ final class BoulderDashBDDConnector {
     private static String                  user     = "root";
 
     /** The password. */
+
     private static String                  password = "rien";
 
     /** The url. */
