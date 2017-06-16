@@ -1,6 +1,6 @@
 package model;
 
-public class Hero {
+public class Hero implements IExplosion{
 
 	private static String SPRITE;
 	private static Hero hero;
@@ -61,6 +61,10 @@ public class Hero {
 	public void setDirection(Direction direction) {
 		this.direction = direction;
 	}
-	
-	
+
+
+	@Override
+	public void IExplosion() {
+
+	}
 }
