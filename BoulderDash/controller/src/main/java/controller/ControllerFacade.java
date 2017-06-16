@@ -4,7 +4,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import model.Example;
-import model.IModel;
+import model.IBoulderDashModel;
 import view.IView;
 
 /**
@@ -13,13 +13,13 @@ import view.IView;
  * @author Jean-Aymeric DIET jadiet@cesi.fr
  * @version 1.0
  */
-public class ControllerFacade implements IController {
+public class ControllerFacade implements IOrderPerformer {
 
     /** The view. */
     private final IView  view;
 
     /** The model. */
-    private final IModel model;
+    private final IBoulderDashModel model;
 
     /**
      * Instantiates a new controller facade.
@@ -29,7 +29,7 @@ public class ControllerFacade implements IController {
      * @param model
      *            the model
      */
-    public ControllerFacade(final IView view, final IModel model) {
+    public ControllerFacade(final IView view, final IBoulderDashModel model) {
         super();
         this.view = view;
         this.model = model;
@@ -70,7 +70,7 @@ public class ControllerFacade implements IController {
      *
      * @return the model
      */
-    public IModel getModel() {
+    public IBoulderDashModel getModel() {
         return this.model;
     }
 }
