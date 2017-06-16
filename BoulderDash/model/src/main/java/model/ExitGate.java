@@ -1,7 +1,7 @@
 package model;
 
 /**
- * Created by tapafe on 16/06/2017.
+ * Created by Arnaud Rigaut on 16/06/2017.
  */
 public class ExitGate extends Element{
 
@@ -13,6 +13,6 @@ public class ExitGate extends Element{
 
     /** constructor of ExitGate */
     public ExitGate(Position positon){
-
+        super(positon);
     }
 }

@@ -1,7 +1,7 @@
 package model;
 
 /**
- * Created by tapafe on 16/06/2017.
+ * Created by Arnaud Rigaut on 16/06/2017.
  */
 public class Dirt extends Element{
 
@@ -10,6 +10,6 @@ public class Dirt extends Element{
 
     /** constructor of ExitGate */
     public Dirt(Position positon){
-
+        super(positon);
     }
 }

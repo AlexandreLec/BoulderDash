@@ -1,7 +1,7 @@
 package model;
 
 /**
- * Created by tapafe on 16/06/2017.
+ * Created by Arnaud Rigaut on 16/06/2017.
  */
 public class Wall extends Element{
 
@@ -11,6 +11,6 @@ public class Wall extends Element{
 
     /** constructor of ExitGate */
     public Wall(Position positon){
-
+        super(positon);
     }
 }

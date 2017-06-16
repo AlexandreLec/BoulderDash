@@ -1,7 +1,7 @@
 package model;
 
 /**
- * Created by tapafe on 16/06/2017.
+ * Created by Arnaud Rigaut on 16/06/2017.
  */
 public class Stone extends Element{
 
@@ -11,6 +11,6 @@ public class Stone extends Element{
 
     /** constructor of ExitGate */
     public Stone(Position positon){
-
+        super(positon);
     }
 }
