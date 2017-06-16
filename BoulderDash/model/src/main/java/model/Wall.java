@@ -5,7 +5,7 @@ package model;
  */
 public class Wall extends Element{
 
-    /** Varible who will use for seek sprite **/
+    /** Variable who will use for seek sprite **/
     private final String STRING = "Wall";
 
 
