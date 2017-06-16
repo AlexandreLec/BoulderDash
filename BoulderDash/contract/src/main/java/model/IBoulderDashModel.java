@@ -9,7 +9,7 @@ import java.util.List;
  * @author Jean-Aymeric DIET jadiet@cesi.fr
  * @version 1.0
  */
-public interface IModel {
+public interface IBoulderDashModel {
 
     /**
      * Gets the example by id.

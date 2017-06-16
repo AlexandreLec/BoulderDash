@@ -11,7 +11,7 @@ import model.dao.ExampleDAO;
  * @author Jean-Aymeric DIET jadiet@cesi.fr
  * @version 1.0
  */
-public class ModelFacade implements IModel {
+public class ModelFacade implements IBoulderDashModel {
 
     /**
      * Instantiates a new model facade.
