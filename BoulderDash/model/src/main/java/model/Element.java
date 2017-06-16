@@ -1,36 +1,41 @@
 package model;
 
+import java.awt.Image;
+
 /**
  * Created by tapafe on 16/06/2017.
  */
 public class Element {
+	
+	private Position position;
+	private Image Sprite;
 
     public Element(Position position){
 
     }
 
-    public getPosition(){
-        return Position;
+    public Position getPosition(){
+        return new Position(1,1);
     }
 
     public void setPosition(Position position){
 
     }
 
-    public getBoulderDashModel(){
-        return BoulderDashModel;
+    public BoulderDashModel getBoulderDashModel(){
+        return new BoulderDashModel();
     }
 
     public void setBoulderDashModel(BoulderDashModel boulderdashmodel){
 
     }
 
-    public placeIMine(){
+    public void placeInMine(){
 
     }
 
-    public getSprite(){
-        return Image;
+    public Image getSprite(){
+        return Sprite;
     }
 
     public void setSprite(String sprite){
