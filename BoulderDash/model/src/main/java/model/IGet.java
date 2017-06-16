@@ -1,8 +1,15 @@
 package model;
 
 /**
- * Created by tapafe on 16/06/2017.
+ * <h1> IKill interface</h1>
+ * @author RIGAUT Arnaud
+ * @version 1.0
  */
+
 public interface IGet {
+    /**
+     * method description for get
+     * @param hero
+     */
     public void get(Hero hero);
 }
