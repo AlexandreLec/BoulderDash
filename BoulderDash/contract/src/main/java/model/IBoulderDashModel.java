@@ -21,7 +21,7 @@ public interface IBoulderDashModel {
      *             the SQL exception
      */
     Example getExampleById(int id) throws SQLException;
-
+    
     /**
      * Gets the example by name.
      *
@@ -41,4 +41,11 @@ public interface IBoulderDashModel {
      *             the SQL exception
      */
     List<Example> getAllExamples() throws SQLException;
+    
+    /**
+     * Get the mine
+     * 
+     * @return the mine
+     */
+    
 }
