@@ -1,7 +1,22 @@
 package view;
 
-public class BoulderDashView {
-	public BoulderDash(orderPerformer IOrderPerformer, observable Observable){}
-    public void run(){}
-    public displaymessage(message string){}
+import java.util.Observable;
+
+import controller.IOrderPerformer;
+
+public class BoulderDashView implements Runnable {
+	
+	private EventPerformer eventPerformer;
+	
+	public BoulderDashView(IOrderPerformer orderPerformer, Observable observable){
+		
+	}
+    
+	public void run() {
+		
+	}
+    
+	public void displaymessage(String message){
+		
+	}
 }

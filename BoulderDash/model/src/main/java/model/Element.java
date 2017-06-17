@@ -8,7 +8,7 @@ import java.awt.Image;
  * @author Arnaud Rigaut
  * @version 1.0
  */
-public class Element {
+public class Element implements IElement {
 	
 	/** The position of the element */
 	private Position position;
@@ -28,6 +28,7 @@ public class Element {
      * Gets the Position.
      * @return the position
      */
+    @Override
     public Position getPosition(){
         return position;
     }
@@ -37,6 +38,7 @@ public class Element {
      * @param position
      * 		Position of the element to set
      */
+    @Override
     public void setPosition(Position position){
 
     }
@@ -45,6 +47,7 @@ public class Element {
      * Gets the model
      * @return the BoulderDashModel
      */
+    @Override
     public BoulderDashModel getBoulderDashModel(){
         return new BoulderDashModel();
     }
@@ -54,6 +57,7 @@ public class Element {
      * @param boulderdashmodel
      * 		the model to set
      */
+    @Override
     public void setBoulderDashModel(BoulderDashModel boulderdashmodel){
 
     }
@@ -61,6 +65,7 @@ public class Element {
     /**
      * Place the elements in the mine
      */
+    @Override
     public void placeInMine(){
 
     }
@@ -69,6 +74,7 @@ public class Element {
      * Gets the sprite of the element
      * @return the sprite
      */
+    @Override
     public Image getSprite(){
         return Sprite;
     }
@@ -77,6 +83,7 @@ public class Element {
      * Sets the sprite of the element
      * @param the sprite
      */
+    @Override
     public void setSprite(String sprite){
 
     }
@@ -85,8 +92,9 @@ public class Element {
      * Gets the movement behavior of the element
      * @return the behavior of move
      */
+    @Override
     public BehaviourMove getBehaviour(){
-        return new BehaviourMove();
+        return new Gravity();
     }
 
     /**
@@ -94,6 +102,7 @@ public class Element {
      * @param behaviour
      * 		The movement behavior to set
      */
+    @Override
     public void setBehaviour(BehaviourMove behaviour){
 
     }

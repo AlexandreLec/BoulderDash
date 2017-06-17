@@ -1,12 +1,10 @@
 package gameframe;
-/**
- * 
- * @author jflho
- *
- */
+
+import java.awt.event.KeyEvent;
+
 public interface IEventPerformer {
 
-	public void eventPerformer(KeyCode KeyEvent){}
+	public void eventPerformer(KeyEvent keyCode);
 	
 }
 

@@ -1,9 +1,26 @@
 package view;
 
-public class ElementBuilder {
-public ElementBuilder(BoulderDashModel IboluderDashModel){}
-private void buildMine(){}
-private void drawElement(element IElement ,observer ImageObserver, graphics Graphics){}
-private operation(){}
-public applyModelToGraphics(graphics Graphics, observer ImageObserver){}
+import java.awt.Graphics;
+import java.awt.image.ImageObserver;
+import java.util.Observer;
+
+import gameframe.IElementBuilder;
+import model.IBoulderDashModel;
+
+public class ElementBuilder implements IElementBuilder {
+	
+	public ElementBuilder(IBoulderDashModel BoulderDashModel){}
+	
+	private void buildMine(){
+		
+	}
+	
+	private void drawElement(IElement element, ImageObserver imageObserver, Graphics graphics){
+		
+	}
+
+	@Override
+	public void applyModelToGraphic(Graphics Graphics, Observer ImageObserver) {
+		
+	}
 }
