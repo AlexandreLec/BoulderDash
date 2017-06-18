@@ -1,11 +1,13 @@
 package controller;
 
 /**
- * <h1>The Interface IController.</h1>
  * 
- * @author Jean-Aymeric DIET jadiet@cesi.fr
+ * @author charl
  * @version 1.0
+ *
  */
+
 public interface IOrderPerformer {
 
+	public void OderPerform(IUserOrder userOrder);
 }

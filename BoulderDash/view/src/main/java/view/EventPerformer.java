@@ -15,7 +15,7 @@ public class EventPerformer {
 		
 	}
 	
-	public UserOrder keyCodeToUserOrder(int keycode){
+	public void keyCodeToUserOrder(int keycode){
 		
 	}
 

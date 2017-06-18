@@ -9,5 +9,6 @@ package controller;
 public interface IUserOrder {
 
 	public Order getOrder();
+	public void setOrder(Order order);
 	
 }

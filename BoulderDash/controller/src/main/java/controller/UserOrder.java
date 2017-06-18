@@ -18,7 +18,15 @@ public class UserOrder implements IUserOrder{
 	/**
 	 * 
 	 */
+	@Override
 	public Order getOrder() {
 		return Order.LEFT;
+	}
+
+
+	@Override
+	public void setOrder(Order order) {
+		
+		
 	}
 }

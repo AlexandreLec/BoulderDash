@@ -11,7 +11,7 @@ public class BoulderDashPerformer implements IOrderPerformer{
 	 * create constructor
 	 * @param BoulderDashModel
 	 */
-	public BoulderDashPerformer(IBoulderDashModel BoulderDashModel) {}
+	public BoulderDashPerformer(IBoulderDashModel BoulderDashModel, IView view) {}
 	
 
 	/**
@@ -37,10 +37,8 @@ public class BoulderDashPerformer implements IOrderPerformer{
 	 * implement OderPerformer
 	 * @param userOrder
 	 */
-	
 	@Override
-	public void OderPerform(UserOrder userOrder) {
-		// TODO Auto-generated method stub
+	public void OderPerform(IUserOrder userOrder) {
 		
 	}
 }

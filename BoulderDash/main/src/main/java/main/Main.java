@@ -1,15 +1,13 @@
 package main;
 
-import java.sql.SQLException;
-
-import controller.ControllerFacade;
-import model.ModelFacade;
-import view.ViewFacade;
+import controller.BoulderDashPerformer;
+import model.BoulderDashModel;
+import view.BoulderDashView;
 
 /**
  * <h1>The Class Main.</h1>
  *
- * @author Jean-Aymeric DIET jadiet@cesi.fr
+ * @author Alexandre LECOMTE
  * @version 1.0
  */
 public abstract class Main {
@@ -21,11 +19,11 @@ public abstract class Main {
      *            the arguments
      */
     public static void main(final String[] args) {
-        final ControllerFacade controller = new ControllerFacade(new ViewFacade(), new ModelFacade());
+        final BoulderDashPerformer controller = new BoulderDashPerformer(new BoulderDashModel(), new BoulderDashView());
 
         try {
-            controller.start();
-        } catch (final SQLException exception) {
+            controller.play();
+        } catch (final Exception exception) {
             exception.printStackTrace();
         }
     }

@@ -5,8 +5,8 @@ import java.awt.image.ImageObserver;
 import java.util.Observer;
 
 import gameframe.IElementBuilder;
-import model.ContractElement;
 import model.IBoulderDashModel;
+import model.IElement;
 
 public class ElementBuilder implements IElementBuilder {
 	
@@ -18,7 +18,7 @@ public class ElementBuilder implements IElementBuilder {
 		
 	}
 	
-	private void drawElement(ContractElement element, ImageObserver imageObserver, Graphics graphics){
+	private void drawElement(IElement element, ImageObserver imageObserver, Graphics graphics){
 		
 	}
 

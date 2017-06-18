@@ -4,19 +4,20 @@ import java.util.Observable;
 
 import controller.IOrderPerformer;
 
-public class BoulderDashView implements Runnable {
+public class BoulderDashView implements Runnable, IView {
 	
 	private EventPerformer eventPerformer;
 	
-	public BoulderDashView(IOrderPerformer orderPerformer, Observable observable){
+	public BoulderDashView(){
 		
 	}
     
 	public void run() {
 		
 	}
-    
-	public void displaymessage(String message){
+
+	@Override
+	public void displayMessage(String message) {
 		
 	}
 }
