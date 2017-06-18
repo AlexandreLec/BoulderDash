@@ -18,13 +18,13 @@ final class BoulderDashBDDConnector {
     private static BoulderDashBDDConnector instance;
 
     /** The login. */
-    private static String                  user     = "id1984813_rock";
+    private static String                  user     = "139890";
 
     /** The password. */
-    private static String                  password = "boulderdash";
+    private static String                  password = "alexandre";
 
     /** The url. */
-    private static String                  url      = "jdbc:mysql://databases.000webhost.com/";
+    private static String                  url      = "jdbc:mysql://mysql-exia-boulderdash.alwaysdata.net/exia-boulderdash_game?useSSL=false";
 
     /** The connection. */
     private Connection                     connection;

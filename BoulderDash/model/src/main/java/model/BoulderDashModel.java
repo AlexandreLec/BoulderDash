@@ -1,7 +1,10 @@
 package model;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Observable;
+
+import model.dao.test;
 
 /**
  * <h1>The Class BoulderDashModel</h1>
@@ -57,7 +60,13 @@ public class BoulderDashModel extends Observable implements IBoulderDashModel {
 	 */
 	@Override
 	public void buildMine(){
-		
+		try {
+			String level = test.getLevel("level2");
+			System.out.println(level);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	/**
