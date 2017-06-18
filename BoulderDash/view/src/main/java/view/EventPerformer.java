@@ -1,11 +1,22 @@
 package view;
 
+import java.awt.event.KeyEvent;
+import java.util.Observable;
+
+import controller.IOrderPerformer;
+
 public class EventPerformer {
 	
-	public EventPerformer(orderPerformer IOderPerformer, observable Observable);
+	public EventPerformer(IOrderPerformer orderPerformer, Observable observable){
+		
+	}
 	
-	public void eventPerformer(keycode KeyEvent);
+	public void eventPerformer(KeyEvent keycode){
+		
+	}
 	
-	public UserOrder keyCodeToUserOrder(int keycode);
+	public UserOrder keyCodeToUserOrder(int keycode){
+		
+	}
 
 }

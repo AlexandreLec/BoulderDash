@@ -7,7 +7,7 @@ package model;
  */
 public class Diamond extends Element implements IGet, IKill {
 
-    /** Varible who will use for seek sprite **/
+    /** Variable who will use for seek sprite **/
     private final String STRING = "Diamond";
 
     /**
@@ -31,7 +31,6 @@ public class Diamond extends Element implements IGet, IKill {
      * method come from IKill
      * @param element
      */
-
     @Override
     public void kill(Element element) {
 

@@ -1,6 +1,7 @@
 package controller;
 
 import model.IBoulderDashModel;
+import view.IView;
 
 public class BoulderDashPerformer implements IOrderPerformer{
 	
@@ -24,7 +25,7 @@ public class BoulderDashPerformer implements IOrderPerformer{
 	 * 
 	 * @param viewSystem
 	 */
-	public void setViewSystem(IViewSystem viewSystem) {}
+	public void setViewSystem(IView viewSystem) {}
 	
 	/**
 	 * create a loop

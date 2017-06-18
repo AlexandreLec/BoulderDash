@@ -9,10 +9,10 @@ import java.util.Observable;
  * @author Alexandre Lecomte
  * @version 1.0
  */
-public class BoulderDashModel extends Observable {
+public class BoulderDashModel extends Observable implements IBoulderDashModel {
 
 	/** The list of the different elements */
-	private ArrayList<Element> elements;
+	private ArrayList<IElement> elements;
 	/** The  mine who contains the elements */
 	private Mine mine;
 	
@@ -27,7 +27,8 @@ public class BoulderDashModel extends Observable {
 	 * Gets the list of the elements 
 	 * @return a list of the elements
 	 */
-	public ArrayList<Element> getElements() {
+	@Override
+	public ArrayList<IElement> getElements() {
 		return elements;
 	}
 	
@@ -36,6 +37,7 @@ public class BoulderDashModel extends Observable {
 	 * @param element
 	 * 		element to add in the list
 	 */
+	@Override
 	public void addElement(IElement element){
 		
 	}
@@ -45,6 +47,7 @@ public class BoulderDashModel extends Observable {
 	 * @param element
 	 * 		element to remove of the list
 	 */
+	@Override
 	public void removeElement(IElement element){
 		
 	}
@@ -52,6 +55,7 @@ public class BoulderDashModel extends Observable {
 	/**
 	 * Builds the mine
 	 */
+	@Override
 	public void buildMine(){
 		
 	}

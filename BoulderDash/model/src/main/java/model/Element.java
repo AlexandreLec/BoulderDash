@@ -47,7 +47,6 @@ public class Element implements IElement {
      * Gets the model
      * @return the BoulderDashModel
      */
-    @Override
     public BoulderDashModel getBoulderDashModel(){
         return new BoulderDashModel();
     }
@@ -57,7 +56,6 @@ public class Element implements IElement {
      * @param boulderdashmodel
      * 		the model to set
      */
-    @Override
     public void setBoulderDashModel(BoulderDashModel boulderdashmodel){
 
     }
@@ -92,7 +90,6 @@ public class Element implements IElement {
      * Gets the movement behavior of the element
      * @return the behavior of move
      */
-    @Override
     public BehaviourMove getBehaviour(){
         return new Gravity();
     }
@@ -102,7 +99,6 @@ public class Element implements IElement {
      * @param behaviour
      * 		The movement behavior to set
      */
-    @Override
     public void setBehaviour(BehaviourMove behaviour){
 
     }
