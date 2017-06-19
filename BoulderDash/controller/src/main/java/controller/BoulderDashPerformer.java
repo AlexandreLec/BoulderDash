@@ -1,6 +1,14 @@
 package controller;
 
 import model.IBoulderDashModel;
+
+/**
+ *  <h1>The class BoulderDashPerformer</h1>
+ * 
+ * @author charl
+ * @version 1.0
+ * 
+ */
 import view.IView;
 
 public class BoulderDashPerformer implements IOrderPerformer{
@@ -15,7 +23,7 @@ public class BoulderDashPerformer implements IOrderPerformer{
 	
 
 	/**
-	 * create method play
+	 * method in order to play
 	 */
 	public void play() {}
 	
