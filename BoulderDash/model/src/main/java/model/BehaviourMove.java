@@ -1,5 +1,5 @@
 package model;
-//test2
+
 /**
  * <h1>The Class BehaviourMove</h1>
  *
