@@ -20,7 +20,7 @@ public class Element implements IElement {
 	 * @param position
 	 * 		Position of the Element
 	 */
-    public Element(Position position){
+    public Element(Position position, String sprite){
 
     }
 

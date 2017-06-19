@@ -9,11 +9,11 @@ package model;
 public class Stone extends Element{
 
     /** Varible who will use for seek sprite **/
-    private final String STRING = "Stone";
+    private final static String STRING = "Stone";
 
 
     /** constructor of ExitGate */
-    public Stone(Position positon){
-        super(positon);
+    public Stone(Position positon, String sprite){
+        super(positon, STRING);
     }
 }

@@ -8,19 +8,19 @@ package model;
 public class Diamond extends Element implements IGet, IKill {
 
     /** Variable who will use for seek sprite **/
-    private final String STRING = "Diamond";
+    private final static String STRING = "Diamond";
 
     /**
      * Constructor of Diamond
       * @param positon
      */
-    public Diamond(Position positon){
-        super(positon);
+    public Diamond(Position positon, String sprite){
+        super(positon, STRING);
     }
 
 
     /**
-     * method come from Iget
+     * @see IGet
      * @param hero
      */
     @Override
@@ -29,7 +29,7 @@ public class Diamond extends Element implements IGet, IKill {
     }
 
     /**
-     * method come from IKill
+     * @see IKill
      * @param element
      */
     @Override

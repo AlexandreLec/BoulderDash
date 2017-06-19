@@ -9,10 +9,10 @@ package model;
 public class Dirt extends Element{
 
     /** Varible who will use for seek sprite **/
-    private final String STRING = "Dirt";
+    private final static String STRING = "Dirt";
 
     /** constructor of ExitGate */
-    public Dirt(Position positon){
-        super(positon);
+    public Dirt(Position positon, String sprite){
+        super(positon, STRING);
     }
 }

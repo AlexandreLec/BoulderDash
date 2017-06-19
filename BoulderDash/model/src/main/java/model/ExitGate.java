@@ -9,14 +9,18 @@ package model;
 
 public class ExitGate extends Element{
 
-    /** Varible who will use for seek sprite **/
-    private final String STRING = "ExitGate";
+    /** Variable who will use for seek sprite **/
+    private final static String STRING = "ExitGate";
 
-    /** crete DP singleton */
-    private ExitGate EXITGATE;
+    /** create DP singleton */
+    private static ExitGate EXITGATE;
 
     /** constructor of ExitGate */
-    public ExitGate(Position positon){
-        super(positon);
+    private ExitGate(Position positon, String sprite){
+        super(positon, STRING);
+    }
+    
+    public ExitGate getInstance(){
+		return EXITGATE;
     }
 }

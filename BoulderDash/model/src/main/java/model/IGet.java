@@ -1,7 +1,7 @@
 package model;
 
 /**
- * <h1> IKill interface</h1>
+ * <h1>IGet interface</h1>
  * @author RIGAUT Arnaud
  * @version 1.0
  */

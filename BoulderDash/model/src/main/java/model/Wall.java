@@ -10,11 +10,11 @@ package model;
 public class Wall extends Element{
 
     /** Variable who will use for seek sprite **/
-    private final String STRING = "Wall";
+    private final static String STRING = "Wall";
 
 
     /** constructor of ExitGatee */
-    public Wall(Position positon){
-        super(positon);
+    public Wall(Position positon, String sprite){
+        super(positon, STRING);
     }
 }
