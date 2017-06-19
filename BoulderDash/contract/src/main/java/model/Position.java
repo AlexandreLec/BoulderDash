@@ -4,7 +4,7 @@ package model;
  * <h1>The Class Position</h1>
  *
  * @author Alexandre Lecomte
- * @version 1.0
+ * @version 1.1
  */
 public class Position {
 
@@ -23,8 +23,12 @@ public class Position {
 	 * 		The position along x axis
 	 * @param y
 	 * 		The position along y axis
+	 * @param maxX
+	 * 		The max position along x axis
+	 * @param maxY
+	 * 		The max position along y axis
 	 */
-	public Position(int x, int y){
+	public Position(int x, int y, int maxX, int maxY){
 		
 	}
 	

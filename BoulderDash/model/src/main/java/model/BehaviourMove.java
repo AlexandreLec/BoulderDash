@@ -7,10 +7,6 @@ package model;
  * @version 1.0
  */
 public abstract class BehaviourMove {
-
-	public BehaviourMove(){
-		
-	}
 	
 	public abstract void move();
 }
