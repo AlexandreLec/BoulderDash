@@ -12,19 +12,18 @@ public class Gravity extends BehaviourMove {
 
 
     /**
-     * Constructor of gravity
+     * Instantiates the Gravity
      */
     public Gravity(){
 		
 	}
 
     /**
-     * Come from behaviourMove
+     *  @see BehaviourMove
      */
 	@Override
 	public void move() {
 		
 	}
 	
-
 }

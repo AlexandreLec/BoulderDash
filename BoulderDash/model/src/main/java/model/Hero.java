@@ -18,7 +18,7 @@ public class Hero extends Element implements IExplosion{
 
 
     /**
-     * constructor of hero
+     * Instantiates the hero
      */
     private Hero(Position position){
 		super(position, SPRITE);
@@ -123,7 +123,7 @@ public class Hero extends Element implements IExplosion{
 
 
     /**
-     * come from IExplosion
+     * @see IExplosion
      */
 	@Override
 	public void explosion() {
