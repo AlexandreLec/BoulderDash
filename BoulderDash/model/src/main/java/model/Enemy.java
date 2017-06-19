@@ -4,7 +4,7 @@ package model;
  * <h1>The Enemy Element</h1>
  *
  * @author Arnaud Rigaut
- * @version 1.0
+ * @version 1.1
  */
 public class Enemy extends Element implements IExplosion, IKill {
 
@@ -15,15 +15,29 @@ public class Enemy extends Element implements IExplosion, IKill {
      * create constructor
      */
     public Enemy(Position position){
-    	super(position, spriteName);
+    	super(position, setSpriteNameAlea());
+    	behaviour = new Automatic();
     }
 
     /**
      * set a sprite for one enemy. This sprite is choose randomly
      */
-    private String setSpriteNameAlea(){
-		return spriteName;
-
+    private static String setSpriteNameAlea(){
+    	
+    	int alea = (int) (Math.random()*4);
+		
+		switch(alea){
+			case 0:
+				return "enemy";
+			case 1:
+				return "enemy";
+			case 2:
+				return "enemy";
+			case 3:
+				return "enemy";
+			default:
+				return "enemy";
+		}
     }
 
     /**
@@ -56,6 +70,6 @@ public class Enemy extends Element implements IExplosion, IKill {
 	 * @param spriteName
 	 */
 	public void setSpriteName(String spriteName) {
-		this.spriteName = spriteName;
+		Enemy.spriteName = spriteName;
 	}
 }

@@ -1,9 +1,6 @@
 package model;
 
-import static org.junit.Assert.*;
-
 import org.junit.Before;
-import org.junit.Test;
 
 /**
  * <h1>The Test Stone Class</h1>
@@ -20,18 +17,7 @@ public class StoneTest extends ElementTest {
 	@Before
 	public void setUp() throws Exception {
 		this.actual = new Stone(new Position(1,1,10,10));
-	}
-
-	/**
-	 * Check if the stone has the good behaviour
-	 */
-	@Override
-	@Test
-	public void getBehaviour() {
-		
-		BehaviourMove expected = new Gravity();
-		
-		assertEquals(expected,this.actual.getBehaviour());
+		this.behaviour = new Gravity();
 	}
 
 }

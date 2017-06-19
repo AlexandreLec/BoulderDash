@@ -3,7 +3,7 @@ package model;
 /**
  * <h1> Diamond Class</h1>
  * @author RIGAUT Arnaud
- * @version 1.0
+ * @version 1.1
  */
 public class Diamond extends Element implements IGet, IKill {
 
@@ -16,6 +16,7 @@ public class Diamond extends Element implements IGet, IKill {
      */
     public Diamond(Position positon){
         super(positon, STRING);
+        behaviour = new Gravity();
     }
 
 
@@ -25,7 +26,7 @@ public class Diamond extends Element implements IGet, IKill {
      */
     @Override
     public void get(Hero hero) {
-
+    	hero.setDiamonds(hero.getDiamonds()+1);
     }
 
     /**
@@ -34,6 +35,6 @@ public class Diamond extends Element implements IGet, IKill {
      */
     @Override
     public void kill(Element element) {
-
+    	element = null;
     }
 }

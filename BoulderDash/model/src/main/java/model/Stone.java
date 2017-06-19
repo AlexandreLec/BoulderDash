@@ -14,5 +14,6 @@ public class Stone extends Element{
     /** constructor of Stone */
     public Stone(Position positon){
         super(positon, STRING);
+        behaviour = new Gravity();
     }
 }

@@ -46,7 +46,7 @@ public class PositionTest {
 	}
 	
 	/**
-	 *  Test if Ymax is not < 0 in case of new position instantiation
+	 *  Test if Ymax is not > 0 in case of new position instantiation
 	 */
 	@Test
 	public void testYmaxMin(){
@@ -131,9 +131,10 @@ public class PositionTest {
 
 	/**
 	 * Test set the x coordinate of a position
+	 * @throws Exception 
 	 */
 	@Test
-	public void testSetX() {
+	public void testSetX() throws Exception {
 		int expected = 2;
 		actual.setX(2);
 		assertSame(expected, actual.getX());
@@ -150,9 +151,10 @@ public class PositionTest {
 
 	/**
 	 * Test set the y coordinate of a position
+	 * @throws Exception 
 	 */
 	@Test
-	public void testSetY() {
+	public void testSetY() throws Exception {
 		int expected = 2;
 		actual.setY(2);
 		assertSame(expected, actual.getY());

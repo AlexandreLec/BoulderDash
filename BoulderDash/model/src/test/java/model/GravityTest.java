@@ -16,7 +16,7 @@ public class GravityTest {
 	}
 	
 	@Test
-	public void test() {
+	public void test() throws Exception {
 		int a = 8;
 		int b = 3;
 		stone = new Position(2,a,10,10);

@@ -22,27 +22,28 @@ public class ControlledTest {
 
 	/**
 	 * Test the move to the right
+	 * @throws Exception 
 	 */
 	@Test
-	public void testMoveRight() {
+	public void testMoveRight() throws Exception {
 		Position expected = new Position(2,1,10,10);
 		assertEquals(expected, this.test.moveRight(new Position(1,1,10,10)));
 	}
 
 	@Test
-	public void testMoveLeft() {
+	public void testMoveLeft() throws Exception {
 		Position expected = new Position(1,1,10,10);
 		assertEquals(expected, this.test.moveLeft(new Position(2,1,10,10)));
 	}
 
 	@Test
-	public void testMoveUp() {
+	public void testMoveUp() throws Exception {
 		Position expected = new Position(1,1,10,10);
 		assertEquals(expected, this.test.moveUp(new Position(1,2,10,10)));
 	}
 
 	@Test
-	public void testMoveDown() {
+	public void testMoveDown() throws Exception {
 		Position expected = new Position(1,2,10,10);
 		assertEquals(expected, this.test.moveDown(new Position(1,1,10,10)));
 	}

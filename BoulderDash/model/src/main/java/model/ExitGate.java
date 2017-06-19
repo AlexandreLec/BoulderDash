@@ -17,6 +17,7 @@ public class ExitGate extends Element{
     /** constructor of ExitGate */
     private ExitGate(Position positon){
         super(positon, STRING);
+        behaviour = new Fixe();
     }
     
     static public ExitGate getInstance(Position position){

@@ -1,12 +1,16 @@
 package model;
 
 import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
 
 /**
  * <h1>The Element Class </h1>
  *
- * @author LECOMPTE Alexandre
- * @version 1.0
+ * @author LECOMTE Alexandre
+ * @version 1.1
  */
 public class Element implements IElement {
 	
@@ -23,7 +27,8 @@ public class Element implements IElement {
 	 * 		Position of the Element
 	 */
     public Element(Position position, String sprite){
-
+    	this.position = position;
+    	this.Sprite = loadSprite(sprite);
     }
     
     /**
@@ -33,7 +38,18 @@ public class Element implements IElement {
      * @return the sprite's image
      */
     private Image loadSprite(String sprite){
-		return Sprite;
+    	
+    	Image result = null;
+    	
+    	String path = "ressources/img/"+sprite+".png";
+    	
+    	try {
+			result = ImageIO.read(new File(path));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		return result;
     }
 
     /**
@@ -42,7 +58,7 @@ public class Element implements IElement {
      */
     @Override
     public Position getPosition(){
-        return position;
+        return this.position;
     }
 
     /**
@@ -52,7 +68,7 @@ public class Element implements IElement {
      */
     @Override
     public void setPosition(Position position){
-    	
+    	this.position = position;
     }
     
     /**
@@ -69,7 +85,7 @@ public class Element implements IElement {
      */
     @Override
     public Image getSprite(){
-        return Sprite;
+        return this.Sprite;
     }
 
     /**
@@ -78,7 +94,7 @@ public class Element implements IElement {
      */
     @Override
     public void setSprite(String sprite){
-
+    	this.Sprite = loadSprite(sprite);
     }
 
     /**
@@ -86,7 +102,7 @@ public class Element implements IElement {
      * @return the behavior of move
      */
     public BehaviourMove getBehaviour(){
-        return new Gravity();
+        return this.behaviour;
     }
 
     /**
@@ -95,6 +111,6 @@ public class Element implements IElement {
      * 		The movement behavior to set
      */
     public void setBehaviour(BehaviourMove behaviour){
-
+    	this.behaviour = behaviour;
     }
 }

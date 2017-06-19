@@ -4,7 +4,7 @@ package model;
  * <h1>The Class Element</h1>
  *
  * @author Arnaud Rigaut
- * @version 1.0
+ * @version 1.1
  */
 public class Hero extends Element implements IExplosion{
 
@@ -22,6 +22,7 @@ public class Hero extends Element implements IExplosion{
      */
     private Hero(Position position){
 		super(position, SPRITE);
+		behaviour = new Controlled();
 	}
 
     /**
@@ -36,6 +37,10 @@ public class Hero extends Element implements IExplosion{
 	 * @return return a new hero
 	 */
 	static public Hero getInstance(Position position){
+		
+		if(hero == null){
+			hero = new Hero(position);
+		}
 		return hero;
 	}
 
