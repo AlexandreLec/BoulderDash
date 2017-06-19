@@ -8,12 +8,12 @@ package model;
  */
 public class Stone extends Element{
 
-    /** Varible who will use for seek sprite **/
+    /** Variable who will use for seek sprite **/
     private final static String STRING = "Stone";
 
 
     /** constructor of ExitGate */
-    public Stone(Position positon, String sprite){
+    public Stone(Position positon){
         super(positon, STRING);
     }
 }

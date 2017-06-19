@@ -14,7 +14,7 @@ public class Diamond extends Element implements IGet, IKill {
      * Constructor of Diamond
       * @param positon
      */
-    public Diamond(Position positon, String sprite){
+    public Diamond(Position positon){
         super(positon, STRING);
     }
 

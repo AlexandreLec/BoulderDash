@@ -14,7 +14,7 @@ public class Wall extends Element{
 
 
     /** constructor of ExitGatee */
-    public Wall(Position positon, String sprite){
+    public Wall(Position positon){
         super(positon, STRING);
     }
 }

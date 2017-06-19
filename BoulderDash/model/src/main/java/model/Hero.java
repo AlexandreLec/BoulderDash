@@ -6,8 +6,7 @@ package model;
  * @author Arnaud Rigaut
  * @version 1.0
  */
-
-public class Hero implements IExplosion{
+public class Hero extends Element implements IExplosion{
 
 	private static String SPRITE;
 	private static Hero hero;
@@ -21,8 +20,8 @@ public class Hero implements IExplosion{
     /**
      * constructor of hero
      */
-    private Hero(){
-		
+    private Hero(Position position){
+		super(position, SPRITE);
 	}
 
     /**
@@ -36,8 +35,8 @@ public class Hero implements IExplosion{
 	 * method use for create an instance of hero
 	 * @return return a new hero
 	 */
-	public Hero getInstance(){
-		return new Hero();
+	static public Hero getInstance(Position position){
+		return hero;
 	}
 
     /**
@@ -127,7 +126,7 @@ public class Hero implements IExplosion{
      * come from IExplosion
      */
 	@Override
-	public void IExplosion() {
+	public void explosion() {
 
 	}
 }
