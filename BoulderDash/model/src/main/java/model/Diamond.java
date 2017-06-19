@@ -18,10 +18,6 @@ public class Diamond extends Element implements IGet, IKill {
         super(positon);
     }
 
-    public void Test(){
-        
-    }
-
 
     /**
      * method come from Iget
