@@ -19,7 +19,7 @@ public class GameFrame extends JFrame implements KeyListener {
 
 
 	/**
-	 * Create the constructor of GamFrame
+	 * Create the constructor of GameFrame
 	 * @param title
 	 * @param performer
 	 * @param observable
