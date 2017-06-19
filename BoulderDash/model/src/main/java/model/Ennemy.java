@@ -6,7 +6,7 @@ package model;
  * @author Arnaud Rigaut
  * @version 1.0
  */
-public class Ennemy implements IExplosion, IKill {
+public class Ennemy extends Element implements IExplosion, IKill {
 
     /**
      * Instantiates the enemy
