@@ -24,7 +24,7 @@ public class Fenêtre extends JFrame {
 		 * Create a label and add into the frame
 		 */
 		
-		JLabel label = new JLabel("");
+		JLabel label = new JLabel("BoulderDash");
 		fenetre.getContentPane().add(label);
 		
 	
