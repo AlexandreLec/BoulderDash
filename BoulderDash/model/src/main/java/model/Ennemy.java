@@ -1,7 +1,7 @@
 package model;
 
 /**
- * <h1>The Ennemy Element</h1>
+ * <h1>The Class Ennemy</h1>
  *
  * @author Arnaud Rigaut
  * @version 1.0
@@ -9,21 +9,21 @@ package model;
 public class Ennemy implements IExplosion, IKill {
 
     /**
-     * create constructor
+     * Instantiates the enemy
      */
     public Ennemy(){
 
     }
 
     /**
-     * set a sprite for one onnemy. This sprites is choose aleatory
+     * set a sprite for one enemy. This sprites is choose aleatory
      */
     private void setSpriteAlea(){
 
     }
 
     /**
-     * Come from IExplosion
+     * @see IExplosion
      */
     @Override
     public void IExplosion() {
@@ -31,7 +31,7 @@ public class Ennemy implements IExplosion, IKill {
     }
 
     /**
-     * Come from IKill
+     * @see IKill
      * @param element
      */
     @Override

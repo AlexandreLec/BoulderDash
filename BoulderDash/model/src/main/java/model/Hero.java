@@ -19,7 +19,7 @@ public class Hero implements IExplosion{
 
 
     /**
-     * constructor of hero
+     * Instantiates the hero
      */
     private Hero(){
 		
@@ -124,7 +124,7 @@ public class Hero implements IExplosion{
 
 
     /**
-     * come from IExplosion
+     * @see IExplosion
      */
 	@Override
 	public void IExplosion() {

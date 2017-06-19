@@ -3,9 +3,9 @@ package model;
 import java.awt.Image;
 
 /**
- * <h1>The Class Element</h1>
+ * <h1>The Element Class </h1>
  *
- * @author Arnaud Rigaut
+ * @author LECOMPTE Alexandre
  * @version 1.0
  */
 public class Element implements IElement {

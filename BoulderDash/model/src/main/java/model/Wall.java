@@ -3,7 +3,7 @@ package model;
  /**
  * <h1>The Class Element</h1>
  *
- * @author Arnaud Rigaut
+ * @author Alexandre Lecomte
  * @version 1.0
  */
 
@@ -13,7 +13,7 @@ public class Wall extends Element{
     private final static String STRING = "Wall";
 
 
-    /** constructor of ExitGatee */
+    /** Instantiates of ExitGatee */
     public Wall(Position positon, String sprite){
         super(positon, STRING);
     }

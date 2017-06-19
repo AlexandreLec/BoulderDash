@@ -15,7 +15,7 @@ public class Mine {
 	static int WIDTH;
 
 	/**
-	 * Create the constructor
+	 * Instantiates the constructor
 	 */
 	public Mine(){
 		

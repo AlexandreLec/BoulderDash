@@ -1,9 +1,9 @@
 package model;
 
 /**
- * <h1>The ExitClass Element</h1>
+ * <h1>The Class ExitGate</h1>
  *
- * @author Arnaud Rigaut
+ * @author Alexandre Lecomte
  * @version 1.0
  */
 
