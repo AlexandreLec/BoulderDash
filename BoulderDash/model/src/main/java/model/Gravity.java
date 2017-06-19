@@ -26,5 +26,4 @@ public class Gravity extends BehaviourMove {
 		
 	}
 	
-
 }

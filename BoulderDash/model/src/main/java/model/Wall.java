@@ -12,9 +12,8 @@ public class Wall extends Element{
     /** Variable who will use for seek sprite **/
     private final static String STRING = "Wall";
 
-
-    /** Instantiates of ExitGatee */
-    public Wall(Position positon, String sprite){
+    /** constructor of ExitGatee */
+    public Wall(Position positon){
         super(positon, STRING);
     }
 }

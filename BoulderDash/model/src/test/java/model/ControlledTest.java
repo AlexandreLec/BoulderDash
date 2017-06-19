@@ -3,17 +3,26 @@ package model;
 import static org.junit.Assert.*;
 
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
+/**
+ * <h1>The Test Controlled Class</h1>
+ *
+ * @author Alexandre Lecomte
+ * @version 1.0
+ */
 public class ControlledTest {
 	
+	/** The tested move behaviour */
 	private Controlled test;
 
 	@Before
 	public void setUp() throws Exception {
 	}
 
+	/**
+	 * Test the move to the right
+	 */
 	@Test
 	public void testMoveRight() {
 		Position expected = new Position(2,1,10,10);

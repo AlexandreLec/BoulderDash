@@ -4,7 +4,7 @@ import java.awt.Graphics;
 import java.awt.image.ImageObserver;
 import java.util.Observer;
 
-import gameframe.IElementBuild;
+import gameframe.IElementBuilder;
 import model.IBoulderDashModel;
 import model.IElement;
 

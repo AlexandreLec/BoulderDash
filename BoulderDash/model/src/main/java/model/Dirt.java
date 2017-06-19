@@ -12,7 +12,7 @@ public class Dirt extends Element{
     private final static String STRING = "Dirt";
 
     /** constructor of ExitGate */
-    public Dirt(Position positon, String sprite){
+    public Dirt(Position positon){
         super(positon, STRING);
     }
 }

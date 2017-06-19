@@ -14,6 +14,8 @@ public class Element implements IElement {
 	private Position position;
 	/** The sprite of the element  */
 	private Image Sprite;
+	/** The move behaviour of the element */
+	protected BehaviourMove behaviour;
 
 	/**
 	 * Instantiates a new Element
@@ -22,6 +24,16 @@ public class Element implements IElement {
 	 */
     public Element(Position position, String sprite){
 
+    }
+    
+    /**
+     * Get the sprite in the database
+     * @param sprite
+     * 		The sprit's name to load
+     * @return the sprite's image
+     */
+    private Image loadSprite(String sprite){
+		return Sprite;
     }
 
     /**
@@ -40,24 +52,7 @@ public class Element implements IElement {
      */
     @Override
     public void setPosition(Position position){
-
-    }
-
-    /**
-     * Gets the model
-     * @return the BoulderDashModel
-     */
-    public BoulderDashModel getBoulderDashModel(){
-        return new BoulderDashModel();
-    }
-
-    /**
-     * Sets the model
-     * @param boulderdashmodel
-     * 		the model to set
-     */
-    public void setBoulderDashModel(BoulderDashModel boulderdashmodel){
-
+    	
     }
     
     /**

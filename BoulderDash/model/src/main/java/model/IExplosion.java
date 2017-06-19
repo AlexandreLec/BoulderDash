@@ -7,8 +7,10 @@ package model;
  */
 
 public interface IExplosion {
-    /**
-     * Instantiates the IExplosion
-     */
-    public void IExplosion();
+
+	/**
+	* Instantiates the IExplosion
+	*/
+	public void explosion();
+
 }
