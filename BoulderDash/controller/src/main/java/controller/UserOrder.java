@@ -3,7 +3,7 @@ package controller;
 /**
  *  <h1>The class UserOrder</h1>
  * 
- * @author charl
+ * @author Charles LELEUX
  * @version 1.0
  * 
  */

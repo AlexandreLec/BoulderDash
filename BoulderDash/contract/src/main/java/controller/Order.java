@@ -2,8 +2,9 @@ package controller;
 
 /**
  *  <h1>The enumeration Order</h1>
+
  * 
- * @author charl
+ * @author Charles LELEUX
  * @version 1.0
  * 
  */

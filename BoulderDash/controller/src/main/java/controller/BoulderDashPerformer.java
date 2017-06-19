@@ -2,10 +2,12 @@ package controller;
 
 import model.IBoulderDashModel;
 
+
 /**
  *  <h1>The class BoulderDashPerformer</h1>
+
  * 
- * @author charl
+ * @author Charles LELEUX
  * @version 1.0
  * 
  */
