@@ -1,7 +1,10 @@
 package model;
 
 /**
- * Created by Arnaud Rigaut on 16/06/2017.
+ * <h1>The Class Element</h1>
+ *
+ * @author Arnaud Rigaut
+ * @version 1.0
  */
 public class Stone extends Element{
 

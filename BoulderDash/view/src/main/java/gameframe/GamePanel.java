@@ -24,6 +24,11 @@ public class GamePanel extends JPanel implements Observer {
 		
 	}
 
+	/**
+	 * the methode create from Observable
+	 * @param o
+	 * @param arg
+	 */
 	@Override
 	public void update(Observable o, Object arg) {
 		
