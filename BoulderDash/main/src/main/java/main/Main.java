@@ -30,6 +30,7 @@ public abstract class Main {
         } catch (final Exception exception) {
             exception.printStackTrace();
         }
+<<<<<<< HEAD
         
         BoulderDashModel model = new BoulderDashModel();
         model.buildMine();
@@ -37,6 +38,8 @@ public abstract class Main {
         
         System.out.println(test.getSprite());
         
+=======
+>>>>>>> branch 'master' of https://github.com/AlexandreLec/BoulderDash
     }
 
 }

@@ -14,6 +14,7 @@ public class Controlled extends BehaviourMove {
 	 */
 	@Override
 	public void move() {
+		
 
 	}
 
@@ -21,9 +22,12 @@ public class Controlled extends BehaviourMove {
 	 * method use for move element right
 	 * @param position
 	 * @return position
+	 * @throws Exception 
 	 */
 	
-	public Position moveRight(Position position){
+	public Position moveRight(Position position) throws Exception{
+		
+		position.setX(position.getX()+1);
 		return position;
 		
 	}

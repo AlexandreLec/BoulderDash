@@ -1,6 +1,7 @@
 package controller;
 
 import model.IBoulderDashModel;
+import view.IView;
 
 
 /**
@@ -14,20 +15,28 @@ import model.IBoulderDashModel;
 import view.IView;
 
 public class BoulderDashPerformer implements IOrderPerformer{
-	
-	
-	
-	/**
-	 * create constructor
-	 * @param BoulderDashModel
-	 */
-	public BoulderDashPerformer(IBoulderDashModel BoulderDashModel, IView view) {}
+
+    public IBoulderDashModel ActualModel;
+    public IView ActualView;
+
+    /**
+     * Create constructor
+      * @param BoulderDashModel
+     * @param view
+     */
+	public BoulderDashPerformer(IBoulderDashModel BoulderDashModel, IView view) {
+
+        ActualModel = BoulderDashModel;
+        ActualView = view;
+    }
 	
 
 	/**
 	 * method in order to play
 	 */
-	public void play() {}
+	public void play() throws Exception {
+        ActualModel.buildMine();
+	}
 
 	/**
 	 * create a loop
