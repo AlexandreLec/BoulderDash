@@ -17,8 +17,7 @@ public class UserOrder implements IUserOrder{
 	public UserOrder(Order order) {}
 	
 	/**
-	 * Call the enum Order for the direction
-	 * 			the direction for the player
+	 * @see IUserOrder
 	 */
 	@Override
 	public Order getOrder() {
@@ -26,7 +25,7 @@ public class UserOrder implements IUserOrder{
 	}
 
 	/**
-	 * return the direction of the player
+	 * @see IUserOrder
 	 */
 	@Override
 	public void setOrder(Order order) {

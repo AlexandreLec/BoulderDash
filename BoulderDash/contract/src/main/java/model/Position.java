@@ -4,7 +4,7 @@ package model;
  * <h1>The Class Position</h1>
  *
  * @author Alexandre Lecomte
- * @version 1.1
+ * @version 1.2
  */
 public class Position {
 
@@ -27,9 +27,30 @@ public class Position {
 	 * 		The max position along x axis
 	 * @param maxY
 	 * 		The max position along y axis
+	 * @throws Exception 
 	 */
-	public Position(int x, int y, int maxX, int maxY){
+	public Position(int x, int y, int maxX, int maxY) throws Exception {
 		
+		if (maxY < 0) 
+			throw new Exception("Ymax out of range");
+		else 
+			this.maxY = maxY;
+		
+		if (maxX < 0) 
+			throw new Exception("Xmax out of range");
+		else 
+			this.maxX = maxX;
+		
+		if (x < 0 || x > maxX) 
+			throw new Exception("X out of range");
+		else 
+			this.x = x;
+		
+		if (y < 0 || y > maxY) 
+			throw new Exception("Y out of range");
+		else 
+			this.y = y;
+			this.maxY = maxY;
 	}
 	
 	/**
@@ -38,7 +59,10 @@ public class Position {
 	 * 		The position
 	 */
 	public Position(Position position){
-		
+		this.x = position.getX();
+		this.y = position.getY();
+		this.maxX = position.getMaxX();
+		this.maxY = position.getMaxY();
 	}
 
 	/**
@@ -53,9 +77,14 @@ public class Position {
 	 * Sets the x coordinate
 	 * @param x
 	 * 		The x coordinate to set
+	 * @throws Exception 
 	 */
-	public void setX(int x) {
-		this.x = x;
+	public void setX(int x) throws Exception {
+		
+		if (x < 0 || x > maxX) 
+			throw new Exception("X out of range");
+		else 
+			this.x = x;
 	}
 
 	/**
@@ -70,9 +99,14 @@ public class Position {
 	 * Sets the y coordinate
 	 * @param y
 	 * 		The y coordinate to set
+	 * @throws Exception 
 	 */
-	public void setY(int y) {
-		this.y = y;
+	public void setY(int y) throws Exception {
+		
+		if (y < 0 || y > maxY) 
+			throw new Exception("Y out of range");
+		else 
+			this.y = y;
 	}
 
 	/**

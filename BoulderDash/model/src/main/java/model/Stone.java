@@ -3,17 +3,17 @@ package model;
 /**
  * <h1>The Class Element</h1>
  *
- * @author Arnaud Rigaut
+ * @author Alexandre Lecomte
  * @version 1.0
  */
 public class Stone extends Element{
 
-    /** Varible who will use for seek sprite **/
+    /** Variable who will use for seek sprite **/
     private final static String STRING = "Stone";
 
-
-    /** constructor of ExitGate */
-    public Stone(Position positon, String sprite){
+    /** constructor of Stone */
+    public Stone(Position positon){
         super(positon, STRING);
+        behaviour = new Gravity();
     }
 }

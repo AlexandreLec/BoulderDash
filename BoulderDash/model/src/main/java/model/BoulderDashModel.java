@@ -57,16 +57,18 @@ public class BoulderDashModel extends Observable implements IBoulderDashModel {
 	
 	/**
 	 * Builds the mine
+	 * @throws Exception 
 	 */
 	@Override
-	public void buildMine(){
-		try {
+	public void buildMine() throws Exception{
+		/*try {
 			String level = test.getLevel("level2");
 			System.out.println(level);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}*/
+		this.elements.add(new Dirt(new Position(1,1,10,10)));
 	}
 
 	/**

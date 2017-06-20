@@ -32,7 +32,8 @@ public interface IBoulderDashModel {
 	
 	/**
 	 * Builds the mine
+	 * @throws Exception 
 	 */
-	public void buildMine();
+	public void buildMine() throws Exception;
     
 }

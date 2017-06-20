@@ -1,12 +1,11 @@
 package model;
 
 /**
- * <h1>The ExitClass Element</h1>
+ * <h1>The Class ExitGate</h1>
  *
- * @author Arnaud Rigaut
+ * @author Alexandre Lecomte
  * @version 1.0
  */
-
 public class ExitGate extends Element{
 
     /** Variable who will use for seek sprite **/
@@ -16,11 +15,12 @@ public class ExitGate extends Element{
     private static ExitGate EXITGATE;
 
     /** constructor of ExitGate */
-    private ExitGate(Position positon, String sprite){
+    private ExitGate(Position positon){
         super(positon, STRING);
+        behaviour = new Fixe();
     }
     
-    public ExitGate getInstance(){
+    static public ExitGate getInstance(Position position){
 		return EXITGATE;
     }
 }

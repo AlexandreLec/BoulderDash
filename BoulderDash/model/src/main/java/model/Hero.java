@@ -4,10 +4,9 @@ package model;
  * <h1>The Class Element</h1>
  *
  * @author Arnaud Rigaut
- * @version 1.0
+ * @version 1.1
  */
-
-public class Hero implements IExplosion{
+public class Hero extends Element implements IExplosion{
 
 	private static String SPRITE;
 	private static Hero hero;
@@ -19,10 +18,11 @@ public class Hero implements IExplosion{
 
 
     /**
-     * constructor of hero
+     * Instantiates the hero
      */
-    private Hero(){
-		
+    private Hero(Position position){
+		super(position, SPRITE);
+		behaviour = new Controlled();
 	}
 
     /**
@@ -36,8 +36,12 @@ public class Hero implements IExplosion{
 	 * method use for create an instance of hero
 	 * @return return a new hero
 	 */
-	public Hero getInstance(){
-		return new Hero();
+	static public Hero getInstance(Position position){
+		
+		if(hero == null){
+			hero = new Hero(position);
+		}
+		return hero;
 	}
 
     /**
@@ -124,10 +128,10 @@ public class Hero implements IExplosion{
 
 
     /**
-     * come from IExplosion
+     * @see IExplosion
      */
 	@Override
-	public void IExplosion() {
+	public void explosion() {
 
 	}
 }
