@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package model;
 
 import java.awt.Image;
@@ -119,3 +120,5 @@ public class Element implements IElement {
     	this.behaviour = behaviour;
     }
 }
+=======
+>>>>>>> branch 'master' of https://github.com/AlexandreLec/BoulderDash
