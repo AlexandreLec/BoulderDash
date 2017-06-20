@@ -3,21 +3,12 @@ package controller;
 import model.IBoulderDashModel;
 import view.IView;
 
-
-/**
- *  <h1>The class BoulderDashPerformer</h1>
-
- * 
- * @author Charles LELEUX
- * @version 1.0
- * 
- */
-import view.IView;
-
 public class BoulderDashPerformer implements IOrderPerformer{
 
     public IBoulderDashModel ActualModel;
     public IView ActualView;
+    
+    private Order order;
 
     /**
      * Create constructor
@@ -57,10 +48,21 @@ public class BoulderDashPerformer implements IOrderPerformer{
 	
 	/**
 	 * implement OderPerformer
-	 * @param userOrder
+	 * @param order
 	 */
 	@Override
-	public void OderPerform(IUserOrder userOrder) {
+	public void OrderPerform(Order order) {
+		// TODO Auto-generated method stub
 		
+	}
+
+
+	public Order getOrder() {
+		return order;
+	}
+
+
+	public void setOrder(Order order) {
+		this.order = order;
 	}
 }

@@ -5,16 +5,15 @@ import model.IBoulderDashModel;
 public class BoulderDashView implements Runnable, IView {
 	
 	private IEventPerformer eventPerformer;
-	private GameFrame gameFrame;
-	private ElementBuilder elementBuilder;
+	private IElementBuilder elementBuilder;
 	
 	public BoulderDashView(){
 		
 	}
     
 	public void start(IBoulderDashModel model) {
-		//this.elementBuilder = new ElementBuilder(model);
-		this.gameFrame = new GameFrame("BoulderDash", eventPerformer, model);
+		this.elementBuilder = new ElementBuilder(model);
+		new GameFrame("BoulderDash", eventPerformer, elementBuilder);
 	}
 
 	@Override

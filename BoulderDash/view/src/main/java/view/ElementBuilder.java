@@ -1,10 +1,9 @@
 package view;
 
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.image.ImageObserver;
 import java.util.Iterator;
-import java.util.Observer;
-
 import model.IBoulderDashModel;
 import model.IElement;
 
@@ -17,29 +16,22 @@ public class ElementBuilder implements IElementBuilder {
 		this.model = BoulderDashModel;
 	}
 	
-	public void drawMine( Graphics graphics){
+	private void drawMine(Graphics graphics, ImageObserver obs){
 		
 		Iterator<IElement> it = model.getElements().iterator();
 		 
 		while (it.hasNext()) {
-		       drawElement(it.next(),graphics);
+		       drawElement(it.next(),graphics, obs);
 		}
 	}
 	
-	private void drawElement(IElement element, Graphics graphics){
-		graphics.drawImage(element.getSprite(),element.getPosition().getX(),element.getPosition().getY(),null);
+	private void drawElement(IElement element, Graphics graphics, ImageObserver obs){
+		Graphics2D g2d = (Graphics2D) graphics ;
+		g2d.drawImage(element.getSprite(),element.getPosition().getX()*16,element.getPosition().getY()*16,obs);
 	}
 
 	@Override
-	public void applyModelToGraphic(Graphics graphics, Observer ImageObserver) {
-		drawMine(graphics);
-	}
-	
-	public IBoulderDashModel getModel() {
-		return model;
-	}
-
-	public void setModel(IBoulderDashModel model) {
-		this.model = model;
+	public void applyModelToGraphic(Graphics graphics, ImageObserver obs) {
+		drawMine(graphics, obs);
 	}
 }

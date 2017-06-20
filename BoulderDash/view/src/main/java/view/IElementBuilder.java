@@ -1,10 +1,10 @@
 package view;
 
 import java.awt.Graphics;
-import java.util.Observer;
+import java.awt.image.ImageObserver;
 
 public interface IElementBuilder {
 
-	public void applyModelToGraphic (Graphics Graphics , Observer ImageObserver);
+	public void applyModelToGraphic(Graphics graphics, ImageObserver obs);
 	
 }

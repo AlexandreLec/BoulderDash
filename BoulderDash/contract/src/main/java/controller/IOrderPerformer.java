@@ -15,5 +15,5 @@ public interface IOrderPerformer {
      * method come from IOrderPermformer
      * @param element
      */
-	public void OderPerform(IUserOrder userOrder);
+	public void OrderPerform(Order order);
 }

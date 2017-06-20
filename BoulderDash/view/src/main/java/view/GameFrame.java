@@ -1,10 +1,7 @@
 package view;
 import javax.swing.*;
 
-import model.IBoulderDashModel;
-
 import java.awt.event.*;
-import java.util.Observable;
 
 /**
  * <h1>The Class GameFrame provides the method to use the different keyboard interactions</h1>
@@ -27,14 +24,14 @@ public class GameFrame extends JFrame implements KeyListener {
 	 * @param performer
 	 * @param observable
 	 */
-	public GameFrame(String title, IEventPerformer performer, IBoulderDashModel model){
+	public GameFrame(String title, IEventPerformer performer, IElementBuilder builder){
 
 		this.setTitle(title);
 		this.setLocationRelativeTo(null);
 		this.setSize(800, 480);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
-		GamePanel panel = new GamePanel(model);
+		GamePanel panel = new GamePanel(builder);
 		
 		//builder.getModel().addObserver(panel);
 		
@@ -50,7 +47,8 @@ public class GameFrame extends JFrame implements KeyListener {
 	 */
 	@Override
 	public void keyTyped(KeyEvent e) {
-		// TODO Auto-generated method stub
+		
+		this.eventPerformer.eventPerform(e);
 
 	}
 
@@ -60,7 +58,8 @@ public class GameFrame extends JFrame implements KeyListener {
 	 */
 	@Override
 	public void keyPressed(KeyEvent e) {
-		// TODO Auto-generated method stub
+		
+		this.eventPerformer.eventPerform(e);
 
 	}
 
@@ -70,7 +69,8 @@ public class GameFrame extends JFrame implements KeyListener {
 	 */
 	@Override
 	public void keyReleased(KeyEvent e) {
-		// TODO Auto-generated method stub
+		
+		this.eventPerformer.eventPerform(e);
 		
 	}
 	
