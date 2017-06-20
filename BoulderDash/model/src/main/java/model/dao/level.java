@@ -4,12 +4,12 @@ import java.sql.CallableStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class test extends AbstractDAO {
+public class level extends AbstractDAO {
 	
 	/** The sql example by id. */
     private static String sqlExampleById   = "{call getLevel(?)}";
 	
-	public test(){
+	public level(){
 		
 	}
 	

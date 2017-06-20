@@ -48,17 +48,18 @@ public class GamePanel extends JPanel implements Observer {
 	
 	public void drawMine( Graphics graphics){
 		
+		int cpt=0;
 		Iterator<IElement> it = model.getElements().iterator();
 		 
 		while (it.hasNext()) {
 		       drawElement(it.next(),graphics);
-		       System.out.println("list");
+		       cpt++;
+		       System.out.println(cpt);
 		}
 	}
 	
 	private void drawElement(IElement element, Graphics graphics){
 		Graphics2D g2d = (Graphics2D) graphics ;
-		g2d.drawImage(element.getSprite(),element.getPosition().getX(),element.getPosition().getY(),this);
-		 System.out.println("drawelement");
+		g2d.drawImage(element.getSprite(),element.getPosition().getX()*16,element.getPosition().getY()*16,this);
 	}
 }

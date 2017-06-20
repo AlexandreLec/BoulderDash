@@ -8,7 +8,7 @@ package model;
 public class Diamond extends Element implements IGet, IKill {
 
     /** Variable who will use for seek sprite **/
-    private final static String STRING = "Diamond";
+    private final static String STRING = "diamond";
 
     /**
      * Constructor of Diamond

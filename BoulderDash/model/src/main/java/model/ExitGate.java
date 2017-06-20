@@ -9,7 +9,7 @@ package model;
 public class ExitGate extends Element{
 
     /** Variable who will use for seek sprite **/
-    private final static String STRING = "ExitGate";
+    private final static String STRING = "door";
 
     /** create DP singleton */
     private static ExitGate EXITGATE;
@@ -20,7 +20,10 @@ public class ExitGate extends Element{
         behaviour = new Fixe();
     }
     
-    static public ExitGate getInstance(Position position){
+    public static ExitGate getInstance(Position position){
+		if(EXITGATE == null){
+			EXITGATE = new ExitGate(position);
+		}
 		return EXITGATE;
     }
 }

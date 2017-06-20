@@ -9,7 +9,7 @@ package model;
 public class Enemy extends Element implements IExplosion, IKill {
 
     /** Variable who will use for seek sprite **/
-    private static String spriteName = "";
+    private static String spriteName = "enemy";
 	
     /**
      * create constructor
