@@ -27,7 +27,7 @@ public class ControlledTest {
 	@Test
 	public void testMoveRight() throws Exception {
 		Position expected = new Position(2,1,10,10);
-		assertEquals(expected, this.test.moveRight(new Position(1,1,10,10)));
+		assertEquals(expected.getX(), this.test.moveRight());
 	}
 
 	@Test

@@ -26,8 +26,6 @@ public abstract class Main {
         } catch (final Exception exception) {
             exception.printStackTrace();
         }
-        
-        new BoulderDashModel().buildMine();
     }
 
 }
