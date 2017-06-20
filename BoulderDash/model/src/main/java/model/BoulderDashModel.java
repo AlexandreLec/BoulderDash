@@ -64,11 +64,11 @@ public class BoulderDashModel extends Observable implements IBoulderDashModel {
 		/*try {
 			String level = test.getLevel("level2");
 			System.out.println(level);
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}*/
-		this.elements.add(new Dirt(new Position(1,1,10,10)));
+		this.elements.add(new Dirt(new Position(1,2,mine.HEIGHT,mine.WIDTH)));
 	
 		
 	}
