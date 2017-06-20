@@ -14,7 +14,7 @@ public interface IBoulderDashModel {
 	 * Gets the list of the elements 
 	 * @return a list of the elements
 	 */
-	public ArrayList<IElement> getElements();
+	public IElement getElements(Position position);
 	
 	/**
 	 * Adds an object to the list of the elements

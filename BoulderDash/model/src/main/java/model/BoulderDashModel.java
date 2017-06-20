@@ -10,12 +10,10 @@ import model.dao.test;
  * <h1>The Class BoulderDashModel</h1>
  *
  * @author Alexandre Lecomte
- * @version 1.0
+ * @version 1.1
  */
 public class BoulderDashModel extends Observable implements IBoulderDashModel {
 
-	/** The list of the different elements */
-	private ArrayList<IElement> elements;
 	/** The  mine who contains the elements */
 	private Mine mine;
 	
@@ -23,7 +21,7 @@ public class BoulderDashModel extends Observable implements IBoulderDashModel {
 	 * Instantiates the BoulderDashModel.
 	 */
 	public BoulderDashModel(){
-		
+		this.mine = new Mine();
 	}
 
 	/**
@@ -31,8 +29,9 @@ public class BoulderDashModel extends Observable implements IBoulderDashModel {
 	 * @return a list of the elements
 	 */
 	@Override
-	public ArrayList<IElement> getElements() {
-		return elements;
+	public IElement getElements(Position position) {
+		
+		return this.mine.getElements().get(position.getX()+position.getY());
 	}
 	
 	/**
@@ -68,7 +67,7 @@ public class BoulderDashModel extends Observable implements IBoulderDashModel {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}*/
-		this.elements.add(new Dirt(new Position(1,1,10,10)));
+		this.mine.getElements().add(new Dirt(new Position(0,0,10,10)));
 	}
 
 	/**

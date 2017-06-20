@@ -2,6 +2,9 @@ package main;
 
 import controller.BoulderDashPerformer;
 import model.BoulderDashModel;
+import model.Element;
+import model.IElement;
+import model.Position;
 import view.BoulderDashView;
 
 /**
@@ -17,8 +20,9 @@ public abstract class Main {
      *
      * @param args
      *            the arguments
+     * @throws Exception 
      */
-    public static void main(final String[] args) {
+    public static void main(final String[] args) throws Exception {
         final BoulderDashPerformer controller = new BoulderDashPerformer(new BoulderDashModel(), new BoulderDashView());
 
         try {
@@ -27,7 +31,12 @@ public abstract class Main {
             exception.printStackTrace();
         }
         
-        new BoulderDashModel().buildMine();
+        BoulderDashModel model = new BoulderDashModel();
+        model.buildMine();
+        IElement test = model.getElements(new Position(0,0,10,10));
+        
+        System.out.println(test.getSprite());
+        
     }
 
 }
