@@ -11,7 +11,7 @@ import javax.swing.*;
 /**
  * <h1>The Element Class </h1>
  *
- * @author LECOMTE Alexandre
+ * @author LECOMTE
  * @version 1.1
  */
 public class Element implements IElement {
