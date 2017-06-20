@@ -1,5 +1,8 @@
-package gameframe;
+package view;
 import javax.swing.*;
+
+import model.IBoulderDashModel;
+
 import java.awt.event.*;
 import java.util.Observable;
 
@@ -24,8 +27,21 @@ public class GameFrame extends JFrame implements KeyListener {
 	 * @param performer
 	 * @param observable
 	 */
-	public GameFrame(String title, IEventPerformer performer, Observable observable){
+	public GameFrame(String title, IEventPerformer performer, IBoulderDashModel model){
 
+		this.setTitle(title);
+		this.setLocationRelativeTo(null);
+		this.setSize(800, 480);
+		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		
+		GamePanel panel = new GamePanel(model);
+		
+		//builder.getModel().addObserver(panel);
+		
+		this.setContentPane(panel);
+		
+		this.setVisible(true);
+		
 	}
 
 	/**

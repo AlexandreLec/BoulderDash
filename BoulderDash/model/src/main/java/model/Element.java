@@ -1,6 +1,7 @@
 package model;
 
 import java.awt.Image;
+import java.awt.Toolkit;
 import java.io.File;
 import java.io.IOException;
 
@@ -39,16 +40,15 @@ public class Element implements IElement {
      */
     private Image loadSprite(String sprite){
     	
-    	Image result = null;
+    	String path = "/ressources/img/"+sprite+".png";
     	
-    	String path = "ressources/img/"+sprite+".png";
-    	
-    	try {
-			result = ImageIO.read(new File(path));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+    	Toolkit toolkit = Toolkit.getDefaultToolkit(); 
+		Image result = toolkit.getImage(path);
 
+		if(result == null){
+			System.out.println("eereur");
+		}
+		
 		return result;
     }
 

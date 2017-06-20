@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Observer;
 
 /**
  * <h1>The Interface IBoulderDashModel.</h1>
@@ -14,7 +15,7 @@ public interface IBoulderDashModel {
 	 * Gets the list of the elements 
 	 * @return a list of the elements
 	 */
-	public IElement getElements(Position position);
+	public ArrayList<IElement> getElements();
 	
 	/**
 	 * Adds an object to the list of the elements
@@ -36,4 +37,5 @@ public interface IBoulderDashModel {
 	 */
 	public void buildMine() throws Exception;
     
+	public void addObserver(Observer o);
 }

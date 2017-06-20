@@ -5,9 +5,9 @@ import java.util.Observable;
 
 import controller.IOrderPerformer;
 
-public class EventPerformer {
+public class EventPerformer implements IEventPerformer {
 	
-	public EventPerformer(IOrderPerformer orderPerformer, Observable observable){
+	public EventPerformer(IOrderPerformer orderPerformer){
 		
 	}
 	

@@ -1,10 +1,8 @@
 package model;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Observable;
-
-import model.dao.test;
+import java.util.Observer;
 
 /**
  * <h1>The Class BoulderDashModel</h1>
@@ -16,12 +14,15 @@ public class BoulderDashModel extends Observable implements IBoulderDashModel {
 
 	/** The  mine who contains the elements */
 	private Mine mine;
+	/** The list of the different elements */
+	private ArrayList<IElement> elements;
 	
 	/**
 	 * Instantiates the BoulderDashModel.
+	 * @throws Exception 
 	 */
-	public BoulderDashModel(){
-		this.mine = new Mine();
+	public BoulderDashModel() throws Exception{
+		this.elements = new ArrayList<IElement>();
 	}
 
 	/**
@@ -29,9 +30,9 @@ public class BoulderDashModel extends Observable implements IBoulderDashModel {
 	 * @return a list of the elements
 	 */
 	@Override
-	public IElement getElements(Position position) {
+	public ArrayList<IElement> getElements() {
 		
-		return this.mine.getElements().get(position.getX()+position.getY());
+		return elements;
 	}
 	
 	/**
@@ -41,7 +42,7 @@ public class BoulderDashModel extends Observable implements IBoulderDashModel {
 	 */
 	@Override
 	public void addElement(IElement element){
-		
+		this.elements.add(element);
 	}
 	
 	/**
@@ -67,7 +68,9 @@ public class BoulderDashModel extends Observable implements IBoulderDashModel {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}*/
-		this.mine.getElements().add(new Dirt(new Position(0,0,10,10)));
+		this.elements.add(new Dirt(new Position(1,1,10,10)));
+	
+		
 	}
 
 	/**
@@ -85,5 +88,10 @@ public class BoulderDashModel extends Observable implements IBoulderDashModel {
 	 */
 	public void setMine(Mine mine) {
 		this.mine = mine;
+	}
+
+	@Override
+	public void addObserver(Observer o) {
+		addObserver(o);
 	}
 }

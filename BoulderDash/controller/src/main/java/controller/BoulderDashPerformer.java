@@ -35,7 +35,8 @@ public class BoulderDashPerformer implements IOrderPerformer{
 	 * method in order to play
 	 */
 	public void play() throws Exception {
-        ActualModel.buildMine();
+       ActualModel.buildMine();
+       ActualView.start(this.ActualModel);
 	}
 
 	/**

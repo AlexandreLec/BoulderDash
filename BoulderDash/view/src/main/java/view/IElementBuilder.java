@@ -1,4 +1,4 @@
-package gameframe;
+package view;
 
 import java.awt.Graphics;
 import java.util.Observer;
