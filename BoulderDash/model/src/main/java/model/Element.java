@@ -40,7 +40,7 @@ public class Element implements IElement {
      */
     private Image loadSprite(String sprite){
     	
-    	String path = "/ressources/img/"+sprite+".png";
+    	String path = "ressources/img/"+sprite+".png";
     	
     	Toolkit toolkit = Toolkit.getDefaultToolkit(); 
 		Image result = toolkit.getImage(path);
