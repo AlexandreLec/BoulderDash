@@ -15,7 +15,7 @@ public class Gravity extends BehaviourMove {
      * Instantiates the Gravity
      */
     public Gravity(){
-		
+
 	}
 
     /**
