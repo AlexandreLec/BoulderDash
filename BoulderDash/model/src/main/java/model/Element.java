@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
+import javax.swing.*;
 
 /**
  * <h1>The Element Class </h1>
@@ -39,17 +40,21 @@ public class Element implements IElement {
      * @return the sprite's image
      */
     private Image loadSprite(String sprite){
-    	
-    	String path = "/ressources/img/"+sprite+".png";
+
+        //ImageIcon ele = new ImageIcon("")
+
+    	String path = "ressources/img/"+sprite+".png";
     	
     	Toolkit toolkit = Toolkit.getDefaultToolkit(); 
 		Image result = toolkit.getImage(path);
+
 
 		if(result == null){
 			System.out.println("eereur");
 		}
 		
 		return result;
+
     }
 
     /**
