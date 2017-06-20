@@ -28,8 +28,13 @@ public class BoulderDashPerformer implements IOrderPerformer{
 	 * method in order to play
 	 */
 	public void play() {}
-	
-	
+
+	/**
+	 * create a loop
+	 */
+	private void gameLoop() {}
+
+
 	/**
 	 * Sets the ViewSystem
 	 * 
@@ -37,10 +42,7 @@ public class BoulderDashPerformer implements IOrderPerformer{
 	 */
 	public void setViewSystem(IView viewSystem) {}
 	
-	/**
-	 * create a loop
-	 */
-	private void gameLoop() {}
+
 
 	
 	/**
