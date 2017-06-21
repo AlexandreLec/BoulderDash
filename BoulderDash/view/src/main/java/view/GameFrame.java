@@ -35,12 +35,14 @@ public class GameFrame extends JFrame implements KeyListener {
 		
 		GamePanel panel = new GamePanel(builder, model);
 
-		addKeyListener(this);
+		
 		System.out.println("test");
 		
 		this.setContentPane(panel);
 		
 		model.addObserver1(panel);
+		
+		addKeyListener(this);
 
 		this.eventPerformer = performer;
 

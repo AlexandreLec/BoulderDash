@@ -53,7 +53,7 @@ public class BoulderDashPerformer implements IOrderPerformer{
 	@Override
 	public void OrderPerform(Order order) {
         try {
-            this.ActualModel.getElementByPosition(4,1).getBehaviour().moveRight();
+            this.ActualModel.getElementByPosition(1,1).getBehaviour().moveRight();
         } catch (Exception e) {
             e.printStackTrace();
         }
