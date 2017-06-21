@@ -1,12 +1,15 @@
 package controller;
 
 import model.IBoulderDashModel;
+import model.IElement;
 import view.IView;
 
 public class BoulderDashPerformer implements IOrderPerformer{
 
     public IBoulderDashModel ActualModel;
     public IView ActualView;
+    
+    private IElement hero;
     
     private Order order;
 
@@ -28,6 +31,7 @@ public class BoulderDashPerformer implements IOrderPerformer{
 	public void play() throws Exception {
        ActualModel.buildMine();
        ActualView.start(this.ActualModel, this);
+       this.hero = this.ActualModel.getElementByPosition(1, 1);
 
 	}
 
@@ -55,7 +59,7 @@ public class BoulderDashPerformer implements IOrderPerformer{
 
         if (order == Order.DOWN){
             try {
-                this.ActualModel.getElementByPosition(1,1).getBehaviour().moveDown();
+                this.hero.getBehaviour().moveDown();
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -64,7 +68,7 @@ public class BoulderDashPerformer implements IOrderPerformer{
 
         if (order == Order.UP){
             try {
-                this.ActualModel.getElementByPosition(1,1).getBehaviour().moveUp();
+            	this.hero.getBehaviour().moveUp();
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -72,15 +76,15 @@ public class BoulderDashPerformer implements IOrderPerformer{
 
         if (order == Order.RIGHT){
             try {
-                this.ActualModel.getElementByPosition(1,1).getBehaviour().moveRight();
+            	this.hero.getBehaviour().moveRight();
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
 
-        if (order == Order.DOWN){
+        if (order == Order.LEFT){
             try {
-                this.ActualModel.getElementByPosition(1,1).getBehaviour().moveDown();
+            	this.hero.getBehaviour().moveLeft();
             } catch (Exception e) {
                 e.printStackTrace();
             }
