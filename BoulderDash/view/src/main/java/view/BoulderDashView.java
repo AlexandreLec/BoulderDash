@@ -17,7 +17,7 @@ public class BoulderDashView implements Runnable, IView {
         this.OrderPerformer = order;
 		this.eventPerformer = new EventPerformer(OrderPerformer);
 		this.elementBuilder = new ElementBuilder(model);
-		new GameFrame("BoulderDash", this.eventPerformer, elementBuilder);
+		new GameFrame("BoulderDash", this.eventPerformer, elementBuilder, model);
 	}
 
 	@Override
