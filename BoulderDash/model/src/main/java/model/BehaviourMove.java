@@ -52,6 +52,8 @@ public class BehaviourMove implements IBehaviourMove {
 		this.element.getPosition().setX(x-1);
 		this.element.getMine().getElements()[x][y] = null;
 		this.element.getMine().getElements()[x--][y] = this.element;
+		
+		this.element.getMine().getModel().effectiveChanged();
 	}
 
 	/**
@@ -69,6 +71,8 @@ public class BehaviourMove implements IBehaviourMove {
 		this.element.getPosition().setX(y-1);
 		this.element.getMine().getElements()[x][y] = null;
 		this.element.getMine().getElements()[x][y--] = this.element;
+		
+		this.element.getMine().getModel().effectiveChanged();
 	}
 
 	/**
@@ -86,6 +90,8 @@ public class BehaviourMove implements IBehaviourMove {
 		this.element.getPosition().setX(y+1);
 		this.element.getMine().getElements()[x][y] = null;
 		this.element.getMine().getElements()[x][y++] = this.element;
+		
+		this.element.getMine().getModel().effectiveChanged();
 	}
 
 }

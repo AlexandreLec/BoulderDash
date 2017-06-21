@@ -66,6 +66,7 @@ public class BoulderDashModel extends Observable implements IBoulderDashModel {
 			}
 		
 	public void effectiveChanged(){
+		System.out.println("test2");
 		this.setChanged();
 		this.notifyObservers();
 	}

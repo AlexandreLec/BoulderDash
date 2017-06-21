@@ -16,7 +16,8 @@ public class ElementBuilder implements IElementBuilder {
 
 	private void drawMine(Graphics graphics, ImageObserver obs){
 		
-		int cpt = 0;
+		System.out.println("Refresh");
+		
 		IElement[][] elements = model.getElements();
 		 
 		for (int x = 0; x < 50; x++) {
@@ -27,8 +28,6 @@ public class ElementBuilder implements IElementBuilder {
 						drawElement(elements[x][y],graphics, obs);
 					}
 					
-					cpt++;
-					System.out.println(cpt);
 			       
 			}
 		}
