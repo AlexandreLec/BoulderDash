@@ -8,6 +8,7 @@ package model;
  */
 public class Hero extends Element implements IExplosion{
 
+	private final static String STRING = "up";
 	private static String SPRITE;
 	private static Hero hero;
 	
@@ -21,7 +22,7 @@ public class Hero extends Element implements IExplosion{
      * Instantiates the hero
      */
     private Hero(Position position){
-		super(position, SPRITE);
+		super(position, STRING);
 		behaviour = new Controlled();
 	}
 

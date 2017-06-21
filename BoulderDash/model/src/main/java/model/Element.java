@@ -3,6 +3,7 @@ package model;
 
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.util.Iterator;
 
 /**
  * <h1>The Element Class </h1>
@@ -114,4 +115,9 @@ public class Element implements IElement {
     public void setBehaviour(BehaviourMove behaviour){
     	this.behaviour = behaviour;
     }
+
+	public static Iterator<String> iterator() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

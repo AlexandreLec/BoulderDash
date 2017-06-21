@@ -1,8 +1,6 @@
 package model;
 
-import java.util.ArrayList;
-import java.util.Observable;
-import java.util.Observer;
+import java.util.*;
 
 import model.dao.level;
 
@@ -54,8 +52,9 @@ public class BoulderDashModel extends Observable implements IBoulderDashModel {
 	 */
 	@Override
 	public void removeElement(IElement element){
+			}
 		
-	}
+
 	
 	/**
 	 * Builds the mine
@@ -92,7 +91,8 @@ public class BoulderDashModel extends Observable implements IBoulderDashModel {
 					case 'u':
 						elements.add(ExitGate.getInstance(new Position(x,y,Mine.WIDTH,Mine.HEIGHT)));
 						break;
-					case ' ':
+					case 'y':
+						elements.add(Hero.getInstance(new Position(x,y,Mine.WIDTH,Mine.HEIGHT)));
 						break;
 					case 'm':
 						elements.add(new Enemy(new Position(x,y,Mine.WIDTH,Mine.HEIGHT)));
