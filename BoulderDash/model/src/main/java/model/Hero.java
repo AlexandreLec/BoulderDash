@@ -7,9 +7,9 @@ package model;
  * @version 1.1
  */
 public class Hero extends Element implements IExplosion{
-
-	private final static String STRING = "up";
-	private static String SPRITE;
+	
+	
+	private static String SPRITE = "up";
 	private static Hero hero;
 	
 	private int timeout;

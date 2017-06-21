@@ -18,7 +18,6 @@ public class Controlled extends BehaviourMove {
 	 */
 	@Override
 	public void move() {
-		
 
 	}
 

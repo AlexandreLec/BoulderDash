@@ -34,6 +34,7 @@ public class BehaviourMove implements IBehaviourMove {
 		this.element.getMine().getElements()[x++][y] = this.element;
 		
 		this.element.getMine().getModel().effectiveChanged();
+
 	}
 
 	/**
