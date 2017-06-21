@@ -21,6 +21,8 @@ public class Element implements IElement {
 	protected BehaviourMove behaviour;
 	/** The mine that contains the element */
 	private Mine mine;
+	/** The sprite's name of the element */
+	private String SpriteName;
 
 	/**
 	 * Instantiates a new Element
@@ -29,7 +31,8 @@ public class Element implements IElement {
 	 */
     public Element(Position position, String sprite, Mine mine){
     	this.position = position;
-    	this.Sprite = loadSprite(sprite);
+    	this.SpriteName = sprite;
+    	this.Sprite = loadSprite(this.SpriteName);
     	this.mine = mine;
     }
     
@@ -100,6 +103,15 @@ public class Element implements IElement {
     public void setSprite(String sprite){
     	this.Sprite = loadSprite(sprite);
     }
+    
+    /**
+     * Get the name of the sprite's element
+     * @return The name of the sprite
+     */
+    @Override
+	public String getSpriteName() {
+		return SpriteName;
+	}
 
     /**
      * Gets the movement behavior of the element

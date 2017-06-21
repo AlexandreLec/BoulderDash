@@ -34,4 +34,10 @@ public interface IElement {
      * @return the behaviour
      */
     public IBehaviourMove getBehaviour();
+
+    /**
+     * Get the name of the element's sprite
+     * @return the sprite name
+     */
+	String getSpriteName();
 }
