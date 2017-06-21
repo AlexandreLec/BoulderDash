@@ -25,6 +25,7 @@ public class GamePanel extends JPanel implements Observer {
 	
 	public GamePanel(IElementBuilder builder, IBoulderDashModel model){
 		this.elementBuilder = builder;
+		repaint();
 	}
 
 	/**

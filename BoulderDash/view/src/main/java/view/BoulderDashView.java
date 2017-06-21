@@ -8,6 +8,7 @@ public class BoulderDashView implements Runnable, IView {
 	private IEventPerformer eventPerformer;
 	private IElementBuilder elementBuilder;
 	private IOrderPerformer OrderPerformer;
+	private IBoulderDashModel model;
 	
 	public BoulderDashView(){
 		
@@ -15,9 +16,8 @@ public class BoulderDashView implements Runnable, IView {
     
 	public void start(IBoulderDashModel model, IOrderPerformer order) {
         this.OrderPerformer = order;
-		this.eventPerformer = new EventPerformer(OrderPerformer);
-		this.elementBuilder = new ElementBuilder(model);
-		new GameFrame("BoulderDash", this.eventPerformer, elementBuilder, model);
+		this.model = model;
+		this.run();
 	}
 
 	@Override
@@ -28,8 +28,9 @@ public class BoulderDashView implements Runnable, IView {
 
     @Override
 	public void run() {
-		// TODO Auto-generated method stub
-		
+    	this.eventPerformer = new EventPerformer(OrderPerformer);
+    	this.elementBuilder = new ElementBuilder(this.model);
+    	new GameFrame("BoulderDash", this.eventPerformer, elementBuilder, model);
 	}
 
 }
