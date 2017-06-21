@@ -79,7 +79,7 @@ public class BoulderDashModel extends Observable implements IBoulderDashModel {
 	@Override
 	public void buildMine() throws Exception{
 		
-		String currentLevel = loadLevel("level1");
+		String currentLevel = loadLevel("level5");
 		int i = 0;
 		for(int y = 0 ;y<Mine.HEIGHT; y++){
 			for (int x = 0; x<Mine.WIDTH;x++){
@@ -111,7 +111,7 @@ public class BoulderDashModel extends Observable implements IBoulderDashModel {
 					case ' ':
 						this.mine.setElement(x,y,null);
 						break;
-					case 'm':
+					case 'n':
 						this.mine.setElement(x,y,new Enemy(new Position(x,y,Mine.WIDTH,Mine.HEIGHT),this.mine));
 						break;
 					}
