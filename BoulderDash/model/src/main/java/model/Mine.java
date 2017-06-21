@@ -15,14 +15,17 @@ public class Mine {
 	static int WIDTH = 50;
 	/** The tab of the different elements */
 	private IElement[][] elements;
+	
+	private BoulderDashModel model;
 
 
 	/**
 	 * Instantiates the constructor
 	 * @throws Exception 
 	 */
-	public Mine(){
+	public Mine(BoulderDashModel model){
 		this.elements = new IElement[Mine.WIDTH][Mine.HEIGHT];
+		this.model = model;
 	}
 	
 	public IElement[][] getElements() {
@@ -33,6 +36,10 @@ public class Mine {
 	public void setElement(int x, int y, IElement add) {
 		
 		this.elements[x][y] = add;
+	}
+
+	public BoulderDashModel getModel() {
+		return model;
 	}
 
 }
