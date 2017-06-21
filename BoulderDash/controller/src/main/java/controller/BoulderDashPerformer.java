@@ -55,7 +55,30 @@ public class BoulderDashPerformer implements IOrderPerformer{
         try {
             this.ActualModel.getElementByPosition(1,1).getBehaviour().moveRight();
         } catch (Exception e) {
+            e.printStackTrace();    
+        }
+        try {
+            this.ActualModel.getElementByPosition(1,1).getBehaviour().moveLeft();
+
+        } catch (Exception e) {
             e.printStackTrace();
+           
+            
+        }
+        try {
+            this.ActualModel.getElementByPosition(1,1).getBehaviour().moveUp();
+        } catch (Exception e) {
+            e.printStackTrace();
+            
+            
+        }
+        try {
+            this.ActualModel.getElementByPosition(1,1).getBehaviour().moveDown();
+        } catch (Exception e) {
+            e.printStackTrace();
+
+
+            
         }
         // TODO Auto-generated method stub
 		
