@@ -27,7 +27,7 @@ public class ElementBuilder implements IElementBuilder {
 	
 	private void drawElement(IElement element, Graphics graphics, ImageObserver obs){
 		Graphics2D g2d = (Graphics2D) graphics ;
-		g2d.drawImage(element.getSprite(),element.getPosition().getX()*16,element.getPosition().getY()*16,obs);
+		g2d.drawImage(element.getSprite(),element.getPosition().getX()*32,element.getPosition().getY()*32,32,32,obs);
 	}
 
 	@Override

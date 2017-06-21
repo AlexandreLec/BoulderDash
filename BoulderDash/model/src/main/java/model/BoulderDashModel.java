@@ -37,6 +37,11 @@ public class BoulderDashModel extends Observable implements IBoulderDashModel {
 		return elements;
 	}
 	
+	public IElement getElementByPosition(int x, int y) {
+		int index = x+50*y;
+		return this.elements.get(index);
+	}
+	
 	/**
 	 * Adds an object to the list of the elements
 	 * @param element

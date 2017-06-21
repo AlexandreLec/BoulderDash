@@ -28,7 +28,7 @@ public class GameFrame extends JFrame implements KeyListener {
 
 		this.setTitle(title);
 		this.setLocationRelativeTo(null);
-		this.setSize(800, 480);
+		this.setSize(1620, 1010);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
 		GamePanel panel = new GamePanel(builder);

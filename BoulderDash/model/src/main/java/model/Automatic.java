@@ -14,6 +14,5 @@ public class Automatic extends BehaviourMove {
 	public void move() {
 		
 	}
-	
 
 }
