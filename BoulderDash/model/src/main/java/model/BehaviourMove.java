@@ -3,7 +3,7 @@ package model;
 public class BehaviourMove implements IBehaviourMove {
 
 	/** The element */
-	private Element element;
+	protected Element element;
 	/** The mine of the Element */
 	
 	/** Instantiate a new move's behaviour*/

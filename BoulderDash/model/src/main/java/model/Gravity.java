@@ -10,6 +10,8 @@ package model;
 
 public class Gravity extends BehaviourMove {
 
+	
+	
 	/**
      * Instantiates the Gravity
      */

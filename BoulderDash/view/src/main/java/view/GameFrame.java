@@ -40,7 +40,7 @@ public class GameFrame extends JFrame implements KeyListener {
 		
 		this.setContentPane(panel);
 		
-		model.addObserver1(panel);
+		model.observerAdd(panel);
 		
 		addKeyListener(this);
 
