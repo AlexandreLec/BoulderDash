@@ -151,7 +151,7 @@ public class BoulderDashModel extends Observable implements IBoulderDashModel {
 	}
 
 	@Override
-	public void addObserver(Observer o) {
+	public void addObserver1(Observer o) {
 		addObserver(o);
 	}
 }

@@ -37,7 +37,7 @@ public interface IBoulderDashModel {
 	 */
 	public void buildMine() throws Exception;
     
-	public void addObserver(Observer o);
+	public void addObserver1(Observer o);
 	
 	public IElement getElementByPosition(int x, int y);
 }

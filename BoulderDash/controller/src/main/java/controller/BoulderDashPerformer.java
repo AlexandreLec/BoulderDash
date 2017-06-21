@@ -28,6 +28,7 @@ public class BoulderDashPerformer implements IOrderPerformer{
 	public void play() throws Exception {
        ActualModel.buildMine();
        ActualView.start(this.ActualModel, this);
+
 	}
 
 	/**
@@ -51,8 +52,12 @@ public class BoulderDashPerformer implements IOrderPerformer{
 	 */
 	@Override
 	public void OrderPerform(Order order) {
-		this.ActualModel.getElementByPosition(0,0);
-		// TODO Auto-generated method stub
+        try {
+            this.ActualModel.getElementByPosition(4,1).getBehaviour().moveRight();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        // TODO Auto-generated method stub
 		
 	}
 

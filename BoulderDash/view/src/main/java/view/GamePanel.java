@@ -6,6 +6,8 @@ import java.util.Observer;
 
 import javax.swing.JPanel;
 
+import model.IBoulderDashModel;
+
 /**
  * <h1>The Class GamePanel</h1>
  *
@@ -21,7 +23,7 @@ public class GamePanel extends JPanel implements Observer {
 
 	private IElementBuilder elementBuilder;
 	
-	public GamePanel(IElementBuilder builder){
+	public GamePanel(IElementBuilder builder, IBoulderDashModel model){
 		this.elementBuilder = builder;
 	}
 
@@ -36,7 +38,7 @@ public class GamePanel extends JPanel implements Observer {
 	}
 	
 	public void paintComponent(Graphics g){
-		this.elementBuilder.applyModelToGraphic(g, this);;
+		this.elementBuilder.applyModelToGraphic(g, this);
 	}
 	
 }
