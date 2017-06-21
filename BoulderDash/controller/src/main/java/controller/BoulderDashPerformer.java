@@ -10,6 +10,7 @@ public class BoulderDashPerformer implements IOrderPerformer{
     public IView ActualView;
     
     private IElement hero;
+    private IBoulderDashModel mine;
     
     private Order order;
 
@@ -57,37 +58,48 @@ public class BoulderDashPerformer implements IOrderPerformer{
 	@Override
 	public void OrderPerform(Order order) {
 
-        if (order == Order.DOWN){
-            try {
-                this.hero.getBehaviour().moveDown();
-            } catch (Exception e) {
-                e.printStackTrace();
+        if ((order == Order.DOWN)){
+            if (this.ActualModel.getElementByPosition(this.hero.getPosition().getX(),this.hero.getPosition().getY()+1).getSpriteName() != "wall" ){
+                try {
+                    this.hero.getBehaviour().moveDown();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
+
         }
 
 
         if (order == Order.UP){
-            try {
-            	this.hero.getBehaviour().moveUp();
-            } catch (Exception e) {
-                e.printStackTrace();
+            if (this.ActualModel.getElementByPosition(this.hero.getPosition().getX(),this.hero.getPosition().getY()-1).getSpriteName() != "wall" ){
+                try {
+                    this.hero.getBehaviour().moveUp();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
+
         }
 
         if (order == Order.RIGHT){
-            try {
-            	this.hero.getBehaviour().moveRight();
-            } catch (Exception e) {
-                e.printStackTrace();
+            if(this.ActualModel.getElementByPosition(this.hero.getPosition().getX()+1,this.hero.getPosition().getY()).getSpriteName() != "wall" ){
+                try {
+                    this.hero.getBehaviour().moveRight();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         }
 
         if (order == Order.LEFT){
-            try {
-            	this.hero.getBehaviour().moveLeft();
-            } catch (Exception e) {
-                e.printStackTrace();
+            if(this.ActualModel.getElementByPosition(this.hero.getPosition().getX()-1,this.hero.getPosition().getY()).getSpriteName() != "wall" ){
+                try {
+                    this.hero.getBehaviour().moveLeft();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
+
         }
 
     }
