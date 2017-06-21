@@ -49,59 +49,85 @@ public class BoulderDashPerformer implements IOrderPerformer{
 	 */
 	public void setViewSystem(IView viewSystem) {}
 	
-
-
-	
 	/**
+	 * @throws Exception 
 	 * @see IOrderPerformer
 	 */
 	@Override
-	public void OrderPerform(Order order) {
-
-        if ((order == Order.DOWN)){
-            if (this.ActualModel.getElementByPosition(this.hero.getPosition().getX(),this.hero.getPosition().getY()+1).getSpriteName() != "wall" ){
-                try {
-                    this.hero.getBehaviour().moveDown();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-
+	public void OrderPerform(Order order) throws Exception {
+		
+		if ((order == Order.DOWN)){
+			
+			String next = Colision.getDownElement(ActualModel, hero);
+			
+			if(next == "stone"){}
+			else if(next == "door"){
+				
+			}
+			else if(next == "diamond"){
+				this.ActualModel.getDiamond();
+				this.hero.getBehaviour().moveDown();
+			}
+			else if(next == "wall"){}
+			else {
+				this.hero.getBehaviour().moveDown();
+			}
         }
 
 
         if (order == Order.UP){
-            if (this.ActualModel.getElementByPosition(this.hero.getPosition().getX(),this.hero.getPosition().getY()-1).getSpriteName() != "wall" ){
-                try {
-                    this.hero.getBehaviour().moveUp();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-
+    		
+        	String next = Colision.getUpElement(ActualModel, hero);
+			
+			if(next == "stone"){}
+			else if(next == "door"){
+				
+			}
+			else if(next == "diamond"){
+				this.ActualModel.getDiamond();
+				this.hero.getBehaviour().moveUp();
+			}
+			else if(next == "wall"){}
+			else {
+				this.hero.getBehaviour().moveUp();
+			}
         }
 
         if (order == Order.RIGHT){
-            if(this.ActualModel.getElementByPosition(this.hero.getPosition().getX()+1,this.hero.getPosition().getY()).getSpriteName() != "wall" ){
-                try {
-                    this.hero.getBehaviour().moveRight();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
+        	
+        	String next = Colision.getRightElement(ActualModel, hero);
+			
+			if(next == "stone"){}
+			else if(next == "door"){
+				
+			}
+			else if(next == "diamond"){
+				this.ActualModel.getDiamond();
+				this.hero.getBehaviour().moveRight();
+			}
+			else if(next == "wall"){}
+			else {
+				this.hero.getBehaviour().moveRight();
+			}
         }
 
         if (order == Order.LEFT){
-            if(this.ActualModel.getElementByPosition(this.hero.getPosition().getX()-1,this.hero.getPosition().getY()).getSpriteName() != "wall" ){
-                try {
-                    this.hero.getBehaviour().moveLeft();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-
+        	
+        	String next = Colision.getLeftElement(ActualModel, hero);
+			
+			if(next == "stone"){}
+			else if(next == "door"){
+				
+			}
+			else if(next == "diamond"){
+				this.ActualModel.getDiamond();
+				this.hero.getBehaviour().moveLeft();
+			}
+			else if(next == "wall"){}
+			else {
+				this.hero.getBehaviour().moveLeft();
+			}
         }
-
     }
 
 

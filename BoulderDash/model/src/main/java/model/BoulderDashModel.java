@@ -2,6 +2,8 @@ package model;
 
 import java.util.Observable;
 import java.util.Observer;
+
+import controller.Order;
 import model.dao.level;
 
 /**
@@ -63,7 +65,8 @@ public class BoulderDashModel extends Observable implements IBoulderDashModel {
 	 */
 	@Override
 	public void removeElement(IElement element){
-			}
+	
+	}
 		
 	public void effectiveChanged(){
 		System.out.println("test2");
@@ -117,6 +120,23 @@ public class BoulderDashModel extends Observable implements IBoulderDashModel {
 					}
 			}
 		}
+	}
+	
+	/**
+	 * Add a diamond for the hero
+	 */
+	@Override
+	public void getDiamond(){
+		Hero hero = Hero.getInstance();
+		hero.setDiamonds(hero.getDiamonds()+1);
+		System.out.println(hero.getDiamonds());
+		this.effectiveChanged();
+	}
+	
+	@Override
+	public int diamondCounter(){
+		Hero hero = Hero.getInstance();
+		return hero.getDiamonds();
 	}
 
 	/**

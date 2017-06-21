@@ -44,6 +44,10 @@ public class Hero extends Element implements IExplosion{
 		}
 		return hero;
 	}
+	
+	static public Hero getInstance(){
+		return hero;
+	}
 
     /**
      * method use for return the selected SPRITE for the hero

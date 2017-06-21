@@ -40,4 +40,8 @@ public interface IBoulderDashModel {
 	public void addObserver1(Observer o);
 	
 	public IElement getElementByPosition(int x, int y);
+
+	void getDiamond();
+
+	int diamondCounter();
 }

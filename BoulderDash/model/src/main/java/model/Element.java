@@ -102,6 +102,7 @@ public class Element implements IElement {
     @Override
     public void setSprite(String sprite){
     	this.Sprite = loadSprite(sprite);
+    	this.SpriteName = sprite;
     }
     
     /**

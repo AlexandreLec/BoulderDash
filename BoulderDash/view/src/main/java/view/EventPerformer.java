@@ -12,7 +12,7 @@ public class EventPerformer implements IEventPerformer {
 		this.orderPerformer = orderPerformer;
 	}
 	
-	public void keyCodeToUserOrder(int keycode){
+	public void keyCodeToUserOrder(int keycode) throws Exception{
 		switch(keycode){
 			case KeyEvent.VK_DOWN :
 				this.orderPerformer.OrderPerform(Order.DOWN);
@@ -35,7 +35,7 @@ public class EventPerformer implements IEventPerformer {
 
 
 	@Override
-	public void eventPerform(KeyEvent keyCode) {
+	public void eventPerform(KeyEvent keyCode) throws Exception {
 		
 		this.keyCodeToUserOrder(keyCode.getKeyCode());
 	}

@@ -70,7 +70,11 @@ public class GameFrame extends JFrame implements KeyListener {
 	@Override
 	public void keyPressed(KeyEvent e) {
 
-		eventPerformer.eventPerform(e);
+		try {
+			eventPerformer.eventPerform(e);
+		} catch (Exception e1) {
+			e1.printStackTrace();
+		}
 	}
 
 	/**

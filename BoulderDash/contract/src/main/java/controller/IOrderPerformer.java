@@ -14,6 +14,7 @@ public interface IOrderPerformer {
 	/**
 	 * method use for understand what order is doing by the player
      * @param order
+	 * @throws Exception 
      */
-	public void OrderPerform(Order order);
+	public void OrderPerform(Order order) throws Exception;
 }
