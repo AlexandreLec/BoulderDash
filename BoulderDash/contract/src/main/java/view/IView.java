@@ -1,5 +1,6 @@
 package view;
 
+import controller.IOrderPerformer;
 import model.IBoulderDashModel;
 
 /**
@@ -18,5 +19,5 @@ public interface IView {
      */
     void displayMessage(String message);
     
-    void start(IBoulderDashModel model);
+    void start(IBoulderDashModel model, IOrderPerformer order);
 }

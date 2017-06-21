@@ -9,11 +9,11 @@ package controller;
  */
 
 public interface IOrderPerformer {
-	
-	
-	 /**
-     * method come from IOrderPermformer
-     * @param element
-     */
+
+
+	/**
+	 * method use for understand what order is doing by the player
+ 	 * @param order
+	 */
 	public void OrderPerform(Order order);
 }

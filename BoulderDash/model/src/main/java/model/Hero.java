@@ -8,6 +8,7 @@ package model;
  */
 public class Hero extends Element implements IExplosion{
 
+	private final static String STRING = "up";
 	private static String SPRITE;
 	private static Hero hero;
 	

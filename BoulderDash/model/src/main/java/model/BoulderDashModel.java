@@ -2,7 +2,6 @@ package model;
 
 import java.util.Observable;
 import java.util.Observer;
-
 import model.dao.level;
 
 /**
@@ -64,8 +63,9 @@ public class BoulderDashModel extends Observable implements IBoulderDashModel {
 	 */
 	@Override
 	public void removeElement(IElement element){
+			}
 		
-	}
+
 	
 	/**
 	 * Builds the mine

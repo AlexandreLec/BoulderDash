@@ -10,7 +10,7 @@ package controller;
  */
 
 /**
- * enumeration for the direction of the player
+ * enumeration for the direction of elements
  */
 
 public enum Order {

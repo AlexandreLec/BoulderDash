@@ -12,4 +12,5 @@ public interface IKill {
       * @param element
      */
     public void kill(Element element);
+
 }
