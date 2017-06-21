@@ -68,7 +68,7 @@ public class BehaviourMove implements IBehaviourMove {
 		int x = this.element.getPosition().getX();
 		int y = this.element.getPosition().getY();
 		
-		this.element.getPosition().setX(y-1);
+		this.element.getPosition().setY(y-1);
 		this.element.getMine().getElements()[x][y] = null;
 		this.element.getMine().getElements()[x][y--] = this.element;
 		
@@ -87,7 +87,7 @@ public class BehaviourMove implements IBehaviourMove {
 		int x = this.element.getPosition().getX();
 		int y = this.element.getPosition().getY();
 		
-		this.element.getPosition().setX(y+1);
+		this.element.getPosition().setY(y+1);
 		this.element.getMine().getElements()[x][y] = null;
 		this.element.getMine().getElements()[x][y++] = this.element;
 		

@@ -52,14 +52,41 @@ public class BoulderDashPerformer implements IOrderPerformer{
 	 */
 	@Override
 	public void OrderPerform(Order order) {
-        try {
-            this.ActualModel.getElementByPosition(4,1).getBehaviour().moveRight();
-        } catch (Exception e) {
-            e.printStackTrace();
+
+        if (order == Order.DOWN){
+            try {
+                this.ActualModel.getElementByPosition(1,1).getBehaviour().moveDown();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
-        // TODO Auto-generated method stub
-		
-	}
+
+
+        if (order == Order.UP){
+            try {
+                this.ActualModel.getElementByPosition(1,1).getBehaviour().moveUp();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        if (order == Order.RIGHT){
+            try {
+                this.ActualModel.getElementByPosition(1,1).getBehaviour().moveRight();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        if (order == Order.DOWN){
+            try {
+                this.ActualModel.getElementByPosition(1,1).getBehaviour().moveDown();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+    }
 
 
 	public Order getOrder() {
