@@ -13,8 +13,8 @@ public class Wall extends Element{
     private final static String STRING = "wall";
 
     /** constructor of ExitGatee */
-    public Wall(Position positon){
-        super(positon, STRING);
-        behaviour = new Fixe();
+    public Wall(Position positon, Mine mine){
+        super(positon, STRING, mine);
+        behaviour = new Fixe(this);
     }
 }

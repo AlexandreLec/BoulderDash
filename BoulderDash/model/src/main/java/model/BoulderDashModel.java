@@ -1,6 +1,5 @@
 package model;
 
-import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -16,15 +15,13 @@ public class BoulderDashModel extends Observable implements IBoulderDashModel {
 
 	/** The  mine who contains the elements */
 	private Mine mine;
-	/** The list of the different elements */
-	private ArrayList<IElement> elements;
 	
 	/**
 	 * Instantiates the BoulderDashModel.
 	 * @throws Exception 
 	 */
 	public BoulderDashModel() throws Exception{
-		this.elements = new ArrayList<IElement>();
+		this.mine = new Mine();
 	}
 
 	/**
@@ -32,14 +29,22 @@ public class BoulderDashModel extends Observable implements IBoulderDashModel {
 	 * @return a list of the elements
 	 */
 	@Override
-	public ArrayList<IElement> getElements() {
+	public IElement[][] getElements() {
 		
-		return elements;
+		return this.mine.getElements();
 	}
 	
+	/**
+	 * Get the element that is to the x and y coordinates
+	 * @param x
+	 * 		The x coordinate
+	 * @param y
+	 * 		The y coordinate
+	 * @return an Element
+	 */
+	@Override
 	public IElement getElementByPosition(int x, int y) {
-		int index = x+50*y;
-		return this.elements.get(index);
+		return this.mine.getElements()[x][y];
 	}
 	
 	/**
@@ -49,7 +54,7 @@ public class BoulderDashModel extends Observable implements IBoulderDashModel {
 	 */
 	@Override
 	public void addElement(IElement element){
-		this.elements.add(element);
+		
 	}
 	
 	/**
@@ -71,40 +76,41 @@ public class BoulderDashModel extends Observable implements IBoulderDashModel {
 		
 		String currentLevel = loadLevel("level1");
 		int i = 0;
-		int x = 0;
-		
 		for(int y = 0 ;y<Mine.HEIGHT; y++){
-			for (; x<Mine.WIDTH;x++){
+			for (int x = 0; x<Mine.WIDTH;x++){
 					
 				char element = currentLevel.charAt(i);
-						
+					
+				i++; 
 				System.out.print(element);
 				
-				i++;
 				switch(element){
 					case 'o':
-						elements.add(new Stone(new Position(x,y,Mine.WIDTH,Mine.HEIGHT)));
+						this.mine.setElement(x,y,new Stone(new Position(x,y,Mine.WIDTH,Mine.HEIGHT),this.mine));
 						break;
 					case 'x':
-						elements.add(new Wall(new Position(x,y,Mine.WIDTH,Mine.HEIGHT)));
+						this.mine.setElement(x,y,new Wall(new Position(x,y,Mine.WIDTH,Mine.HEIGHT),this.mine));
 						break;
 					case 'v':
-						elements.add(new Diamond(new Position(x,y,Mine.WIDTH,Mine.HEIGHT)));
+						this.mine.setElement(x,y,new Diamond(new Position(x,y,Mine.WIDTH,Mine.HEIGHT),this.mine));
 						break;
 					case '.':
-						elements.add(new Dirt(new Position(x,y,Mine.WIDTH,Mine.HEIGHT)));
+						this.mine.setElement(x,y,new Dirt(new Position(x,y,Mine.WIDTH,Mine.HEIGHT),this.mine));
 						break;
 					case 'u':
-						elements.add(ExitGate.getInstance(new Position(x,y,Mine.WIDTH,Mine.HEIGHT)));
+						this.mine.setElement(x,y,ExitGate.getInstance(new Position(x,y,Mine.WIDTH,Mine.HEIGHT),this.mine));
+						break;
+					case 'y':
+						this.mine.setElement(x,y,Hero.getInstance(new Position(x,y,Mine.WIDTH,Mine.HEIGHT),this.mine));
 						break;
 					case ' ':
+						this.mine.setElement(x,y,null);
 						break;
 					case 'm':
-						elements.add(new Enemy(new Position(x,y,Mine.WIDTH,Mine.HEIGHT)));
+						this.mine.setElement(x,y,new Enemy(new Position(x,y,Mine.WIDTH,Mine.HEIGHT),this.mine));
 						break;
 					}
 			}
-			x = 0;
 		}
 	}
 

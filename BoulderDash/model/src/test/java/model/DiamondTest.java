@@ -19,12 +19,12 @@ public class DiamondTest extends ElementTest {
 	/**
 	 * Instantiate a new Diamond
 	 */
-	@Override
+	/*@Override
 	@Before
 	public void setUp() throws Exception {
 		this.actual = new Diamond(new Position(1,1,10,10));
 		this.behaviour = new Gravity();
-	}
+	}*/
 
 	 /**
      * Check if the enemy can kill an element
@@ -32,11 +32,11 @@ public class DiamondTest extends ElementTest {
      * 		The element to kill
 	 * @throws Exception 
      */
-    @Test
+    /*@Test
     public void testKill() throws Exception {
     	Element expected = Hero.getInstance(new Position(1,1,10,10));
     	this.diamond.kill(expected);
     	assertNull(expected);
-    }
+    }*/
 
 }

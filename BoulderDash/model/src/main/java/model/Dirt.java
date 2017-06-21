@@ -12,8 +12,8 @@ public class Dirt extends Element{
     private final static String STRING = "dirt";
 
     /** constructor of ExitGate */
-    public Dirt(Position positon){
-        super(positon, STRING);
-        behaviour = new Fixe();
+    public Dirt(Position positon, Mine mine){
+        super(positon, STRING, mine);
+        behaviour = new Fixe(this);
     }
 }

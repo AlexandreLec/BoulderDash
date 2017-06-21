@@ -18,11 +18,6 @@ public interface IElement {
     public void setPosition(Position position);
     
     /**
-     * Place the elements in the mine
-     */
-    public void placeInMine();
-
-    /**
      * Gets the sprite of the element
      * @return the sprite
      */
@@ -33,4 +28,10 @@ public interface IElement {
      * @param the sprite
      */
     public void setSprite(String sprite);
+    
+    /**
+     * Get the move's behaviour of the element
+     * @return the behaviour
+     */
+    public IBehaviourMove getBehaviour();
 }

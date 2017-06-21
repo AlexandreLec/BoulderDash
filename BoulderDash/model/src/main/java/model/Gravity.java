@@ -10,12 +10,11 @@ package model;
 
 public class Gravity extends BehaviourMove {
 
-
-    /**
+	/**
      * Instantiates the Gravity
      */
-    public Gravity(){
-
+    public Gravity(Element element) {
+		super(element);
 	}
 
     /**

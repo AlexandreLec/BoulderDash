@@ -3,7 +3,6 @@ package view;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.image.ImageObserver;
-import java.util.Iterator;
 import model.IBoulderDashModel;
 import model.IElement;
 
@@ -18,10 +17,21 @@ public class ElementBuilder implements IElementBuilder {
 	
 	private void drawMine(Graphics graphics, ImageObserver obs){
 		
-		Iterator<IElement> it = model.getElements().iterator();
+		int cpt = 0;
+		IElement[][] elements = model.getElements();
 		 
-		while (it.hasNext()) {
-		       drawElement(it.next(),graphics, obs);
+		for (int x = 0; x < 50; x++) {
+			for (int y = 0; y < 30; y++) {
+					
+					if(elements[x][y] == null){}
+					else{
+						drawElement(elements[x][y],graphics, obs);
+					}
+					
+					cpt++;
+					System.out.println(cpt);
+			       
+			}
 		}
 	}
 	

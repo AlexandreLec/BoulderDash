@@ -18,15 +18,18 @@ public class Element implements IElement {
 	private Image Sprite;
 	/** The move behaviour of the element */
 	protected BehaviourMove behaviour;
+	/** The mine that contains the element */
+	private Mine mine;
 
 	/**
 	 * Instantiates a new Element
 	 * @param position
 	 * 		Position of the Element
 	 */
-    public Element(Position position, String sprite){
+    public Element(Position position, String sprite, Mine mine){
     	this.position = position;
     	this.Sprite = loadSprite(sprite);
+    	this.mine = mine;
     }
     
     /**
@@ -73,11 +76,10 @@ public class Element implements IElement {
     }
     
     /**
-     * Place the elements in the mine
+     * Get the element's mine
      */
-    @Override
-    public void placeInMine(){
-
+    public Mine getMine(){
+    	return this.mine;
     }
 
     /**

@@ -2,6 +2,15 @@ package model;
 
 public class BehaviourMove implements IBehaviourMove {
 
+	/** The element */
+	private Element element;
+	/** The mine of the Element */
+	
+	/** Instantiate a new move's behaviour*/
+	public BehaviourMove(Element element){
+		this.element = element;
+	}
+	
 	@Override
 	public void move() {
 		// TODO Auto-generated method stub
@@ -15,11 +24,14 @@ public class BehaviourMove implements IBehaviourMove {
 	 * @throws Exception 
 	 */
 	@Override
-	public Position moveRight(Position position) throws Exception{
+	public void moveRight() throws Exception{
 		
-		position.setX(position.getX()+1);
-		return position;
+		int x = this.element.getPosition().getX();
+		int y = this.element.getPosition().getY();
 		
+		this.element.getPosition().setX(x+1);
+		this.element.getMine().getElements()[x][y] = null;
+		this.element.getMine().getElements()[x++][y] = this.element;
 	}
 
 	/**
@@ -29,11 +41,14 @@ public class BehaviourMove implements IBehaviourMove {
 	 * @throws Exception 
 	 */
 	@Override
-	public Position moveLeft(Position position) throws Exception{
+	public void moveLeft() throws Exception{
 		
-		position.setX(position.getX()-1);
-		return position;
+		int x = this.element.getPosition().getX();
+		int y = this.element.getPosition().getY();
 		
+		this.element.getPosition().setX(x-1);
+		this.element.getMine().getElements()[x][y] = null;
+		this.element.getMine().getElements()[x--][y] = this.element;
 	}
 
 	/**
@@ -43,11 +58,14 @@ public class BehaviourMove implements IBehaviourMove {
 	 * @throws Exception 
 	 */
 	@Override
-	public Position moveUp(Position position) throws Exception{
+	public void moveUp() throws Exception{
 		
-		position.setY(position.getY()-1);
-		return position;
+		int x = this.element.getPosition().getX();
+		int y = this.element.getPosition().getY();
 		
+		this.element.getPosition().setX(y-1);
+		this.element.getMine().getElements()[x][y] = null;
+		this.element.getMine().getElements()[x][y--] = this.element;
 	}
 
 	/**
@@ -57,10 +75,14 @@ public class BehaviourMove implements IBehaviourMove {
 	 * @throws Exception 
 	 */
 	@Override
-	public Position moveDown(Position position) throws Exception{
-		position.setY(position.getY()+1);
-		return position;
+	public void moveDown() throws Exception{
 		
+		int x = this.element.getPosition().getX();
+		int y = this.element.getPosition().getY();
+		
+		this.element.getPosition().setX(y+1);
+		this.element.getMine().getElements()[x][y] = null;
+		this.element.getMine().getElements()[x][y++] = this.element;
 	}
 
 }

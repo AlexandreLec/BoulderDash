@@ -20,9 +20,9 @@ public class Hero extends Element implements IExplosion{
     /**
      * Instantiates the hero
      */
-    private Hero(Position position){
-		super(position, SPRITE);
-		behaviour = new Controlled();
+    private Hero(Position position, Mine mine){
+		super(position, SPRITE,mine);
+		behaviour = new Controlled(this);
 	}
 
     /**
@@ -36,10 +36,10 @@ public class Hero extends Element implements IExplosion{
 	 * method use for create an instance of hero
 	 * @return return a new hero
 	 */
-	static public Hero getInstance(Position position){
+	static public Hero getInstance(Position position, Mine mine){
 		
 		if(hero == null){
-			hero = new Hero(position);
+			hero = new Hero(position, mine);
 		}
 		return hero;
 	}

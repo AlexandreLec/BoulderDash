@@ -8,9 +8,9 @@ package model;
  */
 public interface IBehaviourMove {
 	
-	public void move();
-	public Position moveRight(Position position) throws Exception;
-	public Position moveLeft(Position position) throws Exception;
-	public Position moveUp(Position position) throws Exception;
-	public Position moveDown(Position position) throws Exception;
+	public void move() throws Exception;
+	public void moveRight() throws Exception;
+	public void moveLeft() throws Exception;
+	public void moveUp() throws Exception;
+	public void moveDown() throws Exception;
 }

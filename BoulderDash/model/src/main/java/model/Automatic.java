@@ -7,7 +7,8 @@ package model;
  */
 public class Automatic extends BehaviourMove {
 
-	public Automatic(){
+	public Automatic(Element element){
+		super(element);
 	}
 	
 	@Override

@@ -14,9 +14,9 @@ public class Enemy extends Element implements IExplosion, IKill {
     /**
      * create constructor
      */
-    public Enemy(Position position){
-    	super(position, setSpriteNameAlea());
-    	behaviour = new Automatic();
+    public Enemy(Position position, Mine mine){
+    	super(position, setSpriteNameAlea(), mine);
+    	behaviour = new Automatic(this);
     }
 
     /**

@@ -15,14 +15,14 @@ public class ExitGate extends Element{
     private static ExitGate EXITGATE;
 
     /** constructor of ExitGate */
-    private ExitGate(Position positon){
-        super(positon, STRING);
-        behaviour = new Fixe();
+    private ExitGate(Position positon, Mine mine){
+        super(positon, STRING, mine);
+        behaviour = new Fixe(this);
     }
     
-    public static ExitGate getInstance(Position position){
+    public static ExitGate getInstance(Position position, Mine mine){
 		if(EXITGATE == null){
-			EXITGATE = new ExitGate(position);
+			EXITGATE = new ExitGate(position, mine);
 		}
 		return EXITGATE;
     }

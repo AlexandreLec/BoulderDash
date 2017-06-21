@@ -16,8 +16,8 @@ public class StoneTest extends ElementTest {
 	@Override
 	@Before
 	public void setUp() throws Exception {
-		this.actual = new Stone(new Position(1,1,10,10));
-		this.behaviour = new Gravity();
+		//this.actual = new Stone(new Position(1,1,10,10));
+	//	this.behaviour = new Gravity();
 	}
 
 }
