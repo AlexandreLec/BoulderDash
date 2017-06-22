@@ -2,9 +2,8 @@ package view;
 
 import javax.swing.*;
 
-import model.IBoulderDashModel;
 
-import java.awt.*;
+import model.IBoulderDashModel;
 import java.awt.event.*;
 
 /**
