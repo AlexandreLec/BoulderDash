@@ -19,7 +19,14 @@ public class ExitGate extends Element{
         super(positon, STRING, mine);
         behaviour = new Fixe(this);
     }
-    
+
+
+    /**
+     *
+     * @param position
+     * @param mine
+     * @return
+     */
     public static ExitGate getInstance(Position position, Mine mine){
 		if(EXITGATE == null){
 			EXITGATE = new ExitGate(position, mine);

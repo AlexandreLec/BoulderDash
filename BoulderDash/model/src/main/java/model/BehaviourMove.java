@@ -14,16 +14,21 @@ public class BehaviourMove implements IBehaviourMove {
 	public BehaviourMove(Element element){
 		this.element = element;
 	}
-	
+
+
+	/**
+	 * @see IBehaviourMove
+	 * @throws Exception
+	 */
 	@Override
 	public void move() throws Exception {
 		// TODO Auto-generated method stub
 		
 	}
 
+
 	/**
-	 * method use for move element right
-	 * @param position
+	 * @see IBehaviourMove
 	 * @return position
 	 * @throws Exception 
 	 */
@@ -41,9 +46,9 @@ public class BehaviourMove implements IBehaviourMove {
 		this.element.getMine().getModel().effectiveChanged();
 	}
 
+
 	/**
-	 * method use for move element Left
-	 * @param position
+	 * @see IBehaviourMove
 	 * @return position
 	 * @throws Exception 
 	 */
@@ -61,9 +66,9 @@ public class BehaviourMove implements IBehaviourMove {
 		this.element.getMine().getModel().effectiveChanged();
 	}
 
+
 	/**
-	 * method use for move element Up
-	 * @param position
+	 * @see IBehaviourMove
 	 * @return position
 	 * @throws Exception 
 	 */
@@ -81,9 +86,9 @@ public class BehaviourMove implements IBehaviourMove {
 		this.element.getMine().getModel().effectiveChanged();
 	}
 
+
 	/**
-	 * method use for move element Down
-	 * @param position
+	 * @see IBehaviourMove
 	 * @return position
 	 * @throws Exception 
 	 */
@@ -101,10 +106,21 @@ public class BehaviourMove implements IBehaviourMove {
 		this.element.getMine().getModel().effectiveChanged();
 	}
 
+
+	/**
+	 * @see IBehaviourMove
+	 * @throws Exception
+	 */
 	@Override
 	public void moveAll() throws Exception {
 		
 	}
+
+
+	/**
+	 * @see IBehaviourMove
+	 * @throws Exception
+	 */
 	@Override
 	public void Gravit() throws Exception{
 		
