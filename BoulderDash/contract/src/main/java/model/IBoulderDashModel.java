@@ -1,6 +1,5 @@
 package model;
 
-import java.util.ArrayList;
 import java.util.Observer;
 
 /**
@@ -30,18 +29,32 @@ public interface IBoulderDashModel {
 	 * 		element to remove of the list
 	 */
 	public void removeElement(IElement element);
-	
-	/**
-	 * Builds the mine
-	 * @throws Exception 
-	 */
-	public void buildMine() throws Exception;
     
+	/**
+	 * Add an observer to the model
+	 * @param o
+	 * 		the observer to add
+	 */
 	public void observerAdd(Observer o);
 	
+	/**
+	 * Gets an element by it position
+	 * @param x
+	 * 		The x position of the element to get
+	 * @param y
+	 * 		The y position of the element to get
+	 * @return an Element
+	 */
 	public IElement getElementByPosition(int x, int y);
 
+	/**
+	 * Add a diamond to the hero
+	 */
 	void getDiamond();
 
+	/**
+	 * Get the number of diamond get by the hero
+	 * @return the number of diamonds collected
+	 */
 	int diamondCounter();
 }

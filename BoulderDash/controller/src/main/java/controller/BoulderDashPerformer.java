@@ -10,6 +10,8 @@ public class BoulderDashPerformer implements IOrderPerformer{
     public IView ActualView;
     
     private IElement hero;
+    private IElement enemy;
+    private IElement gravity;
     private IBoulderDashModel mine;
     
     private Order order;
@@ -30,16 +32,26 @@ public class BoulderDashPerformer implements IOrderPerformer{
 	 * method in order to play
 	 */
 	public void play() throws Exception {
-       ActualModel.buildMine();
        ActualView.start(this.ActualModel, this);
        this.hero = this.ActualModel.getElementByPosition(1, 1);
+       this.enemy = this.ActualModel.getElementByPosition(12, 6);
+       this.gravity = this.ActualModel.getElementByPosition(2,28);
+       this.gameLoop();
 
 	}
 
 	/**
 	 * create a loop
+	 * @throws Exception 
 	 */
-	private void gameLoop() {}
+	private void gameLoop() throws Exception {
+		while(true){
+			this.enemy.getBehaviour().moveAll();
+			this.gravity.getBehaviour().Gravit();
+			Thread.sleep(400);
+			
+		}
+	}
 
 
 	/**
@@ -61,7 +73,7 @@ public class BoulderDashPerformer implements IOrderPerformer{
 			String next = Colision.getDownElement(ActualModel, hero);
 			
 			if(next == "door"){
-				
+                System.exit(0);
 			}
 			else if(next == "diamond"){
 				this.ActualModel.getDiamond();
@@ -81,7 +93,7 @@ public class BoulderDashPerformer implements IOrderPerformer{
 			if(next == "stone"){
 			}
 			else if(next == "door"){
-				
+                EndGame();
 			}
 			else if(next == "diamond"){
 				this.ActualModel.getDiamond();
@@ -106,7 +118,7 @@ public class BoulderDashPerformer implements IOrderPerformer{
 				}
 			}
 			else if(next == "door"){
-				
+                EndGame();
 			}
 			else if(next == "diamond"){
 				this.ActualModel.getDiamond();
@@ -131,7 +143,7 @@ public class BoulderDashPerformer implements IOrderPerformer{
 				}
 			}
 			else if(next == "door"){
-				
+                EndGame();
 			}
 			else if(next == "diamond"){
 				this.ActualModel.getDiamond();
@@ -153,4 +165,10 @@ public class BoulderDashPerformer implements IOrderPerformer{
 	public void setOrder(Order order) {
 		this.order = order;
 	}
+
+	public void EndGame(){
+
+        if (this.ActualModel.diamondCounter() >= 10)
+        System.exit(0);
+    }
 }

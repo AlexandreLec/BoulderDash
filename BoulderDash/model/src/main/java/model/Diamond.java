@@ -19,7 +19,6 @@ public class Diamond extends Element implements IGet, IKill {
         behaviour = new Gravity(this);
     }
 
-
     /**
      * @see IGet
      * @param hero

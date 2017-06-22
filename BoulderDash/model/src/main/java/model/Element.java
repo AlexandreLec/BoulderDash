@@ -3,12 +3,11 @@ package model;
 
 import java.awt.Image;
 import java.awt.Toolkit;
-import java.util.Iterator;
 
 /**
- * <h1>The Element Class </h1>
+ * <h1>The Class Element</h1>
  *
- * @author LECOMTE
+ * @author Alexandre LECOMTE
  * @version 1.1
  */
 public class Element implements IElement {
@@ -43,8 +42,6 @@ public class Element implements IElement {
      * @return the sprite's image
      */
     private Image loadSprite(String sprite){
-
-        //ImageIcon ele = new ImageIcon("")
 
     	String path = "ressources/img/"+sprite+".png";
     	
@@ -130,9 +127,4 @@ public class Element implements IElement {
     public void setBehaviour(BehaviourMove behaviour){
     	this.behaviour = behaviour;
     }
-
-	public static Iterator<String> iterator() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

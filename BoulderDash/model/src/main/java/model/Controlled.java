@@ -9,6 +9,10 @@ package model;
 
 public class Controlled extends BehaviourMove {
 
+	/**
+	 * Instantiate a new controlled move
+	 * @param element
+	 */
 	public Controlled(Element element) {
 		super(element);
 	}

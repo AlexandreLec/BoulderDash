@@ -13,4 +13,6 @@ public interface IBehaviourMove {
 	public void moveLeft() throws Exception;
 	public void moveUp() throws Exception;
 	public void moveDown() throws Exception;
+	public void moveAll() throws Exception;
+	void Gravit() throws Exception;
 }
