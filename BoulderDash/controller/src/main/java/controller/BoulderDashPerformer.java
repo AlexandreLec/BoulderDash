@@ -166,9 +166,13 @@ public class BoulderDashPerformer implements IOrderPerformer{
 		this.order = order;
 	}
 
-	public void EndGame(){
+	public void EndGame() throws Exception{
 
-        if (this.ActualModel.diamondCounter() >= 10)
-        System.exit(0);
+            if (this.ActualModel.diamondCounter() < 10)
+                throw new Exception("Not enought diamond");
+            else
+                System.exit(0);
+
+
     }
 }

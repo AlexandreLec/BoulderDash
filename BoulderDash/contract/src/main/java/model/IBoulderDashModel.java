@@ -14,28 +14,28 @@ public interface IBoulderDashModel {
 	 * Gets the list of the elements 
 	 * @return a list of the elements
 	 */
-	public IElement[][] getElements();
+	IElement[][] getElements();
 	
 	/**
 	 * Adds an object to the list of the elements
 	 * @param element
 	 * 		element to add in the list
 	 */
-	public void addElement(IElement element);
+	void addElement(IElement element);
 	
 	/**
 	 * Removes an object of the list of elements
 	 * @param element
 	 * 		element to remove of the list
 	 */
-	public void removeElement(IElement element);
+	void removeElement(IElement element);
     
 	/**
 	 * Add an observer to the model
 	 * @param o
 	 * 		the observer to add
 	 */
-	public void observerAdd(Observer o);
+	void observerAdd(Observer o);
 	
 	/**
 	 * Gets an element by it position
@@ -45,7 +45,7 @@ public interface IBoulderDashModel {
 	 * 		The y position of the element to get
 	 * @return an Element
 	 */
-	public IElement getElementByPosition(int x, int y);
+	IElement getElementByPosition(int x, int y);
 
 	/**
 	 * Add a diamond to the hero

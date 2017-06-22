@@ -7,12 +7,27 @@ package model;
  * @version 1.0
  */
 public interface IBehaviourMove {
+
+	/**
+	 * All method of movement call in mobile elements
+	 * @throws Exception
+	 */
 	
-	public void move() throws Exception;
-	public void moveRight() throws Exception;
-	public void moveLeft() throws Exception;
-	public void moveUp() throws Exception;
-	public void moveDown() throws Exception;
-	public void moveAll() throws Exception;
+	void move() throws Exception;
+	void moveRight() throws Exception;
+	void moveLeft() throws Exception;
+	void moveUp() throws Exception;
+	void moveDown() throws Exception;
+
+	/**
+	 * Method use for move all ennemy in the same time
+	 * @throws Exception
+	 */
+	void moveAll() throws Exception;
+
+	/**
+	 * Movement method for stones and diamonds gravitation
+	 * @throws Exception
+	 */
 	void Gravit() throws Exception;
 }

@@ -11,6 +11,6 @@ public interface IExplosion {
 	/**
 	* Instantiates the IExplosion
 	*/
-	public void explosion();
+	void explosion();
 
 }

@@ -7,7 +7,7 @@ import java.awt.image.ImageObserver;
 
 public interface IElementBuilder {
 
-	public void applyModelToGraphic(Graphics graphics, ImageObserver obs);
-	public IBoulderDashModel getModel();
+	void applyModelToGraphic(Graphics graphics, ImageObserver obs);
+	IBoulderDashModel getModel();
 	
 }

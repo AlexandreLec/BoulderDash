@@ -11,6 +11,6 @@ public interface IKill {
      * method description for kill
       * @param element
      */
-    public void kill(Element element);
+    void kill(Element element);
 
 }
