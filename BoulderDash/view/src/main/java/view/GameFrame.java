@@ -1,8 +1,10 @@
 package view;
+
 import javax.swing.*;
 
 import model.IBoulderDashModel;
 
+import java.awt.*;
 import java.awt.event.*;
 
 /**
@@ -27,7 +29,6 @@ public class GameFrame extends JFrame implements KeyListener {
 	 * @param observable
 	 */
 	public GameFrame(String title, IEventPerformer performer, IElementBuilder builder, IBoulderDashModel model){
-		
 		
 		this.setTitle(title);
 		//this.setLocationRelativeTo(null);

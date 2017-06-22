@@ -47,6 +47,7 @@ public class ElementBuilder implements IElementBuilder {
 		g2d.setFont(fonte);
 		g2d.setColor(Color.BLACK);
 		g2d.drawString("Diamond"+String.valueOf(this.model.diamondCounter()), 32, 956);
+		g2d.setBackground(Color.RED);
 		
 	}
 

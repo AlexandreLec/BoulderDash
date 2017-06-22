@@ -6,6 +6,8 @@ import java.util.Observable;
 import java.util.Observer;
 
 import javax.swing.*;
+
+
 import model.IBoulderDashModel;
 
 /**
@@ -15,8 +17,8 @@ import model.IBoulderDashModel;
  * @version 1.0
  */
 public class GamePanel extends JPanel implements Observer {
-			
-			
+	
+	
 	/**
 	 * Generated Serialized ID
 	 */
@@ -26,7 +28,7 @@ public class GamePanel extends JPanel implements Observer {
 	
 	public GamePanel(IElementBuilder builder, IBoulderDashModel model){
 		
-
+		
 		this.elementBuilder = builder;
 		
 		repaint();
@@ -44,6 +46,7 @@ public class GamePanel extends JPanel implements Observer {
 	}
 	
 	public void paintComponent(Graphics g){
+		
 		
 		this.elementBuilder.applyModelToGraphic(g, this);
 	
