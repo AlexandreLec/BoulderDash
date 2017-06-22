@@ -45,6 +45,9 @@ public class GamePanel extends JPanel implements Observer {
 		repaint();
 	}
 	
+	/**
+	 * allows to paint the component on the frame
+	 */
 	public void paintComponent(Graphics g){
 		
 		

@@ -39,16 +39,31 @@ public class GameFrame extends JFrame implements KeyListener {
 		
 		GamePanel panel = new GamePanel(builder, model);
 		
+		/**
+		 * Display Test
+		 */
 		System.out.println("test");
 		
+		/**
+		 * Say that Pane content panel
+		 */
 		this.setContentPane(panel);
 		
+		/**
+		 * Add Observer to the panel
+		 */
 		model.observerAdd(panel);
 		
+		/**
+		 * Use the keyController
+		 */
 		addKeyListener(this);
 
 		this.eventPerformer = performer;
 
+		/**
+		 * Show the frame
+		 */
 		this.setVisible(true);
 		
 	    

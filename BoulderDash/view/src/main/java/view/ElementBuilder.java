@@ -16,7 +16,7 @@ public class ElementBuilder implements IElementBuilder {
 		this.model = BoulderDashModel;
 	}
 
-	private void drawMine(Graphics graphics, ImageObserver obs){
+	private void drawMine(Graphics graphics, ImageObserver obs) {
 		
 		System.out.println("Refresh");
 		
@@ -51,7 +51,8 @@ public class ElementBuilder implements IElementBuilder {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		g2d.setBackground(Color.RED);
+		
+
 		
 
 		g2d.setColor(Color.BLACK);
@@ -61,7 +62,6 @@ public class ElementBuilder implements IElementBuilder {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 	}
 
 	@Override
