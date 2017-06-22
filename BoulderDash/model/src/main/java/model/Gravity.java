@@ -13,6 +13,8 @@ import java.util.Iterator;
 
 public class Gravity extends BehaviourMove {
 	
+	private boolean motion = false;
+	
 	/**
      * Instantiates the Gravity
      */
@@ -40,15 +42,20 @@ public class Gravity extends BehaviourMove {
 		IElement downl = element.getMine().getElements()[element.getPosition().getX()-1][element.getPosition().getY()+1];
 		IElement left = element.getMine().getElements()[element.getPosition().getX()-1][element.getPosition().getY()];
 	
+		
+		
 		if(down == null){
+			this.motion = true;
 			this.element.getBehaviour().moveDown();
 		}
-		if(left == null && down != null && downl == null){
+		if(down != null && left == null && downl == null && (down.getClass() == model.Diamond.class || down.getClass() == model.Stone.class)){
+			this.motion = true;
 			this.element.getBehaviour().moveLeft();
 			this.element.getBehaviour().moveDown();
 		}
 		
-		if(right == null && down != null && downr == null){
+		if(down != null && right == null && downr == null && (down.getClass() == model.Diamond.class || down.getClass() == model.Stone.class)){
+			this.motion = true;
 			this.element.getBehaviour().moveRight();
 			this.element.getBehaviour().moveDown();
 		}
@@ -64,9 +71,17 @@ public class Gravity extends BehaviourMove {
 	    	
 	    	IElement diamond = new Diamond(new Position(x,y,xMax,yMax),Enemy.mine);
 
-	    	Enemy.mine.setElement(x, y, diamond);
+	    	this.element.getMine().setElement(x, y, diamond);
 
-	    	Enemy.mine.addGravity(diamond);
+	    	this.element.getMine().addGravity(diamond);
+		}
+		if(down != null && down.getClass() == model.Hero.class) {
+			
+	    	Hero.getInstance().explosion();
+
+		}
+		else{
+			this.motion = false;
 		}
 	}
 	

@@ -6,7 +6,7 @@ package model;
  * @author Arnaud Rigaut
  * @version 1.1
  */
-public class Enemy extends Element implements IExplosion {
+public class Enemy extends Element {
 
     /** Variable who will use for seek sprite **/
     private static String spriteName = "enemy";
@@ -42,32 +42,7 @@ public class Enemy extends Element implements IExplosion {
 			default:
 				return "enemy";
 		}
-    }
 
-    /**
-     * Come from IExplosion
-     * @throws Exception 
-     */
-    @Override
-    synchronized public void explosion() throws Exception {
-    	
-    	int x = this.getPosition().getX();
-    	int y = this.getPosition().getY();
-    	int xMax = this.getPosition().getMaxX();
-    	int yMax = this.getPosition().getMaxY();
-
-    	IElement diamond = new Diamond(new Position(x,y,xMax,yMax),Enemy.mine);
-
-    	Enemy.mine.setElement(x, y, diamond);
-
-    	Enemy.mine.addGravity(diamond);
-		this.mine.setElement(x+1, y, new Diamond(new Position(x+1,y,xMax,yMax),this.mine));
-		this.mine.setElement(x-1, y, new Diamond(new Position(x-1,y,xMax,yMax),this.mine));
-		this.mine.setElement(x, y+1, new Diamond(new Position(x,y+1,xMax,yMax),this.mine));
-		this.mine.setElement(x, y-1, new Diamond(new Position(x,y-1,xMax,yMax),this.mine));
-		System.out.println("kill");
-		//this.getMine().getModel().effectiveChanged();
-		
     }
     
     /**

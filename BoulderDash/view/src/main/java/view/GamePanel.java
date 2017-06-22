@@ -49,9 +49,13 @@ public class GamePanel extends JPanel implements Observer {
 	 * allows to paint the component on the frame
 	 */
 	public void paintComponent(Graphics g){
-		
-		
-		this.elementBuilder.applyModelToGraphic(g, this);
-	
-}
+
+
+		try {
+			this.elementBuilder.applyModelToGraphic(g, this);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
 }

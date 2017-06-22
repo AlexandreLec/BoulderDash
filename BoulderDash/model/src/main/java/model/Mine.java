@@ -1,7 +1,6 @@
 package model;
 
-import java.util.ArrayList;
-import java.util.Iterator;
+import java.awt.Image;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 import model.dao.level;
@@ -29,6 +28,8 @@ public class Mine {
 	private CopyOnWriteArrayList<IElement> gravity;
 	
 	private IElement hero;
+	
+	private Image background;
 
 	/**
 	 * Instantiates the constructor
