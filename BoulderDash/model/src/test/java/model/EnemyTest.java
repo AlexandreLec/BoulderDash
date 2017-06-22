@@ -29,7 +29,7 @@ public class EnemyTest extends ElementTest {
     @Test
     public void testExplosion() throws Exception {
     	//Element expected = new Dirt(new Position(3,1,10,10));
-    	this.enemy.explosion();
+    	//this.enemy.explosion();
     	
     	assertNull(this.enemy);
     	//assertNull(expected);
