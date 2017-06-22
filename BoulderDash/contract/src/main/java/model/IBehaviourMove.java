@@ -1,9 +1,9 @@
 package model;
 
 /**
- * <h1>The Class BehaviourMove</h1>
+ * <h1>The interface IBehaviourMove </h1>
  *
- * @author Alexandre Lecomte
+ * @author Arnaud Rigaut
  * @version 1.0
  */
 public interface IBehaviourMove {
