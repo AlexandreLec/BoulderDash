@@ -26,13 +26,11 @@ public class ElementBuilder implements IElementBuilder {
 			for (int y = 0; y < 30; y++) {
 					
 					if(elements[x][y] == null){
-						graphics.fillRect(x*32, y*32, 32, 32);;
-					}
+						graphics.fillRect(x*32, y*32, 32, 32);
+                    }
 					else{
 						drawElement(elements[x][y],graphics, obs);
 					}
-					
-			       
 			}
 		}
 	}
@@ -45,10 +43,20 @@ public class ElementBuilder implements IElementBuilder {
 
 		Font fonte = new Font("TimeRoman", Font.BOLD, 32);
 		g2d.setFont(fonte);
+<<<<<<< HEAD
 		g2d.setColor(Color.BLACK);
 		g2d.drawString("Diamond"+String.valueOf(this.model.diamondCounter()), 32, 956);
 		g2d.setBackground(Color.RED);
 		
+=======
+		g2d.setColor(Color.BLACK);
+
+		try {
+			g2d.drawString("Diamond"+String.valueOf(this.model.diamondCounter()), 32, 956);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+>>>>>>> branch 'master' of https://github.com/AlexandreLec/BoulderDash
 	}
 
 	@Override

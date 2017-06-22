@@ -16,5 +16,5 @@ public interface IOrderPerformer {
      * @param order
 	 * @throws Exception 
      */
-	public void OrderPerform(Order order) throws Exception;
+    void OrderPerform(Order order) throws Exception;
 }

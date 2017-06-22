@@ -22,6 +22,8 @@ public class Element implements IElement {
 	private Mine mine;
 	/** The sprite's name of the element */
 	private String SpriteName;
+	/** Direction of the element */
+	protected Direction direction;
 
 	/**
 	 * Instantiates a new Element
@@ -127,4 +129,14 @@ public class Element implements IElement {
     public void setBehaviour(BehaviourMove behaviour){
     	this.behaviour = behaviour;
     }
+
+    @Override
+	public Direction getDirection() {
+		return direction;
+	}
+
+    @Override
+	public void setDirection(Direction direction) {
+		this.direction = direction;
+	}
 }
