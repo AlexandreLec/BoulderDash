@@ -1,7 +1,9 @@
 package view;
 
 import java.awt.*;
+
 import java.awt.image.ImageObserver;
+
 import model.IBoulderDashModel;
 import model.IElement;
 
@@ -24,8 +26,8 @@ public class ElementBuilder implements IElementBuilder {
 			for (int y = 0; y < 30; y++) {
 					
 					if(elements[x][y] == null){
-						graphics.fillRect(x*32, y*32, 32, 32);;
-					}
+						graphics.fillRect(x*32, y*32, 32, 32);
+                    }
 					else{
 						drawElement(elements[x][y],graphics, obs);
 					}
@@ -34,6 +36,7 @@ public class ElementBuilder implements IElementBuilder {
 	}
 	
 	private void drawElement(IElement element, Graphics graphics, ImageObserver obs){
+		
 		Graphics2D g2d = (Graphics2D) graphics ;
 		g2d.drawImage(element.getSprite(),element.getPosition().getX()*32,element.getPosition().getY()*32,32,32,obs);
 
@@ -47,12 +50,12 @@ public class ElementBuilder implements IElementBuilder {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 	}
 
 	@Override
 	public void applyModelToGraphic(Graphics graphics, ImageObserver obs) {
 		drawMine(graphics, obs);
+		
 	}
 
 	public IBoulderDashModel getModel() {

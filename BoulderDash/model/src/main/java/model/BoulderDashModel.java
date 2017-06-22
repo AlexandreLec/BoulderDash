@@ -1,9 +1,12 @@
 package model;
 
-import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
+
 import java.util.concurrent.CopyOnWriteArrayList;
+
+
+import model.dao.level;
 
 /**
  * <h1>The Class BoulderDashModel</h1>
@@ -83,6 +86,7 @@ public class BoulderDashModel extends Observable implements IBoulderDashModel {
 		hero.setDiamonds(hero.getDiamonds()+1);
 		System.out.println(hero.getDiamonds());
 		this.effectiveChanged();
+		
 	}
 	
 	/**
@@ -97,6 +101,28 @@ public class BoulderDashModel extends Observable implements IBoulderDashModel {
 			throw new Exception("Hero is dead");
 		
 		return hero.getDiamonds();
+
+		
+	}
+
+	/**
+	 * Load the level, get it from the database
+	 * @param levelToLoad
+	 * 		The level to load 
+	 * @return a String that contain the level template
+	 */
+	private String loadLevel(String levelToLoad){
+		
+		String result = "";
+		
+		try {
+			result = level.getLevel(levelToLoad);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+
 	}
 	
 	@Override
