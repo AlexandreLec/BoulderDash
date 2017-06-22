@@ -42,24 +42,22 @@ public class Gravity extends BehaviourMove {
 		IElement downl = element.getMine().getElements()[element.getPosition().getX()-1][element.getPosition().getY()+1];
 		IElement left = element.getMine().getElements()[element.getPosition().getX()-1][element.getPosition().getY()];
 	
-		
-		
-		if(down == null){
+		if(down.getClass() == model.Background.class){
 			this.motion = true;
 			this.element.getBehaviour().moveDown();
 		}
-		if(down != null && left == null && downl == null && (down.getClass() == model.Diamond.class || down.getClass() == model.Stone.class)){
+		if(down.getClass() != model.Background.class && left.getClass() == model.Background.class && downl.getClass() == model.Background.class && (down.getClass() == model.Diamond.class || down.getClass() == model.Stone.class)){
 			this.motion = true;
 			this.element.getBehaviour().moveLeft();
 			this.element.getBehaviour().moveDown();
 		}
 		
-		if(down != null && right == null && downr == null && (down.getClass() == model.Diamond.class || down.getClass() == model.Stone.class)){
+		if(down.getClass() != model.Background.class && right.getClass() == model.Background.class && downr.getClass() == model.Background.class && (down.getClass() == model.Diamond.class || down.getClass() == model.Stone.class)){
 			this.motion = true;
 			this.element.getBehaviour().moveRight();
 			this.element.getBehaviour().moveDown();
 		}
-		if(down != null && down.getClass() == model.Enemy.class) {
+		if(down.getClass() != model.Background.class && down.getClass() == model.Enemy.class) {
 			IElement enemy = element.getMine().getElements()[element.getPosition().getX()][element.getPosition().getY()+1];
 			
 			int x = enemy.getPosition().getX();
@@ -75,12 +73,12 @@ public class Gravity extends BehaviourMove {
 
 	    	this.element.getMine().addGravity(diamond);
 		}
-		if(down != null && down.getClass() == model.Hero.class) {
+		if(down.getClass() != model.Background.class && down.getClass() == model.Hero.class && this.motion == true) {
 			
 	    	Hero.getInstance().explosion();
 
 		}
-		else{
+		if(down.getClass() != model.Background.class){
 			this.motion = false;
 		}
 	}

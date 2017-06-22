@@ -43,7 +43,7 @@ public class Element implements IElement {
      * 		The sprit's name to load
      * @return the sprite's image
      */
-    private Image loadSprite(String sprite){
+    public static Image loadSprite(String sprite){
 
     	String path = "ressources/img/"+sprite+".png";
     	

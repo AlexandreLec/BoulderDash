@@ -33,7 +33,7 @@ public class Automatic extends BehaviourMove {
 		
 		switch(dir){
 			case LEFT :
-				if(left == null){
+				if(left.getClass() == model.Background.class){
 					this.element.getBehaviour().moveLeft();
 				}
 				else if(left.equals(Hero.getInstance())){
@@ -45,7 +45,7 @@ public class Automatic extends BehaviourMove {
 				}
 				break;
 			case RIGHT :
-				if(right == null){
+				if(right.getClass() == model.Background.class){
 					this.element.getBehaviour().moveRight();
 				}
 				else if(right.equals(Hero.getInstance())){
@@ -57,7 +57,7 @@ public class Automatic extends BehaviourMove {
 				}
 				break;
 			case UP :
-				if(up == null){
+				if(up.getClass() == model.Background.class){
 					this.element.getBehaviour().moveUp();
 				}
 				else if(up.equals(Hero.getInstance())){
@@ -69,7 +69,7 @@ public class Automatic extends BehaviourMove {
 				}
 				break;
 			case DOWN :
-				if(down == null){
+				if(down.getClass() == model.Background.class){
 					this.element.getBehaviour().moveDown();
 				}
 				else if(down.equals(Hero.getInstance())){

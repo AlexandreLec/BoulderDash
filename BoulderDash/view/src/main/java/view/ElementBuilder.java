@@ -26,7 +26,7 @@ public class ElementBuilder implements IElementBuilder {
 			for (int y = 0; y < 30; y++) {
 					
 					if(elements[x][y] == null){
-						graphics.fillRect(x*32, y*32, 32, 32);
+						//graphics.drawImage(this.model.getBackground(),elements[x][y].getPosition().getX()*32, elements[x][y].getPosition().getY()*32, obs);
                     }
 					else{
 						drawElement(elements[x][y],graphics, obs);
@@ -35,7 +35,7 @@ public class ElementBuilder implements IElementBuilder {
 		}
 	}
 	
-	private void drawElement(IElement element, Graphics graphics, ImageObserver obs) throws Exception {
+	private void drawElement(IElement element, Graphics graphics, ImageObserver obs) {
 		
 		Graphics2D g2d = (Graphics2D) graphics ;
 		g2d.drawImage(element.getSprite(),element.getPosition().getX()*32,element.getPosition().getY()*32,32,32,obs);
@@ -44,7 +44,11 @@ public class ElementBuilder implements IElementBuilder {
 		Font fonte = new Font("TimeRoman", Font.BOLD, 32);
 		g2d.setFont(fonte);
 		g2d.setColor(Color.BLACK);
-		g2d.drawString("Diamond"+String.valueOf(this.model.diamondCounter()), 32, 956);
+		try {
+			g2d.drawString("Diamond"+String.valueOf(this.model.diamondCounter()), 32, 956);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		g2d.setBackground(Color.RED);
 	}
 

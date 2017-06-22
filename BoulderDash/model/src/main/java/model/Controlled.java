@@ -24,5 +24,6 @@ public class Controlled extends BehaviourMove {
 	public void move() {
 
 	}
+	
 
 }

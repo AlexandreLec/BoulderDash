@@ -1,5 +1,6 @@
 package model;
 
+import java.awt.Image;
 import java.util.Observable;
 import java.util.Observer;
 
@@ -81,8 +82,9 @@ public class BoulderDashModel extends Observable implements IBoulderDashModel {
 	 * Add a diamond for the hero
 	 */
 	@Override
-	public void getDiamond(){
+	public void getDiamond(IElement element){
 		Hero hero = Hero.getInstance();
+		this.mine.destroyElement(element);
 		hero.setDiamonds(hero.getDiamonds()+1);
 		System.out.println(hero.getDiamonds());
 		this.effectiveChanged();
@@ -103,26 +105,6 @@ public class BoulderDashModel extends Observable implements IBoulderDashModel {
 		return hero.getDiamonds();
 
 		
-	}
-
-	/**
-	 * Load the level, get it from the database
-	 * @param levelToLoad
-	 * 		The level to load 
-	 * @return a String that contain the level template
-	 */
-	private String loadLevel(String levelToLoad){
-		
-		String result = "";
-		
-		try {
-			result = level.getLevel(levelToLoad);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-		return result;
-
 	}
 	
 	@Override

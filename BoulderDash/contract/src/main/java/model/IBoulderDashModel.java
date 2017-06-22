@@ -1,6 +1,6 @@
 package model;
 
-import java.util.ArrayList;
+import java.awt.Image;
 import java.util.Observer;
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -52,7 +52,7 @@ public interface IBoulderDashModel {
 	/**
 	 * Add a diamond to the hero
 	 */
-	void getDiamond();
+	void getDiamond(IElement element);
 
 	/**
 	 * Get the number of diamond get by the hero
@@ -66,4 +66,5 @@ public interface IBoulderDashModel {
 	CopyOnWriteArrayList<IElement> getEnemy();
 
 	CopyOnWriteArrayList<IElement> getGravity();
+
 }

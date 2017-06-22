@@ -70,12 +70,12 @@ public class BoulderDashPerformer implements IOrderPerformer{
 		if ((order == Order.DOWN)){
 			
 			String next = Colision.getDownElement(ActualModel, hero);
-			
+
 			if(next == "door"){
                 System.exit(0);
 			}
 			else if(next == "diamond"){
-				this.ActualModel.getDiamond();
+				this.ActualModel.getDiamond(this.ActualModel.getElementByPosition(hero.getPosition().getX(), hero.getPosition().getY()+1));
 				this.hero.getBehaviour().moveDown();
 			}
 			else if(next == "wall" || next == "stone"){}
@@ -95,7 +95,7 @@ public class BoulderDashPerformer implements IOrderPerformer{
                 EndGame();
 			}
 			else if(next == "diamond"){
-				this.ActualModel.getDiamond();
+				this.ActualModel.getDiamond(this.ActualModel.getElementByPosition(hero.getPosition().getX(), hero.getPosition().getY()-1));
 				this.hero.getBehaviour().moveUp();
 			}
 			else if(next == "wall"){}
@@ -120,7 +120,7 @@ public class BoulderDashPerformer implements IOrderPerformer{
                 EndGame();
 			}
 			else if(next == "diamond"){
-				this.ActualModel.getDiamond();
+				this.ActualModel.getDiamond(this.ActualModel.getElementByPosition(hero.getPosition().getX()+1, hero.getPosition().getY()));
 				this.hero.getBehaviour().moveRight();
 			}
 			else if(next == "wall"){}
@@ -145,7 +145,7 @@ public class BoulderDashPerformer implements IOrderPerformer{
                 EndGame();
 			}
 			else if(next == "diamond"){
-				this.ActualModel.getDiamond();
+				this.ActualModel.getDiamond(this.ActualModel.getElementByPosition(hero.getPosition().getX()-1, hero.getPosition().getY()));
 				this.hero.getBehaviour().moveLeft();
 			}
 			else if(next == "wall"){}

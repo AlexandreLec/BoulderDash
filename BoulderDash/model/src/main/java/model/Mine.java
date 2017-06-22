@@ -1,6 +1,5 @@
 package model;
 
-import java.awt.Image;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 import model.dao.level;
@@ -28,8 +27,6 @@ public class Mine {
 	private CopyOnWriteArrayList<IElement> gravity;
 	
 	private IElement hero;
-	
-	private Image background;
 
 	/**
 	 * Instantiates the constructor
@@ -49,7 +46,7 @@ public class Mine {
 	 */
 	private void buildMine() throws Exception{
 		
-		String currentLevel = loadLevel("level5");
+		String currentLevel = loadLevel("level3");
 		int i = 0;
 		for(int y = 0 ;y<Mine.HEIGHT; y++){
 			for (int x = 0; x<Mine.WIDTH;x++){
@@ -84,7 +81,7 @@ public class Mine {
 						this.setElement(x,y,this.hero);
 						break;
 					case ' ':
-						this.setElement(x,y,null);
+						this.setElement(x,y,new Background(new Position(x,y,Mine.WIDTH,Mine.HEIGHT),this));
 						break;
 					case 'n':
 						IElement enemy = new Enemy(new Position(x,y,Mine.WIDTH,Mine.HEIGHT),this);
@@ -152,7 +149,9 @@ public class Mine {
 	
 	public void destroyElement(IElement element){
 		
-		this.elements[element.getPosition().getX()][element.getPosition().getY()] = null;
+		if(element != null){
+			this.elements[element.getPosition().getX()][element.getPosition().getY()] = null;
+		}
 		
 		for (IElement e : this.enemy) {
 			if (e.equals(element)) {
@@ -164,6 +163,10 @@ public class Mine {
 			if (e.equals(element)) {
 				this.enemy.remove(e);
 			}
+		}
+		
+		if(this.hero.equals(element)){
+			this.hero = null;
 		}
 	}
 
