@@ -10,8 +10,8 @@ public class ExitGateTest extends ElementTest {
 	@Override
 	@Before
 	public void setUp() throws Exception {
-		//this.actual = ExitGate.getInstance(new Position(9,9,10,10));
-		//this.behaviour = new Fixe();
+		this.actual = ExitGate.getInstance(new Position(1,1,10,10),this.mine);
+		this.behaviour = new Fixe(actual);
 	}
 
 }

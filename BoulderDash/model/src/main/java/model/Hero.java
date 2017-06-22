@@ -133,10 +133,12 @@ public class Hero extends Element implements IExplosion{
 
 
     /**
+     * @throws Exception 
      * @see IExplosion
      */
 	@Override
-	public void explosion() {
-		System.exit(0);
+	synchronized public void explosion() throws Exception {
+		this.getMine().destroyElement(Hero.hero);
+		Hero.hero = null;
 	}
 }

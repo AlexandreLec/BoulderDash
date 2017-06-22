@@ -19,6 +19,8 @@ public class BoulderDashModel extends Observable implements IBoulderDashModel {
 
 	/** The  mine who contains the elements */
 	private Mine mine;
+	/** The game over image*/
+	private Image gameOver;
 	
 	/**
 	 * Instantiates the BoulderDashModel.
@@ -26,6 +28,7 @@ public class BoulderDashModel extends Observable implements IBoulderDashModel {
 	 */
 	public BoulderDashModel() throws Exception{
 		this.mine = new Mine(this);
+		this.gameOver = Element.loadSprite("gameover");
 	}
 
 	/**
@@ -80,9 +83,10 @@ public class BoulderDashModel extends Observable implements IBoulderDashModel {
 	
 	/**
 	 * Add a diamond for the hero
+	 * @throws Exception 
 	 */
 	@Override
-	public void getDiamond(IElement element){
+	synchronized public void getDiamond(IElement element) throws Exception{
 		Hero hero = Hero.getInstance();
 		this.mine.destroyElement(element);
 		hero.setDiamonds(hero.getDiamonds()+1);
@@ -143,4 +147,10 @@ public class BoulderDashModel extends Observable implements IBoulderDashModel {
 	public void observerAdd(Observer o) {
 		addObserver(o);
 	}
+
+	@Override
+	public Image getGameOver() {
+		return gameOver;
+	}
+
 }

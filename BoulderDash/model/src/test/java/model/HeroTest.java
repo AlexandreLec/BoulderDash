@@ -19,20 +19,20 @@ public class HeroTest extends ElementTest {
 	@Override
 	@Before
 	public void setUp() throws Exception {
-		//this.actual = Hero.getInstance(new Position(1,1,10,10));
-	//	this.behaviour = new Controlled();
+		this.actual = Hero.getInstance(new Position(1,1,10,10), this.mine);
+		this.behaviour = new Controlled(actual);
 	}
 	
 	/**
 	 * Check the single instantiation of the hero
 	 * @throws Exception 
 	 */
-	@Test
-	public void getInstance(Position position) throws Exception {
+	//@Test
+	//public void getInstance(Position position) throws Exception {
 		
 		/*Element expected = Hero.getInstance(new Position(3,1,10,10));
 		
 		assertSame(expected,this.actual);*/
-	}
+	//}
 
 }

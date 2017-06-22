@@ -25,7 +25,7 @@ public class ElementBuilder implements IElementBuilder {
 	public ElementBuilder(IBoulderDashModel BoulderDashModel){
 
 		this.model = BoulderDashModel;
-}
+	}
 
 
     /**
@@ -35,22 +35,17 @@ public class ElementBuilder implements IElementBuilder {
      * @param obs
      * @throws Exception
      */
-		private void drawMine(Graphics graphics, ImageObserver obs){
+	private void drawMine(Graphics graphics, ImageObserver obs){
 
-		
 		System.out.println("Refresh");
 		
-		IElement[][] elements = model.getElements();
+		IElement[][] actual = model.getElements();
 		 
 		for (int x = 0; x < 50; x++) {
 			for (int y = 0; y < 30; y++) {
 					
-					if(elements[x][y] == null){
-						//graphics.drawImage(this.model.getBackground(),elements[x][y].getPosition().getX()*32, elements[x][y].getPosition().getY()*32, obs);
-                    }
-					else{
-						drawElement(elements[x][y],graphics, obs);
-					}
+				drawElement(actual[x][y],graphics, obs);
+					
 			}
 		}
 	}
@@ -71,11 +66,12 @@ public class ElementBuilder implements IElementBuilder {
 
 		Font fonte = new Font("TimeRoman", Font.BOLD, 32);
 		g2d.setFont(fonte);
+		g2d.setColor(Color.BLACK);
 
 		try {
-			g2d.drawString("Diamond"+String.valueOf(this.model.diamondCounter()), 32, 956);
+			g2d.drawString("Diamond : "+String.valueOf(this.model.diamondCounter()), 32, 956);
 		} catch (Exception e) {
-			e.printStackTrace();
+			g2d.drawString("Diamond :", 32, 956);
 		}
 
 	} 
@@ -89,9 +85,11 @@ public class ElementBuilder implements IElementBuilder {
 	@Override
 	public void applyModelToGraphic(Graphics graphics, ImageObserver obs) {
 		drawMine(graphics, obs);
-		
 	}
 
+	public void gameOver(){
+		
+	}
 
     /**
      * @return model

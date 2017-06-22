@@ -51,8 +51,9 @@ public interface IBoulderDashModel {
 
 	/**
 	 * Add a diamond to the hero
+	 * @throws Exception 
 	 */
-	void getDiamond(IElement element);
+	void getDiamond(IElement element) throws Exception;
 
 	/**
 	 * Get the number of diamond get by the hero
@@ -66,5 +67,8 @@ public interface IBoulderDashModel {
 	CopyOnWriteArrayList<IElement> getEnemy();
 
 	CopyOnWriteArrayList<IElement> getGravity();
+
+	Image getGameOver();
+
 
 }

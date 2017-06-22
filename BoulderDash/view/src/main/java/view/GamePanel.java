@@ -41,7 +41,6 @@ public class GamePanel extends JPanel implements Observer {
 	 */
 	@Override
 	public void update(Observable o, Object arg) {
-		
 		repaint();
 	}
 	
@@ -50,12 +49,13 @@ public class GamePanel extends JPanel implements Observer {
 	 */
 	public void paintComponent(Graphics g){
 
-
 		try {
 			this.elementBuilder.applyModelToGraphic(g, this);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
+		//g.drawImage(elementBuilder.getModel().getGameOver(), 20, 20, this);
 
 	}
 }

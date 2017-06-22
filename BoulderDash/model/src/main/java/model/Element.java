@@ -8,7 +8,7 @@ import java.awt.Toolkit;
  * <h1>The Class Element</h1>
  *
  * @author Alexandre LECOMTE
- * @version 1.1
+ * @version 1.3
  */
 public class Element implements IElement {
 	
@@ -130,11 +130,19 @@ public class Element implements IElement {
     	this.behaviour = behaviour;
     }
 
+    /**
+     * Get the direction of the element
+     */
     @Override
 	public Direction getDirection() {
 		return direction;
 	}
 
+    /**
+     * Set the direction to the element
+     * @param direction
+     * 		The direction to set
+     */
     @Override
 	public void setDirection(Direction direction) {
 		this.direction = direction;

@@ -13,11 +13,11 @@ public class DirtTest extends ElementTest {
 	/**
 	 * Instantiate a new Dirt
 	 */
-	/*@Override
+	@Override
 	@Before
 	public void setUp() throws Exception {
-		this.actual = new Dirt(new Position(1,1,10,10));
-		this.behaviour = new Fixe();
-	}*/
+		this.actual = new Dirt(new Position(1,1,10,10), this.mine);
+		this.behaviour = new Fixe(actual);
+	}
 	
 }

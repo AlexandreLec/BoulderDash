@@ -16,8 +16,8 @@ public class WallTest extends ElementTest {
 	@Override
 	@Before
 	public void setUp() throws Exception {
-		//this.actual = new Wall(new Position(1,1,10,10));
-		//this.behaviour = new Fixe();
+		this.actual = new Wall(new Position(1,1,10,10), this.mine);
+		this.behaviour = new Fixe(actual);
 	}
 
 }

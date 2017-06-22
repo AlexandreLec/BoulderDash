@@ -10,6 +10,7 @@ public interface IGet {
     /**
      * method description for get
      * @param hero
+     * @throws Exception 
      */
-    void get(Hero hero);
+    void get(Hero hero) throws Exception;
 }

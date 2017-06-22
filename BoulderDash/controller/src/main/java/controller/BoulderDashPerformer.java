@@ -1,5 +1,6 @@
 package controller;
 
+import model.Direction;
 import model.IBoulderDashModel;
 import model.IElement;
 import view.IView;
@@ -32,7 +33,6 @@ public class BoulderDashPerformer implements IOrderPerformer{
         ActualView = view;
     }
 
-
     /**
      * Principal method use for get back initial position of some element
       * @throws Exception
@@ -45,20 +45,18 @@ public class BoulderDashPerformer implements IOrderPerformer{
        this.gameLoop();
 	}
 
-
 	/**
 	 * create a loop and a thread for enemy and gravity
 	 * @throws Exception 
 	 */
 	private void gameLoop() throws Exception {
-		while(true){
+		while(this.hero != null){
 			this.enemy.getBehaviour().moveAll();
 			this.gravity.getBehaviour().Gravit();
-			Thread.sleep(200);
-			
+			Thread.sleep(100);
 		}
+		System.exit(0);
 	}
-
 	
 	/**
 	 * @throws Exception 
@@ -67,94 +65,27 @@ public class BoulderDashPerformer implements IOrderPerformer{
 	@Override
 	public void OrderPerform(Order order) throws Exception {
 		
-		if ((order == Order.DOWN)){
-			
-			String next = Colision.getDownElement(ActualModel, hero);
+		if(this.hero == null){
+			Thread.sleep(10000);
+			System.out.println("END");
+			System.exit(0);
+		}
+		if (order == Order.DOWN){
+			this.hero.setDirection(Direction.DOWN);
+	    }
+	    if (order == Order.UP){
+	      	this.hero.setDirection(Direction.UP);
+	    }
+	    if (order == Order.RIGHT){
+	        this.hero.setDirection(Direction.RIGHT);
+	    }
+	    if (order == Order.LEFT){
+	       	this.hero.setDirection(Direction.LEFT);
+	    }
+	       
+	    this.hero.getBehaviour().move();
 
-			if(next == "door"){
-                System.exit(0);
-			}
-			else if(next == "diamond"){
-				this.ActualModel.getDiamond(this.ActualModel.getElementByPosition(hero.getPosition().getX(), hero.getPosition().getY()+1));
-				this.hero.getBehaviour().moveDown();
-			}
-			else if(next == "wall" || next == "stone"){}
-			else {
-				this.hero.getBehaviour().moveDown();
-			}
-        }
-
-
-        if (order == Order.UP){
-    		
-        	String next = Colision.getUpElement(ActualModel, hero);
-			
-			if(next == "stone"){
-			}
-			else if(next == "door"){
-                EndGame();
-			}
-			else if(next == "diamond"){
-				this.ActualModel.getDiamond(this.ActualModel.getElementByPosition(hero.getPosition().getX(), hero.getPosition().getY()-1));
-				this.hero.getBehaviour().moveUp();
-			}
-			else if(next == "wall"){}
-			else {
-				this.hero.getBehaviour().moveUp();
-			}
-        }
-
-        if (order == Order.RIGHT){
-        	
-        	String next = Colision.getRightElement(ActualModel, hero);
-        	System.out.println(next);
-			if(next == "stone"){
-				IElement stone = this.ActualModel.getElementByPosition(this.hero.getPosition().getX()+1, this.hero.getPosition().getY());
-				next = Colision.getRightElement(this.ActualModel, stone);
-				if(next == null){
-					stone.getBehaviour().moveRight();
-					this.hero.getBehaviour().moveRight();
-				}
-			}
-			else if(next == "door"){
-                EndGame();
-			}
-			else if(next == "diamond"){
-				this.ActualModel.getDiamond(this.ActualModel.getElementByPosition(hero.getPosition().getX()+1, hero.getPosition().getY()));
-				this.hero.getBehaviour().moveRight();
-			}
-			else if(next == "wall"){}
-			else {
-				this.hero.getBehaviour().moveRight();
-			}
-        }
-
-        if (order == Order.LEFT){
-        	
-        	String next = Colision.getLeftElement(ActualModel, hero);
-			
-			if(next == "stone"){
-				IElement stone = this.ActualModel.getElementByPosition(this.hero.getPosition().getX()-1, this.hero.getPosition().getY());
-				next = Colision.getLeftElement(this.ActualModel, stone);
-				if(next == null){
-					stone.getBehaviour().moveLeft();
-					this.hero.getBehaviour().moveLeft();
-				}
-			}
-			else if(next == "door"){
-                EndGame();
-			}
-			else if(next == "diamond"){
-				this.ActualModel.getDiamond(this.ActualModel.getElementByPosition(hero.getPosition().getX()-1, hero.getPosition().getY()));
-				this.hero.getBehaviour().moveLeft();
-			}
-			else if(next == "wall"){}
-			else {
-				this.hero.getBehaviour().moveLeft();
-			}
-        }
     }
-
 
     /**
      * Sets the ViewSystem
@@ -170,7 +101,6 @@ public class BoulderDashPerformer implements IOrderPerformer{
 		return order;
 	}
 
-
     /**
      * set the new order
      * @param order
@@ -178,7 +108,6 @@ public class BoulderDashPerformer implements IOrderPerformer{
 	public void setOrder(Order order) {
 		this.order = order;
 	}
-
 
     /**
      * Metho use when we want end the game
@@ -190,7 +119,5 @@ public class BoulderDashPerformer implements IOrderPerformer{
                 throw new Exception("Not enought diamond");
             else
                 System.exit(0);
-
-
     }
 }

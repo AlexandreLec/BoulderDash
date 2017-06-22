@@ -147,11 +147,9 @@ public class Mine {
 		return enemy;
 	}
 	
-	public void destroyElement(IElement element){
+	public void destroyElement(IElement element) throws Exception{
 		
-		if(element != null){
-			this.elements[element.getPosition().getX()][element.getPosition().getY()] = null;
-		}
+		this.elements[element.getPosition().getX()][element.getPosition().getY()] = new Background(new Position(element.getPosition().getX(),element.getPosition().getY(),Mine.WIDTH,Mine.HEIGHT), this);
 		
 		for (IElement e : this.enemy) {
 			if (e.equals(element)) {

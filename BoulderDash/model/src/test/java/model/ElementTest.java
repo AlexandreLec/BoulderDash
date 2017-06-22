@@ -17,6 +17,8 @@ public class ElementTest {
 	protected Element actual;
 	/** The behaviour of the tested Element */
 	protected BehaviourMove behaviour;
+	
+	protected Mine mine;
 
 	@Before
 	public void setUp() throws Exception {
