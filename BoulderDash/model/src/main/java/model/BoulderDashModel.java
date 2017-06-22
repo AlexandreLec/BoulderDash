@@ -3,6 +3,7 @@ package model;
 import java.util.Observable;
 import java.util.Observer;
 
+
 import model.dao.level;
 
 /**
@@ -130,6 +131,7 @@ public class BoulderDashModel extends Observable implements IBoulderDashModel {
 		hero.setDiamonds(hero.getDiamonds()+1);
 		System.out.println(hero.getDiamonds());
 		this.effectiveChanged();
+		
 	}
 	
 	/**
@@ -139,6 +141,7 @@ public class BoulderDashModel extends Observable implements IBoulderDashModel {
 	public int diamondCounter(){
 		Hero hero = Hero.getInstance();
 		return hero.getDiamonds();
+		
 	}
 
 	/**

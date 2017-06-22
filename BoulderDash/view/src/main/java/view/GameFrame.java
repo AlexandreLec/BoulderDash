@@ -3,6 +3,7 @@ import javax.swing.*;
 
 import model.IBoulderDashModel;
 
+
 import java.awt.event.*;
 
 /**
@@ -28,13 +29,14 @@ public class GameFrame extends JFrame implements KeyListener {
 	 */
 	public GameFrame(String title, IEventPerformer performer, IElementBuilder builder, IBoulderDashModel model){
 
+		
 		this.setTitle(title);
 		this.setLocationRelativeTo(null);
 		this.setSize(1620, 1010);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
 		GamePanel panel = new GamePanel(builder, model);
-
+		
 		
 		System.out.println("test");
 		
@@ -47,12 +49,10 @@ public class GameFrame extends JFrame implements KeyListener {
 		this.eventPerformer = performer;
 
 		this.setVisible(true);
-
-
-
 		
+	    
 	}
-
+	 
 	/**
 	 * Use for research the key who is typed
 	 * @param e

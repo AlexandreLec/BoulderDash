@@ -1,7 +1,9 @@
 package view;
 
 import java.awt.*;
+
 import java.awt.image.ImageObserver;
+
 import model.IBoulderDashModel;
 import model.IElement;
 
@@ -36,6 +38,7 @@ public class ElementBuilder implements IElementBuilder {
 	}
 	
 	private void drawElement(IElement element, Graphics graphics, ImageObserver obs){
+		
 		Graphics2D g2d = (Graphics2D) graphics ;
 		g2d.drawImage(element.getSprite(),element.getPosition().getX()*32,element.getPosition().getY()*32,32,32,obs);
 
@@ -44,11 +47,13 @@ public class ElementBuilder implements IElementBuilder {
 		g2d.setFont(fonte);
 		g2d.setColor(Color.BLACK);
 		g2d.drawString("Diamond"+String.valueOf(this.model.diamondCounter()), 32, 956);
+		
 	}
 
 	@Override
 	public void applyModelToGraphic(Graphics graphics, ImageObserver obs) {
 		drawMine(graphics, obs);
+		
 	}
 
 	public IBoulderDashModel getModel() {
