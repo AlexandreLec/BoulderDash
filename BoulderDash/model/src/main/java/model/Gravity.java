@@ -40,17 +40,19 @@ public class Gravity extends BehaviourMove {
 	@Override
 	public void move() throws Exception{
 		IElement down = element.getMine().getElements()[element.getPosition().getX()][element.getPosition().getY()+1];
+		IElement downr = element.getMine().getElements()[element.getPosition().getX()+1][element.getPosition().getY()+1];
 		IElement right = element.getMine().getElements()[element.getPosition().getX()+1][element.getPosition().getY()];
+		IElement downl = element.getMine().getElements()[element.getPosition().getX()-1][element.getPosition().getY()+1];
 		IElement left = element.getMine().getElements()[element.getPosition().getX()-1][element.getPosition().getY()];
 	if(down == null){
 		this.element.getBehaviour().moveDown();
 	}
-	if(left == null && down == null){
+	if(left == null && down != null && downl == null){
 		this.element.getBehaviour().moveLeft();
 		this.element.getBehaviour().moveDown();
 	}
 	
-	if(right == null && down == null){
+	if(right == null && down != null && downr == null){
 		this.element.getBehaviour().moveRight();
 		this.element.getBehaviour().moveDown();
 	}
