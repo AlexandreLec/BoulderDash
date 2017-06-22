@@ -1,6 +1,8 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import model.dao.level;
 
@@ -22,10 +24,11 @@ public class Mine {
 	/** The model that contain the mine */
 	private BoulderDashModel model;
 	/**  */
-	private ArrayList<IElement> enemy;
+	private CopyOnWriteArrayList<IElement> enemy;
 	
-	private ArrayList<IElement> gravity;
-
+	private CopyOnWriteArrayList<IElement> gravity;
+	
+	private IElement hero;
 
 	/**
 	 * Instantiates the constructor
@@ -34,8 +37,8 @@ public class Mine {
 	public Mine(BoulderDashModel model) throws Exception{
 		this.elements = new IElement[Mine.WIDTH][Mine.HEIGHT];
 		this.model = model;
-		this.enemy = new ArrayList<IElement>();
-		this.gravity = new ArrayList<IElement>();
+		this.enemy = new CopyOnWriteArrayList<IElement>();
+		this.gravity = new CopyOnWriteArrayList<IElement>();
 		this.buildMine();
 	}
 	
@@ -76,7 +79,8 @@ public class Mine {
 						this.setElement(x,y,ExitGate.getInstance(new Position(x,y,Mine.WIDTH,Mine.HEIGHT),this));
 						break;
 					case 'y':
-						this.setElement(x,y,Hero.getInstance(new Position(x,y,Mine.WIDTH,Mine.HEIGHT),this));
+						this.hero = Hero.getInstance(new Position(x,y,Mine.WIDTH,Mine.HEIGHT),this);
+						this.setElement(x,y,this.hero);
 						break;
 					case ' ':
 						this.setElement(x,y,null);
@@ -141,20 +145,41 @@ public class Mine {
 		return model;
 	}
 
-	public ArrayList<IElement> getEnemy() {
+	public CopyOnWriteArrayList<IElement> getEnemy() {
 		return enemy;
+	}
+	
+	public void destroyElement(IElement element){
+		
+		this.elements[element.getPosition().getX()][element.getPosition().getY()] = null;
+		
+		for (IElement e : this.enemy) {
+			if (e.equals(element)) {
+				this.enemy.remove(e);
+			}
+		}
+		
+		for (IElement e : this.gravity) {
+			if (e.equals(element)) {
+				this.enemy.remove(e);
+			}
+		}
 	}
 
 	public void addEnemy(IElement enemy) {
 		this.enemy.add(enemy);
 	}
 
-	public ArrayList<IElement> getGravity() {
+	public CopyOnWriteArrayList<IElement> getGravity() {
 		return gravity;
 	}
 
-	public void addGravity(IElement gravity) {
+	synchronized public void addGravity(IElement gravity) {
 		this.gravity.add(gravity);
+	}
+	
+	public IElement getHero() {
+		return hero;
 	}
 
 }

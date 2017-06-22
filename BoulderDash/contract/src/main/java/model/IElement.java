@@ -47,4 +47,8 @@ public interface IElement {
      * @return the sprite name
      */
 	String getSpriteName();
+
+	Direction getDirection();
+
+	void setDirection(Direction direction);
 }
