@@ -12,8 +12,6 @@ public class BoulderDashPerformer implements IOrderPerformer{
     private IElement hero;
     private IElement enemy;
     private IElement gravity;
-    private IBoulderDashModel mine;
-    
     private Order order;
 
     /**
@@ -33,11 +31,10 @@ public class BoulderDashPerformer implements IOrderPerformer{
 	 */
 	public void play() throws Exception {
        ActualView.start(this.ActualModel, this);
-       this.hero = this.ActualModel.getElementByPosition(1, 1);
-       this.enemy = this.ActualModel.getElementByPosition(12, 6);
-       this.gravity = this.ActualModel.getElementByPosition(2,28);
+       this.hero = this.ActualModel.getHero();
+       this.enemy = this.ActualModel.getEnemy().get(1);
+       this.gravity = this.ActualModel.getGravity().get(1);
        this.gameLoop();
-
 	}
 
 	/**
@@ -48,7 +45,7 @@ public class BoulderDashPerformer implements IOrderPerformer{
 		while(true){
 			this.enemy.getBehaviour().moveAll();
 			this.gravity.getBehaviour().Gravit();
-			Thread.sleep(400);
+			Thread.sleep(200);
 			
 		}
 	}
@@ -166,7 +163,7 @@ public class BoulderDashPerformer implements IOrderPerformer{
 		this.order = order;
 	}
 
-	public void EndGame(){
+	public void EndGame() throws Exception{
 
         if (this.ActualModel.diamondCounter() >= 10)
         System.exit(0);

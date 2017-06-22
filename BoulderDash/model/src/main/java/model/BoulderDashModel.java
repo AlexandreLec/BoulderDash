@@ -1,7 +1,9 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * <h1>The Class BoulderDashModel</h1>
@@ -85,11 +87,31 @@ public class BoulderDashModel extends Observable implements IBoulderDashModel {
 	
 	/**
 	 * Get the number of diamond get by the hero
+	 * @throws Exception 
 	 */
 	@Override
-	public int diamondCounter(){
+	public int diamondCounter() throws Exception{
 		Hero hero = Hero.getInstance();
+			
+		if(hero == null)
+			throw new Exception("Hero is dead");
+		
 		return hero.getDiamonds();
+	}
+	
+	@Override
+	public IElement getHero(){
+		return this.getMine().getHero();
+	}
+	
+	@Override
+	public CopyOnWriteArrayList<IElement> getEnemy(){
+		return this.getMine().getEnemy();
+	}
+	
+	@Override
+	public CopyOnWriteArrayList<IElement> getGravity(){
+		return this.getMine().getGravity();
 	}
 
 	/**

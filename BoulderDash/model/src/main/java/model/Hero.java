@@ -137,6 +137,6 @@ public class Hero extends Element implements IExplosion{
      */
 	@Override
 	public void explosion() {
-
+		System.exit(0);
 	}
 }

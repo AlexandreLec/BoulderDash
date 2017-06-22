@@ -6,17 +6,21 @@ package model;
  * @author Arnaud Rigaut
  * @version 1.1
  */
-public class Enemy extends Element implements IExplosion, IKill {
+public class Enemy extends Element implements IExplosion {
 
     /** Variable who will use for seek sprite **/
     private static String spriteName = "enemy";
+    
+    static Mine mine;
 	
     /**
      * create constructor
      */
     public Enemy(Position position, Mine mine){
     	super(position, setSpriteNameAlea(), mine);
+    	Enemy.mine = mine;
     	behaviour = new Automatic(this);
+    	direction = Direction.LEFT;
     }
 
     /**
@@ -42,21 +46,30 @@ public class Enemy extends Element implements IExplosion, IKill {
 
     /**
      * Come from IExplosion
+     * @throws Exception 
      */
     @Override
-    public void explosion() {
+    synchronized public void explosion() throws Exception {
     	
+    	int x = this.getPosition().getX();
+    	int y = this.getPosition().getY();
+    	int xMax = this.getPosition().getMaxX();
+    	int yMax = this.getPosition().getMaxY();
+
+    	IElement diamond = new Diamond(new Position(x,y,xMax,yMax),Enemy.mine);
+
+    	Enemy.mine.setElement(x, y, diamond);
+
+    	Enemy.mine.addGravity(diamond);
+		/*this.mine.setElement(x+1, y, new Diamond(new Position(x+1,y,xMax,yMax),this.mine));
+		this.mine.setElement(x-1, y, new Diamond(new Position(x-1,y,xMax,yMax),this.mine));
+		this.mine.setElement(x, y+1, new Diamond(new Position(x,y+1,xMax,yMax),this.mine));
+		this.mine.setElement(x, y-1, new Diamond(new Position(x,y-1,xMax,yMax),this.mine));*/
+		System.out.println("kill");
+		//this.getMine().getModel().effectiveChanged();
+		
     }
-
-    /**
-     * Come from IKill
-     * @param element
-     */
-    @Override
-    public void kill(Element element) {
-
-    }
-
+    
     /**
      * Get the name of the enemy's sprite
      * @return The sprite's name

@@ -1,6 +1,8 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.Observer;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * <h1>The Interface IBoulderDashModel.</h1>
@@ -55,6 +57,13 @@ public interface IBoulderDashModel {
 	/**
 	 * Get the number of diamond get by the hero
 	 * @return the number of diamonds collected
+	 * @throws Exception 
 	 */
-	int diamondCounter();
+	int diamondCounter() throws Exception;
+
+	IElement getHero();
+
+	CopyOnWriteArrayList<IElement> getEnemy();
+
+	CopyOnWriteArrayList<IElement> getGravity();
 }

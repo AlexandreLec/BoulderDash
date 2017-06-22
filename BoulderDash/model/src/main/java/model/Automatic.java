@@ -29,66 +29,59 @@ public class Automatic extends BehaviourMove {
 		IElement right = element.getMine().getElements()[element.getPosition().getX()+1][element.getPosition().getY()];
 		IElement left = element.getMine().getElements()[element.getPosition().getX()-1][element.getPosition().getY()];
 		
-		if(up == null && right == null){
-			
-			int alea = (int) (Math.random()*2);
-	
-			switch(alea){
-				case 0:
-					this.element.getBehaviour().moveRight();
-					break;
-				case 1:
-					this.element.getBehaviour().moveUp();
-					break;
-			}
-		}
-		else if(up == null){
-			this.element.getBehaviour().moveUp();
-		}
-		else if(left == null && down == null){
-			int alea = (int) (Math.random()*2);
-			
-			switch(alea){
-				case 0:
+		Direction dir = this.element.getDirection();
+		
+		switch(dir){
+			case LEFT :
+				if(left == null){
 					this.element.getBehaviour().moveLeft();
-					break;
-				case 1:
-					this.element.getBehaviour().moveDown();
-					break;
-			}
-		}
-		else if(right == null && down == null){
-			int alea = (int) (Math.random()*2);
-			
-			switch(alea){
-				case 0:
+				}
+				else if(left.equals(Hero.getInstance())){
+					this.element.getBehaviour().moveLeft();
+					Hero.getInstance().explosion();
+				}
+				else{
+					this.element.setDirection(Direction.DOWN);
+				}
+				break;
+			case RIGHT :
+				if(right == null){
 					this.element.getBehaviour().moveRight();
-					break;
-				case 1:
+				}
+				else if(right.equals(Hero.getInstance())){
+					this.element.getBehaviour().moveRight();
+					Hero.getInstance().explosion();
+				}
+				else{
+					this.element.setDirection(Direction.UP);
+				}
+				break;
+			case UP :
+				if(up == null){
+					this.element.getBehaviour().moveUp();
+				}
+				else if(up.equals(Hero.getInstance())){
+					this.element.getBehaviour().moveUp();
+					Hero.getInstance().explosion();
+				}
+				else{
+					this.element.setDirection(Direction.LEFT);
+				}
+				break;
+			case DOWN :
+				if(down == null){
 					this.element.getBehaviour().moveDown();
-					break;
-			}
+				}
+				else if(down.equals(Hero.getInstance())){
+					this.element.getBehaviour().moveDown();
+					Hero.getInstance().explosion();
+				}
+				else{
+					this.element.setDirection(Direction.RIGHT);
+				}
+				break;
 		}
-		else if(left == null){
-			this.element.getBehaviour().moveLeft();
-		}
-		else{}
 		
-
-		/*int alea = (int) (Math.random()*4);
-		
-		switch(alea){
-			case 0:
-				this.element.getBehaviour().moveDown();
-			case 1:
-				this.element.getBehaviour().moveUp();
-			case 2:
-				this.element.getBehaviour().moveRight();
-			case 3:
-				this.element.getBehaviour().moveLeft();
-			default:
-				this.element.getBehaviour().moveUp();
-		}*/
 	}
 
 }
