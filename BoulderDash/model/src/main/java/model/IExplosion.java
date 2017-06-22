@@ -10,7 +10,8 @@ public interface IExplosion {
 
 	/**
 	* Instantiates the IExplosion
+	 * @throws Exception 
 	*/
-	void explosion();
+	void explosion() throws Exception;
 
 }

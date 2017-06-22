@@ -43,12 +43,17 @@ public class ElementBuilder implements IElementBuilder {
 
 		Font fonte = new Font("TimeRoman", Font.BOLD, 32);
 		g2d.setFont(fonte);
-<<<<<<< HEAD
+
 		g2d.setColor(Color.BLACK);
-		g2d.drawString("Diamond"+String.valueOf(this.model.diamondCounter()), 32, 956);
+		try {
+			g2d.drawString("Diamond"+String.valueOf(this.model.diamondCounter()), 32, 956);
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		g2d.setBackground(Color.RED);
 		
-=======
+
 		g2d.setColor(Color.BLACK);
 
 		try {
@@ -56,7 +61,7 @@ public class ElementBuilder implements IElementBuilder {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
->>>>>>> branch 'master' of https://github.com/AlexandreLec/BoulderDash
+
 	}
 
 	@Override

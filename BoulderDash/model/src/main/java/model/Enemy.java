@@ -61,10 +61,10 @@ public class Enemy extends Element implements IExplosion {
     	Enemy.mine.setElement(x, y, diamond);
 
     	Enemy.mine.addGravity(diamond);
-		/*this.mine.setElement(x+1, y, new Diamond(new Position(x+1,y,xMax,yMax),this.mine));
+		this.mine.setElement(x+1, y, new Diamond(new Position(x+1,y,xMax,yMax),this.mine));
 		this.mine.setElement(x-1, y, new Diamond(new Position(x-1,y,xMax,yMax),this.mine));
 		this.mine.setElement(x, y+1, new Diamond(new Position(x,y+1,xMax,yMax),this.mine));
-		this.mine.setElement(x, y-1, new Diamond(new Position(x,y-1,xMax,yMax),this.mine));*/
+		this.mine.setElement(x, y-1, new Diamond(new Position(x,y-1,xMax,yMax),this.mine));
 		System.out.println("kill");
 		//this.getMine().getModel().effectiveChanged();
 		
