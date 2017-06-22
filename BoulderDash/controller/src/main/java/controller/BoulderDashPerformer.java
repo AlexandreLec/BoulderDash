@@ -4,6 +4,13 @@ import model.IBoulderDashModel;
 import model.IElement;
 import view.IView;
 
+/**
+ * <h1>The class BoulderDashPerformer</h1>
+ *
+ * @author Arnaud Rigaut
+ * @version 1.0
+ */
+
 public class BoulderDashPerformer implements IOrderPerformer{
 
     public IBoulderDashModel ActualModel;
@@ -26,11 +33,12 @@ public class BoulderDashPerformer implements IOrderPerformer{
         ActualModel = BoulderDashModel;
         ActualView = view;
     }
-	
 
-	/**
-	 * method in order to play
-	 */
+
+    /**
+     * Principal method use for get back initial position of some element
+      * @throws Exception
+     */
 	public void play() throws Exception {
        ActualView.start(this.ActualModel, this);
        this.hero = this.ActualModel.getElementByPosition(1, 1);
@@ -40,8 +48,9 @@ public class BoulderDashPerformer implements IOrderPerformer{
 
 	}
 
+
 	/**
-	 * create a loop
+	 * create a loop and a thread for enemy and gravity
 	 * @throws Exception 
 	 */
 	private void gameLoop() throws Exception {
@@ -53,13 +62,6 @@ public class BoulderDashPerformer implements IOrderPerformer{
 		}
 	}
 
-
-	/**
-	 * Sets the ViewSystem
-	 * 
-	 * @param viewSystem
-	 */
-	public void setViewSystem(IView viewSystem) {}
 	
 	/**
 	 * @throws Exception 
@@ -157,15 +159,34 @@ public class BoulderDashPerformer implements IOrderPerformer{
     }
 
 
+    /**
+     * Sets the ViewSystem
+     * @param viewSystem
+     */
+    public void setViewSystem(IView viewSystem) {}
+
+    /**
+     * get actual order
+     * @return
+     */
 	public Order getOrder() {
 		return order;
 	}
 
 
+    /**
+     * set the new order
+     * @param order
+     */
 	public void setOrder(Order order) {
 		this.order = order;
 	}
 
+
+    /**
+     * Metho use when we want end the game
+     * @throws Exception
+     */
 	public void EndGame() throws Exception{
 
             if (this.ActualModel.diamondCounter() < 10)
