@@ -1,5 +1,7 @@
 package model;
 
+import java.util.ArrayList;
+
 import model.dao.level;
 
 /**
@@ -13,12 +15,14 @@ public class Mine {
 
 	/** The height of the mine */ 
 	static int HEIGHT = 30;
-	/** The width of the mine */ 
+	/** The width of the mine */
 	static int WIDTH = 50;
 	/** The tab of the different elements */
 	private IElement[][] elements;
 	/** The model that contain the mine */
 	private BoulderDashModel model;
+	/**  */
+	private ArrayList<IElement> enemy;
 
 
 	/**
@@ -28,6 +32,7 @@ public class Mine {
 	public Mine(BoulderDashModel model) throws Exception{
 		this.elements = new IElement[Mine.WIDTH][Mine.HEIGHT];
 		this.model = model;
+		this.enemy = new ArrayList<IElement>();
 		this.buildMine();
 	}
 	
@@ -70,7 +75,9 @@ public class Mine {
 						this.setElement(x,y,null);
 						break;
 					case 'n':
-						this.setElement(x,y,new Enemy(new Position(x,y,Mine.WIDTH,Mine.HEIGHT),this));
+						IElement enemy = new Enemy(new Position(x,y,Mine.WIDTH,Mine.HEIGHT),this);
+						this.enemy.add(enemy);
+						this.setElement(x,y,enemy);
 						break;
 					}
 			}
@@ -125,6 +132,14 @@ public class Mine {
 	 */
 	public BoulderDashModel getModel() {
 		return model;
+	}
+
+	public ArrayList<IElement> getEnemy() {
+		return enemy;
+	}
+
+	public void addEnemy(IElement enemy) {
+		this.enemy.add(enemy);
 	}
 
 }

@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Iterator;
+
 /**
  * <h1>The Class Automatic Move Behaviour</h1>
  * @author Alexandre LECOMTE
@@ -9,6 +11,14 @@ public class Automatic extends BehaviourMove {
 
 	public Automatic(Element element){
 		super(element);
+	}
+	
+	@Override
+	public void moveAll() throws Exception{
+		Iterator<IElement> iterator = this.element.getMine().getEnemy().iterator();
+		while (iterator.hasNext()) {
+			iterator.next().getBehaviour().move();
+		}
 	}
 	
 	@Override

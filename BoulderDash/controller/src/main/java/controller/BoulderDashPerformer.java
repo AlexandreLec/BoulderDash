@@ -44,8 +44,8 @@ public class BoulderDashPerformer implements IOrderPerformer{
 	 */
 	private void gameLoop() throws Exception {
 		while(true){
-			this.enemy.getBehaviour().move();
-			Thread.sleep(500);
+			this.enemy.getBehaviour().moveAll();
+			Thread.sleep(400);
 		}
 	}
 

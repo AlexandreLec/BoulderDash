@@ -101,4 +101,9 @@ public class BehaviourMove implements IBehaviourMove {
 		this.element.getMine().getModel().effectiveChanged();
 	}
 
+	@Override
+	public void moveAll() throws Exception {
+		
+	}
+
 }
