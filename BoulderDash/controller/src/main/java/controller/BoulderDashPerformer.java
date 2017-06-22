@@ -69,7 +69,7 @@ public class BoulderDashPerformer implements IOrderPerformer{
 			String next = Colision.getDownElement(ActualModel, hero);
 			
 			if(next == "door"){
-				
+                System.exit(0);
 			}
 			else if(next == "diamond"){
 				this.ActualModel.getDiamond();
@@ -89,7 +89,7 @@ public class BoulderDashPerformer implements IOrderPerformer{
 			if(next == "stone"){
 			}
 			else if(next == "door"){
-				
+                EndGame();
 			}
 			else if(next == "diamond"){
 				this.ActualModel.getDiamond();
@@ -114,7 +114,7 @@ public class BoulderDashPerformer implements IOrderPerformer{
 				}
 			}
 			else if(next == "door"){
-				
+                EndGame();
 			}
 			else if(next == "diamond"){
 				this.ActualModel.getDiamond();
@@ -139,7 +139,7 @@ public class BoulderDashPerformer implements IOrderPerformer{
 				}
 			}
 			else if(next == "door"){
-				
+                EndGame();
 			}
 			else if(next == "diamond"){
 				this.ActualModel.getDiamond();
@@ -161,4 +161,10 @@ public class BoulderDashPerformer implements IOrderPerformer{
 	public void setOrder(Order order) {
 		this.order = order;
 	}
+
+	public void EndGame(){
+
+        if (this.ActualModel.diamondCounter() == 10)
+        System.exit(0);
+    }
 }
