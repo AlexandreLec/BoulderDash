@@ -23,6 +23,8 @@ public class Mine {
 	private BoulderDashModel model;
 	/**  */
 	private ArrayList<IElement> enemy;
+	
+	private ArrayList<IElement> gravity;
 
 
 	/**
@@ -33,6 +35,7 @@ public class Mine {
 		this.elements = new IElement[Mine.WIDTH][Mine.HEIGHT];
 		this.model = model;
 		this.enemy = new ArrayList<IElement>();
+		this.gravity = new ArrayList<IElement>();
 		this.buildMine();
 	}
 	
@@ -54,13 +57,17 @@ public class Mine {
 				
 				switch(element){
 					case 'o':
-						this.setElement(x,y,new Stone(new Position(x,y,Mine.WIDTH,Mine.HEIGHT),this));
+						IElement gravit = new Stone(new Position(x,y,Mine.WIDTH,Mine.HEIGHT),this);
+						this.gravity.add(gravit);
+						this.setElement(x,y,gravit);
 						break;
 					case 'x':
 						this.setElement(x,y,new Wall(new Position(x,y,Mine.WIDTH,Mine.HEIGHT),this));
 						break;
 					case 'v':
-						this.setElement(x,y,new Diamond(new Position(x,y,Mine.WIDTH,Mine.HEIGHT),this));
+						gravit = new Diamond(new Position(x,y,Mine.WIDTH,Mine.HEIGHT),this);
+						this.gravity.add(gravit);
+						this.setElement(x,y,gravit);
 						break;
 					case '.':
 						this.setElement(x,y,new Dirt(new Position(x,y,Mine.WIDTH,Mine.HEIGHT),this));
@@ -140,6 +147,14 @@ public class Mine {
 
 	public void addEnemy(IElement enemy) {
 		this.enemy.add(enemy);
+	}
+
+	public ArrayList<IElement> getGravity() {
+		return gravity;
+	}
+
+	public void addGravity(IElement gravity) {
+		this.gravity.add(gravity);
 	}
 
 }
