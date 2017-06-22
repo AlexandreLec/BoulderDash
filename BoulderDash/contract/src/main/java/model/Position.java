@@ -37,109 +37,109 @@ public class Position {
 			this.maxY = maxY;
 		
 		if (maxX < 0) 
-			throw new Exception("Xmax out of range");
-		else 
-			this.maxX = maxX;
+            throw new Exception("Xmax out of range");
+        else
+            this.maxX = maxX;
 		
-		if (x < 0 || x > maxX) 
-			throw new Exception("X out of range");
-		else 
-			this.x = x;
+        if (x < 0 || x > maxX)
+            throw new Exception("X out of range");
+        else
+            this.x = x;
 		
-		if (y < 0 || y > maxY) 
-			throw new Exception("Y out of range");
-		else 
-			this.y = y;
-			this.maxY = maxY;
-	}
+        if (y < 0 || y > maxY)
+            throw new Exception("Y out of range");
+        else
+            this.y = y;
+        this.maxY = maxY;
+    }
 	
-	/**
-	 * Instantiate a new Position
-	 * @param position
-	 * 		The position
-	 */
-	public Position(Position position){
-		this.x = position.getX();
-		this.y = position.getY();
-		this.maxX = position.getMaxX();
-		this.maxY = position.getMaxY();
-	}
+    /**
+     * Instantiate a new Position
+     * @param position
+     * 		The position
+     */
+    public Position(Position position){
+        this.x = position.getX();
+        this.y = position.getY();
+        this.maxX = position.getMaxX();
+        this.maxY = position.getMaxY();
+    }
 
-	/**
-	 * Gets the x coordinate
-	 * @return the x coordinate
-	 */
-	public int getX() {
-		return x;
-	}
+    /**
+     * Gets the x coordinate
+     * @return the x coordinate
+     */
+    public int getX() {
+        return x;
+    }
 
-	/**
-	 * Sets the x coordinate
-	 * @param x
-	 * 		The x coordinate to set
-	 * @throws Exception 
-	 */
-	public void setX(int x) throws Exception {
+    /**
+     * Sets the x coordinate
+     * @param x
+     * 		The x coordinate to set
+     * @throws Exception
+     */
+    public void setX(int x) throws Exception {
 		
-		if (x < 0 || x > maxX) 
-			throw new Exception("X out of range");
-		else 
-			this.x = x;
-	}
+        if (x < 0 || x > maxX)
+            throw new Exception("X out of range");
+        else
+            this.x = x;
+    }
 
-	/**
-	 * Gets the y coordinate
-	 * @return the y coordinate
-	 */
-	public int getY() {
-		return y;
-	}
+    /**
+     * Gets the y coordinate
+     * @return the y coordinate
+     */
+    public int getY() {
+        return y;
+    }
 
-	/**
-	 * Sets the y coordinate
-	 * @param y
-	 * 		The y coordinate to set
-	 * @throws Exception 
-	 */
-	public void setY(int y) throws Exception {
+    /**
+     * Sets the y coordinate
+     * @param y
+     * 		The y coordinate to set
+     * @throws Exception
+     */
+    public void setY(int y) throws Exception {
 		
-		if (y < 0 || y > maxY) 
-			throw new Exception("Y out of range");
-		else 
-			this.y = y;
-	}
+        if (y < 0 || y > maxY)
+            throw new Exception("Y out of range");
+        else
+            this.y = y;
+    }
 
-	/**
-	 * Gets the max x coordinate
-	 * @return the max x coordinate
-	 */
-	public int getMaxX() {
-		return maxX;
-	}
+    /**
+     * Gets the max x coordinate
+     * @return the max x coordinate
+     */
+    public int getMaxX() {
+        return maxX;
+    }
 
-	/**
-	 * Sets the max x coordinate
-	 * @param maxX
-	 * 		The max x coordinate to set
-	 */
-	public void setMaxX(int maxX) {
-		this.maxX = maxX;
-	}
+    /**
+     * Sets the max x coordinate
+     * @param maxX
+     * 		The max x coordinate to set
+     */
+    public void setMaxX(int maxX) {
+        this.maxX = maxX;
+    }
 
-	/**
-	 * Gets the max y coordinate
-	 * @return the max y coordinate
-	 */
-	public int getMaxY() {
-		return maxY;
-	}
+    /**
+     * Gets the max y coordinate
+     * @return the max y coordinate
+     */
+    public int getMaxY() {
+        return maxY;
+    }
 
-	/**
-	 * Sets the max y coordinate
-	 * @param maxY
-	 * 		The max y coordinate to set
-	 */
-	public void setMaxY(int maxY) {
-		this.maxY = maxY;
-	}
+    /**
+     * Sets the max y coordinate
+     * @param maxY
+     * 		The max y coordinate to set
+     */
+    public void setMaxY(int maxY) {
+        this.maxY = maxY;
+    }
 }

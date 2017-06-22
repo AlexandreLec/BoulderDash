@@ -26,8 +26,8 @@ public class ElementBuilder implements IElementBuilder {
 			for (int y = 0; y < 30; y++) {
 					
 					if(elements[x][y] == null){
-						graphics.fillRect(x*32, y*32, 32, 32);;
-					}
+						graphics.fillRect(x*32, y*32, 32, 32);
+                    }
 					else{
 						drawElement(elements[x][y],graphics, obs);
 					}

@@ -11,5 +11,5 @@ public interface IGet {
      * method description for get
      * @param hero
      */
-    public void get(Hero hero);
+    void get(Hero hero);
 }
