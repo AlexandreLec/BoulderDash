@@ -42,6 +42,7 @@ public class Enemy extends Element {
 			default:
 				return "enemy";
 		}
+
     }
     
     /**

@@ -7,16 +7,36 @@ import java.awt.image.ImageObserver;
 import model.IBoulderDashModel;
 import model.IElement;
 
+/**
+ * <h1>The class ElementBuilder</h1>
+ *
+ * @author Arnaud Rigaut
+ * @version 1.0
+ */
+
 public class ElementBuilder implements IElementBuilder {
 	
 	 private IBoulderDashModel model;
 
+    /**
+     * instantiate BoulderDashModel
+     * @param BoulderDashModel
+     */
 	public ElementBuilder(IBoulderDashModel BoulderDashModel){
 
 		this.model = BoulderDashModel;
-	}
+}
 
-	private void drawMine(Graphics graphics, ImageObserver obs){
+
+    /**
+     * method use for draw the visual of our mine. Set in a double enter tab all element.
+     * If an element "null" exist, replace it by a black rectangle who sizes is 32*32.
+     * @param graphics
+     * @param obs
+     * @throws Exception
+     */
+		private void drawMine(Graphics graphics, ImageObserver obs){
+
 		
 		System.out.println("Refresh");
 		
@@ -34,7 +54,15 @@ public class ElementBuilder implements IElementBuilder {
 			}
 		}
 	}
-	
+
+    /**
+     * place in a graphics who name's g2d, all element
+     * After add some features in our program. In particulary the number of diamond get by the hero
+     * @param element
+     * @param graphics
+     * @param obs
+     * @throws Exception
+     */
 	private void drawElement(IElement element, Graphics graphics, ImageObserver obs) {
 		
 		Graphics2D g2d = (Graphics2D) graphics ;
@@ -43,21 +71,31 @@ public class ElementBuilder implements IElementBuilder {
 
 		Font fonte = new Font("TimeRoman", Font.BOLD, 32);
 		g2d.setFont(fonte);
-		g2d.setColor(Color.BLACK);
+
 		try {
 			g2d.drawString("Diamond"+String.valueOf(this.model.diamondCounter()), 32, 956);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		g2d.setBackground(Color.RED);
-	}
 
+	} 
+		
+    /**
+     * @see IElementBuilder
+     * @param graphics
+     * @param obs
+     * @throws Exception
+     */
 	@Override
 	public void applyModelToGraphic(Graphics graphics, ImageObserver obs) {
 		drawMine(graphics, obs);
 		
 	}
 
+
+    /**
+     * @return model
+     */
 	public IBoulderDashModel getModel() {
 		return model;
 	}
