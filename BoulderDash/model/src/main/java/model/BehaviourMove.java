@@ -1,10 +1,14 @@
 package model;
 
+/**
+ * <h1>The Class Behaviour Move</h1>
+ * @author Alexandre LECOMTE
+ * @version 1.1
+ */
 public class BehaviourMove implements IBehaviourMove {
 
 	/** The element */
 	protected Element element;
-	/** The mine of the Element */
 	
 	/** Instantiate a new move's behaviour*/
 	public BehaviourMove(Element element){
@@ -12,7 +16,7 @@ public class BehaviourMove implements IBehaviourMove {
 	}
 	
 	@Override
-	public void move() {
+	public void move() throws Exception {
 		// TODO Auto-generated method stub
 		
 	}

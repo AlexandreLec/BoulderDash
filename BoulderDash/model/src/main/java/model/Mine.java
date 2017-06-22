@@ -1,10 +1,12 @@
 package model;
 
+import model.dao.level;
+
 /**
  * <h1>The Class Element</h1>
  *
  * @author Arnaud Rigaut
- * @version 1.0
+ * @version 1.2
  */
 
 public class Mine {
@@ -15,7 +17,7 @@ public class Mine {
 	static int WIDTH = 50;
 	/** The tab of the different elements */
 	private IElement[][] elements;
-	
+	/** The model that contain the mine */
 	private BoulderDashModel model;
 
 
@@ -23,21 +25,104 @@ public class Mine {
 	 * Instantiates the constructor
 	 * @throws Exception 
 	 */
-	public Mine(BoulderDashModel model){
+	public Mine(BoulderDashModel model) throws Exception{
 		this.elements = new IElement[Mine.WIDTH][Mine.HEIGHT];
 		this.model = model;
+		this.buildMine();
 	}
 	
+	/**
+	 * Builds the mine
+	 * @throws Exception 
+	 */
+	private void buildMine() throws Exception{
+		
+		String currentLevel = loadLevel("level5");
+		int i = 0;
+		for(int y = 0 ;y<Mine.HEIGHT; y++){
+			for (int x = 0; x<Mine.WIDTH;x++){
+					
+				char element = currentLevel.charAt(i);
+					
+				i++; 
+				System.out.print(element);
+				
+				switch(element){
+					case 'o':
+						this.setElement(x,y,new Stone(new Position(x,y,Mine.WIDTH,Mine.HEIGHT),this));
+						break;
+					case 'x':
+						this.setElement(x,y,new Wall(new Position(x,y,Mine.WIDTH,Mine.HEIGHT),this));
+						break;
+					case 'v':
+						this.setElement(x,y,new Diamond(new Position(x,y,Mine.WIDTH,Mine.HEIGHT),this));
+						break;
+					case '.':
+						this.setElement(x,y,new Dirt(new Position(x,y,Mine.WIDTH,Mine.HEIGHT),this));
+						break;
+					case 'u':
+						this.setElement(x,y,ExitGate.getInstance(new Position(x,y,Mine.WIDTH,Mine.HEIGHT),this));
+						break;
+					case 'y':
+						this.setElement(x,y,Hero.getInstance(new Position(x,y,Mine.WIDTH,Mine.HEIGHT),this));
+						break;
+					case ' ':
+						this.setElement(x,y,null);
+						break;
+					case 'n':
+						this.setElement(x,y,new Enemy(new Position(x,y,Mine.WIDTH,Mine.HEIGHT),this));
+						break;
+					}
+			}
+		}
+	}
+	
+	/**
+	 * Load the level, get it from the database
+	 * @param levelToLoad
+	 * 		The level to load 
+	 * @return a String that contain the level template
+	 */
+	private String loadLevel(String levelToLoad){
+		
+		String result = "";
+		
+		try {
+			result = level.getLevel(levelToLoad);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+	
+	/**
+	 * Get a tab that contain all the mine's elements
+	 * @return a tab of Elements
+	 */
 	public IElement[][] getElements() {
 		
 		return elements;
 	}
 	
+	/**
+	 * Add a element in the mine
+	 * @param x
+	 * 		The x column where add the element
+	 * @param y
+	 * 		The y column where add the element
+	 * @param add
+	 * 		The element to add
+	 */
 	public void setElement(int x, int y, IElement add) {
 		
 		this.elements[x][y] = add;
 	}
 
+	/**
+	 * Get the model of the mine
+	 * @return the model of the mine
+	 */
 	public BoulderDashModel getModel() {
 		return model;
 	}

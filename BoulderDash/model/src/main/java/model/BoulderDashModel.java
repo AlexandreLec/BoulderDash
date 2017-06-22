@@ -3,13 +3,11 @@ package model;
 import java.util.Observable;
 import java.util.Observer;
 
-import model.dao.level;
-
 /**
  * <h1>The Class BoulderDashModel</h1>
  *
  * @author Alexandre Lecomte
- * @version 1.2
+ * @version 1.3
  */
 public class BoulderDashModel extends Observable implements IBoulderDashModel {
 
@@ -30,7 +28,6 @@ public class BoulderDashModel extends Observable implements IBoulderDashModel {
 	 */
 	@Override
 	public IElement[][] getElements() {
-		
 		return this.mine.getElements();
 	}
 	
@@ -54,7 +51,7 @@ public class BoulderDashModel extends Observable implements IBoulderDashModel {
 	 */
 	@Override
 	public void addElement(IElement element){
-		
+		this.mine.setElement(element.getPosition().getX(), element.getPosition().getY(), element);
 	}
 	
 	/**
@@ -64,61 +61,15 @@ public class BoulderDashModel extends Observable implements IBoulderDashModel {
 	 */
 	@Override
 	public void removeElement(IElement element){
-	
+		this.mine.setElement(element.getPosition().getX(), element.getPosition().getY(), null);
 	}
 		
+	/**
+	 * Notify the model's observer (the view) that it changed values
+	 */
 	public void effectiveChanged(){
-		System.out.println("test2");
 		this.setChanged();
 		this.notifyObservers();
-	}
-
-	
-	/**
-	 * Builds the mine
-	 * @throws Exception 
-	 */
-	@Override
-	public void buildMine() throws Exception{
-		
-		String currentLevel = loadLevel("level5");
-		int i = 0;
-		for(int y = 0 ;y<Mine.HEIGHT; y++){
-			for (int x = 0; x<Mine.WIDTH;x++){
-					
-				char element = currentLevel.charAt(i);
-					
-				i++; 
-				System.out.print(element);
-				
-				switch(element){
-					case 'o':
-						this.mine.setElement(x,y,new Stone(new Position(x,y,Mine.WIDTH,Mine.HEIGHT),this.mine));
-						break;
-					case 'x':
-						this.mine.setElement(x,y,new Wall(new Position(x,y,Mine.WIDTH,Mine.HEIGHT),this.mine));
-						break;
-					case 'v':
-						this.mine.setElement(x,y,new Diamond(new Position(x,y,Mine.WIDTH,Mine.HEIGHT),this.mine));
-						break;
-					case '.':
-						this.mine.setElement(x,y,new Dirt(new Position(x,y,Mine.WIDTH,Mine.HEIGHT),this.mine));
-						break;
-					case 'u':
-						this.mine.setElement(x,y,ExitGate.getInstance(new Position(x,y,Mine.WIDTH,Mine.HEIGHT),this.mine));
-						break;
-					case 'y':
-						this.mine.setElement(x,y,Hero.getInstance(new Position(x,y,Mine.WIDTH,Mine.HEIGHT),this.mine));
-						break;
-					case ' ':
-						this.mine.setElement(x,y,null);
-						break;
-					case 'n':
-						this.mine.setElement(x,y,new Enemy(new Position(x,y,Mine.WIDTH,Mine.HEIGHT),this.mine));
-						break;
-					}
-			}
-		}
 	}
 	
 	/**
@@ -139,25 +90,6 @@ public class BoulderDashModel extends Observable implements IBoulderDashModel {
 	public int diamondCounter(){
 		Hero hero = Hero.getInstance();
 		return hero.getDiamonds();
-	}
-
-	/**
-	 * Load the level, get it from the database
-	 * @param levelToLoad
-	 * 		The level to load 
-	 * @return a String that contain the level template
-	 */
-	private String loadLevel(String levelToLoad){
-		
-		String result = "";
-		
-		try {
-			result = level.getLevel(levelToLoad);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-		return result;
 	}
 
 	/**

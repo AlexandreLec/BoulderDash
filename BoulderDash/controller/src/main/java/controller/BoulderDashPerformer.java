@@ -10,6 +10,7 @@ public class BoulderDashPerformer implements IOrderPerformer{
     public IView ActualView;
     
     private IElement hero;
+    private IElement enemy;
     private IBoulderDashModel mine;
     
     private Order order;
@@ -30,16 +31,23 @@ public class BoulderDashPerformer implements IOrderPerformer{
 	 * method in order to play
 	 */
 	public void play() throws Exception {
-       ActualModel.buildMine();
        ActualView.start(this.ActualModel, this);
        this.hero = this.ActualModel.getElementByPosition(1, 1);
+       this.enemy = this.ActualModel.getElementByPosition(12, 6);
+       this.gameLoop();
 
 	}
 
 	/**
 	 * create a loop
+	 * @throws Exception 
 	 */
-	private void gameLoop() {}
+	private void gameLoop() throws Exception {
+		while(true){
+			this.enemy.getBehaviour().move();
+			Thread.sleep(500);
+		}
+	}
 
 
 	/**
