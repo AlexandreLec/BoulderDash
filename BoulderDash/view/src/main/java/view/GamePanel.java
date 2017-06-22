@@ -15,9 +15,8 @@ import model.IBoulderDashModel;
  * @version 1.0
  */
 public class GamePanel extends JPanel implements Observer {
-	
-	
-	
+			
+			
 	/**
 	 * Generated Serialized ID
 	 */
@@ -26,6 +25,7 @@ public class GamePanel extends JPanel implements Observer {
 	private IElementBuilder elementBuilder;
 	
 	public GamePanel(IElementBuilder builder, IBoulderDashModel model){
+		
 
 		this.elementBuilder = builder;
 		
@@ -39,6 +39,7 @@ public class GamePanel extends JPanel implements Observer {
 	 */
 	@Override
 	public void update(Observable o, Object arg) {
+		
 		repaint();
 	}
 	

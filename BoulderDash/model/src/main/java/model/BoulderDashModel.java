@@ -3,7 +3,6 @@ package model;
 import java.util.Observable;
 import java.util.Observer;
 
-<<<<<<< HEAD
 
 import model.dao.level;
 
