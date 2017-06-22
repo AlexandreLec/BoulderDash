@@ -105,5 +105,9 @@ public class BehaviourMove implements IBehaviourMove {
 	public void moveAll() throws Exception {
 		
 	}
+	@Override
+	public void Gravit() throws Exception{
+		
+	}
 
 }
