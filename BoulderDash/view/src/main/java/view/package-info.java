@@ -1,7 +1,7 @@
 /**
  * Provides all classes for the view component.
- *
- * @author Jean-Aymeric DIET jadiet@cesi.fr
- * @version 1.0
+ * 
+ * @author Alexandre LECOMTE alexandre.lecomte@viacesi.fr
+ * @version 1.2
  */
 package view;
