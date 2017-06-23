@@ -172,9 +172,29 @@ public class Mine {
 
 	/**
 	 * Method for add an enemy
-	 * @param enemy
+	 * @param enemy.
 	 * 		Name of enemy to add
 	 */
+	public void destroyDiamond(IElement element) throws Exception{
+	this.elements[element.getPosition().getX()][element.getPosition().getY()] = new Background(new Position(element.getPosition().getX(),element.getPosition().getY(),Mine.WIDTH,Mine.HEIGHT), this);
+	
+	for (IElement e : this.gravity) {
+		if (e.equals(element)) {
+			this.gravity.remove(e);
+		}
+	}
+	
+	for (IElement e : this.gravity) {
+		if (e.equals(element)) {
+			this.gravity.remove(e);
+		}
+	}
+	
+	if(this.hero.equals(element)){
+		this.hero = null;
+	}
+	}
+	
 	public void addEnemy(IElement enemy) {
 		this.enemy.add(enemy);
 	}

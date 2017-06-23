@@ -7,7 +7,7 @@ package model;
  * @version 1.1
  */
 public class Hero extends Element implements IExplosion{
-	
+
 	
 	private static String SPRITE = "up";
 	private static Hero hero;
@@ -70,6 +70,10 @@ public class Hero extends Element implements IExplosion{
      */
 	public int getDiamonds() {
 		return diamonds;
+
+	
+		
+		
 	}
 
     /**

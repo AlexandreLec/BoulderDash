@@ -32,7 +32,9 @@ public class Diamond extends Element implements IGet, IKill {
     @Override
     public void get(Hero hero) throws Exception {
     	hero.setDiamonds(hero.getDiamonds()+1);
+    	behaviour = new Fixe(this);
     	this.getMine().destroyElement(this);
+    	
     }
 
     /**
