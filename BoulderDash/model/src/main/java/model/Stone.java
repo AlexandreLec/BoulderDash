@@ -12,8 +12,8 @@ public class Stone extends Element{
     private final static String STRING = "stone";
 
     /** constructor of Stone */
-    public Stone(Position positon, Mine mine){
-        super(positon, STRING, mine);
+    public Stone(Position position, Mine mine){
+        super(position, STRING, mine);
         behaviour = new Gravity(this);
     }
 }

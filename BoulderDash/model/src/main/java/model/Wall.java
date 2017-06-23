@@ -12,9 +12,9 @@ public class Wall extends Element{
     /** Variable who will use for seek sprite **/
     private final static String STRING = "wall";
 
-    /** constructor of ExitGatee */
-    public Wall(Position positon, Mine mine){
-        super(positon, STRING, mine);
+    /** constructor of ExitGate */
+    public Wall(Position position, Mine mine){
+        super(position, STRING, mine);
         behaviour = new Fixe(this);
     }
 }

@@ -2,7 +2,7 @@ package view;
 
 
 /**
- * <h1>The interface IEventProformer</h1>
+ * <h1>The interface IEventPerformer</h1>
  *
  * @author Arnaud Rigaut
  * @version 1.0

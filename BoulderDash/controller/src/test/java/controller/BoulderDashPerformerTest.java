@@ -33,7 +33,7 @@ public class BoulderDashPerformerTest {
         try {
         	this.controller.EndGame(8);
         }catch (final Exception e){
-            final String excepted = "Not enought diamond";
+            final String excepted = "Not enough diamond";
             assertEquals(excepted, e.getMessage());
         }
     }

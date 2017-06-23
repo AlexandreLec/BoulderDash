@@ -96,14 +96,14 @@ public class BoulderDashPerformer implements IOrderPerformer{
     public void setViewSystem(IView viewSystem) {}
 
     /**
-     * Metho use when we want end the game
+     * Method use when we want end the game
      * @throws Exception
-	 * 		Exception not enought diamond
+	 * 		Exception not enough diamond
      */
 	public void EndGame(int diamond) throws Exception{
 
             if (diamond < 10)
-                throw new Exception("Not enought diamond");
+                throw new Exception("Not enough diamond");
             else
                 this.ActualModel.setGame(false);
     }

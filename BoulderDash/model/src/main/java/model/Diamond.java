@@ -12,13 +12,13 @@ public class Diamond extends Element implements IGet, IKill {
 
     /**
      * Constructor of Diamond
-      * @param positon
+      * @param position
      *      Find diamond position
      *  @param mine
      *      Get the actual mine
      */
-    public Diamond(Position positon, Mine mine){
-        super(positon, STRING, mine);
+    public Diamond(Position position, Mine mine){
+        super(position, STRING, mine);
         behaviour = new Gravity(this);
     }
 

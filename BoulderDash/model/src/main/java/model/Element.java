@@ -40,7 +40,7 @@ public class Element implements IElement {
     /**
      * Get the sprite in the database
      * @param sprite
-     * 		The sprit's name to load
+     * 		The sprite's name to load
      * @return the sprite's image
      */
     public static Image loadSprite(String sprite){
@@ -52,7 +52,7 @@ public class Element implements IElement {
 
 
 		if(result == null){
-			System.out.println("eereur");
+			System.out.println("error");
 		}
 		
 		return result;
