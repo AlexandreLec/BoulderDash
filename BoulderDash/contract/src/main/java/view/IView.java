@@ -18,6 +18,14 @@ public interface IView {
      *            the message
      */
     void displayMessage(String message);
-    
+
+
+    /**
+     * start the game view
+     * @param model
+     *      Get actual Model
+     * @param order
+     *      Get the order
+     */
     void start(IBoulderDashModel model, IOrderPerformer order);
 }

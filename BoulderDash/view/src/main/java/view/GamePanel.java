@@ -35,7 +35,9 @@ public class GamePanel extends JPanel implements Observer {
 	/**
 	 * the methode create from Observable
 	 * @param o
+	 * 		observable name
 	 * @param arg
+	 * 		objet name to update
 	 */
 	@Override
 	public void update(Observable o, Object arg) {
@@ -45,6 +47,8 @@ public class GamePanel extends JPanel implements Observer {
 	
 	/**
 	 * allows to paint the component on the frame
+	 * @param g
+	 * 		name the graphic
 	 */
 	public void paintComponent(Graphics g){
 		

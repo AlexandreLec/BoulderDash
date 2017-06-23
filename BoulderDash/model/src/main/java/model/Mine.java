@@ -30,7 +30,8 @@ public class Mine {
 
 	/**
 	 * Instantiates the constructor
-	 * @throws Exception 
+	 * @throws Exception
+	 *		BuildMine exception
 	 */
 	public Mine(BoulderDashModel model) throws Exception{
 		this.elements = new IElement[Mine.WIDTH][Mine.HEIGHT];
@@ -42,7 +43,8 @@ public class Mine {
 	
 	/**
 	 * Builds the mine
-	 * @throws Exception 
+	 * @throws Exception
+	 * 		position Exception
 	 */
 	private void buildMine() throws Exception{
 		
@@ -168,18 +170,36 @@ public class Mine {
 		}
 	}
 
+	/**
+	 * Metho for add an enemy
+	 * @param enemy
+	 * 		Name of enemy to add
+	 */
 	public void addEnemy(IElement enemy) {
 		this.enemy.add(enemy);
 	}
 
+	/**
+	 * Use for copy and write on a array list
+	 * @return gravity
+	 */
 	public CopyOnWriteArrayList<IElement> getGravity() {
 		return gravity;
 	}
 
+	/**
+	 * try to synchronise thread
+	 * @param gravity
+	 * 		element affect by  gravity
+	 */
 	public void addGravity(IElement gravity) {
 		this.gravity.add(gravity);
 	}
-	
+
+	/**
+	 * Method for get the hero
+	 * @return hero
+	 */
 	public IElement getHero() {
 		return hero;
 	}

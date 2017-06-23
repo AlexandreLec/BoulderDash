@@ -22,9 +22,11 @@ public class ExitGate extends Element{
 
 
     /**
-     *
+     * Get the exitGate
      * @param position
+     *      get the Exit Gate position
      * @param mine
+     *      Get the actual mine
      * @return
      */
     public static ExitGate getInstance(Position position, Mine mine){

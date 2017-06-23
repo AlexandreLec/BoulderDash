@@ -20,11 +20,14 @@ public class BoulderDashPerformer implements IOrderPerformer{
     private IElement hero;
     private IElement enemy;
     private IElement gravity;
+    private Order order;
 
     /**
      * Create constructor
       * @param BoulderDashModel
+     *      Use for set the actual model
      * @param view
+     *      Use for set the actual view
      */
 	public BoulderDashPerformer(IBoulderDashModel BoulderDashModel, IView view) {
 
@@ -37,6 +40,7 @@ public class BoulderDashPerformer implements IOrderPerformer{
 	/**
      * Principal method use for get back initial position of some element
       * @throws Exception
+     *      Game loop exception
      */
 	public void play() throws Exception {
        ActualView.start(this.ActualModel, this);
@@ -48,7 +52,8 @@ public class BoulderDashPerformer implements IOrderPerformer{
 
 	/**
 	 * create a loop and a thread for enemy and gravity
-	 * @throws Exception 
+	 * @throws Exception
+     *      thread exception
 	 */
 	private void gameLoop() throws Exception {
 		while(this.hero != null){
@@ -59,12 +64,13 @@ public class BoulderDashPerformer implements IOrderPerformer{
 	}
 	
 	/**
-	 * @throws Exception 
+	 * @throws Exception
+	 * 		Thread Exception
 	 * @see IOrderPerformer
 	 */
 	@Override
 	public void OrderPerform(Order order) throws Exception {
-		
+
 		if (order == Order.DOWN){
 			this.hero.setDirection(Direction.DOWN);
 	    }
@@ -85,12 +91,14 @@ public class BoulderDashPerformer implements IOrderPerformer{
     /**
      * Sets the ViewSystem
      * @param viewSystem
+	 * 		the actual view
      */
     public void setViewSystem(IView viewSystem) {}
 
     /**
      * Metho use when we want end the game
      * @throws Exception
+	 * 		Exception not enought diamond
      */
 	public void EndGame(int diamond) throws Exception{
 

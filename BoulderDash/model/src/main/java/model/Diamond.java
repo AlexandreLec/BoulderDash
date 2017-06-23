@@ -13,6 +13,9 @@ public class Diamond extends Element implements IGet, IKill {
     /**
      * Constructor of Diamond
       * @param positon
+     *      Find diamond position
+     *  @param mine
+     *      Get the actual mine
      */
     public Diamond(Position positon, Mine mine){
         super(positon, STRING, mine);
@@ -22,7 +25,9 @@ public class Diamond extends Element implements IGet, IKill {
     /**
      * @see IGet
      * @param hero
-     * @throws Exception 
+     *      Get the hero element
+     * @throws Exception
+     *      Destroy element execption
      */
     @Override
     public void get(Hero hero) throws Exception {
@@ -33,6 +38,7 @@ public class Diamond extends Element implements IGet, IKill {
     /**
      * @see IKill
      * @param element
+     *      Get element able to be kill
      */
     @Override
     public void kill(Element element) {

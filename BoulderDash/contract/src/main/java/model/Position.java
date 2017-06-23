@@ -27,7 +27,8 @@ public class Position {
 	 * 		The max position along x axis
 	 * @param maxY
 	 * 		The max position along y axis
-	 * @throws Exception 
+	 * @throws Exception
+     *      max position is out of range
 	 */
 	public Position(int x, int y, int maxX, int maxY) throws Exception {
 		
@@ -78,6 +79,7 @@ public class Position {
      * @param x
      * 		The x coordinate to set
      * @throws Exception
+     *      x coordinate is out of range
      */
     public void setX(int x) throws Exception {
 		
@@ -100,6 +102,7 @@ public class Position {
      * @param y
      * 		The y coordinate to set
      * @throws Exception
+     *      y coordinate is out of range
      */
     public void setY(int y) throws Exception {
 		

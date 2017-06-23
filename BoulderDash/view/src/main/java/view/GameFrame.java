@@ -24,8 +24,13 @@ public class GameFrame extends JFrame implements KeyListener {
 	/**
 	 * Create the constructor of GameFrame
 	 * @param title
+	 * 		For the title of frame
 	 * @param performer
-	 * @param observable
+	 *		For the event perform
+	 * @param builder
+	 *		Use for set what element to built
+	 * @param model
+	 * 		For set a model
 	 */
 	public GameFrame(String title, IEventPerformer performer, IElementBuilder builder, IBoulderDashModel model){
 		
@@ -71,6 +76,7 @@ public class GameFrame extends JFrame implements KeyListener {
 	/**
 	 * Use for research the key who is typed
 	 * @param e
+	 * 		Name of key event
 	 */
 	@Override
 	public void keyTyped(KeyEvent e) {
@@ -81,6 +87,7 @@ public class GameFrame extends JFrame implements KeyListener {
 	/**
 	 * Use for research the key who is pressed
 	 * @param e
+	 * 		Name of key event
 	 */
 	@Override
 	public void keyPressed(KeyEvent e) {
@@ -95,6 +102,7 @@ public class GameFrame extends JFrame implements KeyListener {
 	/**
 	 * Use for research the key who is released
 	 * @param e
+	 * 		Name of key event
 	 */
 	@Override
 	public void keyReleased(KeyEvent e) {

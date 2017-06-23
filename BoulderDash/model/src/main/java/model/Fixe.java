@@ -9,6 +9,11 @@ package model;
 
 public class Fixe extends BehaviourMove {
 
+	/**
+	 * set the element to fixe
+	 * @param element
+	 * 		get the element
+	 */
 	public Fixe(Element element) {
 		super(element);
 	}

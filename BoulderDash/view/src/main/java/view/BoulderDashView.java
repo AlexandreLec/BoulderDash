@@ -22,7 +22,9 @@ public class BoulderDashView implements Runnable, IView {
     /**
      * Set the curent model and take the actual order
      * @param model
+	 * 		Use for set the actual model
      * @param order
+     *      Use for set the order perform
      */
 	public void start(IBoulderDashModel model, IOrderPerformer order) {
         this.OrderPerformer = order;
@@ -34,6 +36,7 @@ public class BoulderDashView implements Runnable, IView {
     /**
      * @see IView
      * @param message
+     *      the meesage to display
      */
 	@Override
 	public void displayMessage(String message) {

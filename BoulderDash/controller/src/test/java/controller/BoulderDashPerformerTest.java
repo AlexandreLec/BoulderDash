@@ -26,6 +26,7 @@ public class BoulderDashPerformerTest {
     /**
      * Test if we can't end the game in case of diamondCounter is <10
      * @throws Exception
+     *      excepted number of diamond
      */
     @Test
     public void testEndGameNoDiamond() throws Exception {

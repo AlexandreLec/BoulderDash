@@ -24,6 +24,7 @@ public class PositionTest {
 	/**
 	 *  Instantiate a position before each test
 	 * @throws Exception
+	 * 		Position Exception
 	 */
 	@Before
 	public void setUp() throws Exception {
@@ -131,7 +132,8 @@ public class PositionTest {
 
 	/**
 	 * Test set the x coordinate of a position
-	 * @throws Exception 
+	 * @throws Exception
+	 * 		Positon Exception
 	 */
 	@Test
 	public void testSetX() throws Exception {
@@ -151,7 +153,8 @@ public class PositionTest {
 
 	/**
 	 * Test set the y coordinate of a position
-	 * @throws Exception 
+	 * @throws Exception
+	 *		Position Exception
 	 */
 	@Test
 	public void testSetY() throws Exception {

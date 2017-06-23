@@ -32,7 +32,8 @@ public interface IElement {
 
     /**
      * Sets the sprite of the element
-     * @param the sprite
+     * @param sprite
+     *      strite want to apply
      */
     void setSprite(String sprite);
     
@@ -48,7 +49,16 @@ public interface IElement {
      */
 	String getSpriteName();
 
+    /**
+     * Get the direction of a element
+     * @return the direction of the element
+     */
 	Direction getDirection();
 
+    /**
+     * Set the direction of a element
+     * @param direction
+     *      direction like up, down...
+     */
 	void setDirection(Direction direction);
 }

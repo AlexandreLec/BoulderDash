@@ -10,6 +10,7 @@ public interface IKill {
     /**
      * method description for kill
       * @param element
+     *      Element able to be kill
      */
     void kill(Element element);
 

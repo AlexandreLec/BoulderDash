@@ -11,6 +11,7 @@ public interface IBehaviourMove {
 	/**
 	 * All method of movement call in mobile elements
 	 * @throws Exception
+	 * 		except this.  movement
 	 */
 	
 	void move() throws Exception;
@@ -22,12 +23,14 @@ public interface IBehaviourMove {
 	/**
 	 * Method use for move all ennemy in the same time
 	 * @throws Exception
+	 *		iteration exception
 	 */
 	void moveAll() throws Exception;
 
 	/**
 	 * Movement method for stones and diamonds gravitation
 	 * @throws Exception
+	 *		Iteration exception
 	 */
 	void Gravit() throws Exception;
 }
