@@ -6,7 +6,7 @@ package model;
  * @version 1.0
  */
 
-public interface IGet {
+interface IGet {
     /**
      * method description for get
      * @param hero

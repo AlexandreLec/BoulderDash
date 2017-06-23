@@ -12,7 +12,7 @@ import java.awt.event.*;
  * @author Jean-Francois LHOMME
  * @version 1.0
  */
-public class GameFrame extends JFrame implements KeyListener {
+class GameFrame extends JFrame implements KeyListener {
 
 	/**
 	 * 	Generated Serialized ID

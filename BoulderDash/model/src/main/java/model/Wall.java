@@ -7,7 +7,7 @@ package model;
  * @version 1.0
  */
 
-public class Wall extends Element{
+ class Wall extends Element{
 
     /** Variable who will use for seek sprite **/
     private final static String STRING = "wall";

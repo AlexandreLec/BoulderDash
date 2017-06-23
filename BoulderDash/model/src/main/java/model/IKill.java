@@ -5,7 +5,7 @@ package model;
  * @author RIGAUT Arnaud
  * @version 1.0
  */
-public interface IKill {
+interface IKill {
 
     /**
      * method description for kill

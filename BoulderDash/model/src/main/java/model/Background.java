@@ -5,7 +5,7 @@ package model;
  * @author Alexandre Lecomte
  * @version 1.0
  */
-public class Background extends Element {
+class Background extends Element {
 
 	 /** Variable who will use for seek sprite **/
     private final static String STRING = "background";

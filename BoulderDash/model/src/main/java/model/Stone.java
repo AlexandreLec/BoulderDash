@@ -6,7 +6,7 @@ package model;
  * @author Alexandre Lecomte
  * @version 1.1
  */
-public class Stone extends Element{
+class Stone extends Element{
 
     /** Variable who will use for seek sprite **/
     private final static String STRING = "stone";

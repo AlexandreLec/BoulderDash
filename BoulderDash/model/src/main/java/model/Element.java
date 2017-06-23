@@ -17,20 +17,20 @@ public class Element implements IElement {
 	/** The sprite of the element  */
 	private Image Sprite;
 	/** The move behaviour of the element */
-	protected BehaviourMove behaviour;
+	BehaviourMove behaviour;
 	/** The mine that contains the element */
 	private Mine mine;
 	/** The sprite's name of the element */
 	private String SpriteName;
 	/** Direction of the element */
-	protected Direction direction;
+	Direction direction;
 
 	/**
 	 * Instantiates a new Element
 	 * @param position
 	 * 		Position of the Element
 	 */
-    public Element(Position position, String sprite, Mine mine){
+	Element(Position position, String sprite, Mine mine){
     	this.position = position;
     	this.SpriteName = sprite;
     	this.Sprite = loadSprite(this.SpriteName);

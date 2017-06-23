@@ -14,11 +14,11 @@ import org.junit.Test;
 public class ElementTest {
 	
 	/** The tested Element */
-	protected Element actual;
+    Element actual;
 	/** The behaviour of the tested Element */
-	protected BehaviourMove behaviour;
+    BehaviourMove behaviour;
 	
-	protected Mine mine;
+	Mine mine;
 
 	@Before
 	public void setUp() throws Exception {

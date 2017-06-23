@@ -131,7 +131,7 @@ final class BoulderDashBDDConnector {
      *
      * @return the connection
      */
-    public Connection getConnection() {
+    private Connection getConnection() {
         return this.connection;
     }
 
@@ -150,7 +150,7 @@ final class BoulderDashBDDConnector {
      *
      * @return the statement
      */
-    public Statement getStatement() {
+    private Statement getStatement() {
         return this.statement;
     }
 

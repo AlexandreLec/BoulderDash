@@ -10,7 +10,7 @@ package view;
 
 import java.awt.event.KeyEvent;
 
-public interface IEventPerformer {
+interface IEventPerformer {
 
 	/**
 	 * method use for transform and send the command set by the player

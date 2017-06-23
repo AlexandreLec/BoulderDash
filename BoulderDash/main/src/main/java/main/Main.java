@@ -10,7 +10,7 @@ import view.BoulderDashView;
  * @author Alexandre LECOMTE
  * @version 1.0
  */
-public abstract class Main {
+abstract class Main {
 
     /**
      * The main method.

@@ -10,7 +10,7 @@ import java.awt.image.ImageObserver;
 		 * @author Charles LELEUX
 		 * @version 1.0
 		 */
-public interface IElementBuilder {
+		interface IElementBuilder {
 
 
 		/**

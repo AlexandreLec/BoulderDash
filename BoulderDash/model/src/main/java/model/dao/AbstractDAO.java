@@ -9,7 +9,7 @@ import java.sql.ResultSet;
  * @author Jean-Aymeric DIET jadiet@cesi.fr
  * @version 1.0
  */
-public abstract class AbstractDAO {
+abstract class AbstractDAO {
 
     /**
      * Execute query.
@@ -40,7 +40,7 @@ public abstract class AbstractDAO {
      *            the query
      * @return the callable statement
      */
-    protected static CallableStatement prepareCall(final String query) {
+    static CallableStatement prepareCall(final String query) {
         return BoulderDashBDDConnector.getInstance().prepareCall(query);
     }
 }

@@ -16,7 +16,7 @@ import model.IBoulderDashModel;
  * @author Jean-Francois LHOMME
  * @version 1.0
  */
-public class GamePanel extends JPanel implements Observer {
+class GamePanel extends JPanel implements Observer {
 	
 	
 	/**

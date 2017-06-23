@@ -8,10 +8,10 @@ package model;
 public class BehaviourMove implements IBehaviourMove {
 
 	/** The element */
-	protected Element element;
+	Element element;
 	
 	/** Instantiate a new move's behaviour*/
-	public BehaviourMove(Element element){
+	BehaviourMove(Element element){
 		this.element = element;
 	}
 

@@ -15,7 +15,7 @@ public class PositionTest {
 	/**
 	 * The position to test
 	 */
-	Position actual;
+    private Position actual;
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {

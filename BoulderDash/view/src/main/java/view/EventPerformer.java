@@ -13,7 +13,7 @@ import controller.Order;
 
 public class EventPerformer implements IEventPerformer {
 	
-	IOrderPerformer orderPerformer;
+	private IOrderPerformer orderPerformer;
 
 
 	/**
@@ -33,7 +33,7 @@ public class EventPerformer implements IEventPerformer {
 	 * @throws Exception
 	 * 		Order perform exception
 	 */
-	public void keyCodeToUserOrder(int keycode) throws Exception{
+    private void keyCodeToUserOrder(int keycode) throws Exception{
 		switch(keycode){
 			case KeyEvent.VK_DOWN :
 				this.orderPerformer.OrderPerform(Order.DOWN);

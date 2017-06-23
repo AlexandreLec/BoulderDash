@@ -14,8 +14,8 @@ import view.IView;
 
 public class BoulderDashPerformer implements IOrderPerformer{
 
-    public IBoulderDashModel ActualModel;
-    public IView ActualView;
+    private IBoulderDashModel ActualModel;
+    private IView ActualView;
     
     private IElement hero;
     private IElement enemy;
