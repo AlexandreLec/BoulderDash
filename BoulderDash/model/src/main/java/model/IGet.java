@@ -6,11 +6,13 @@ package model;
  * @version 1.0
  */
 
-public interface IGet {
+interface IGet {
     /**
      * method description for get
      * @param hero
-     * @throws Exception 
+     *      the hero element
+     * @throws Exception
+     *      getMine exception
      */
     void get(Hero hero) throws Exception;
 }

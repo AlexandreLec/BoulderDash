@@ -7,13 +7,19 @@ package model;
  * @version 1.0
  */
 
-public class Dirt extends Element {
+class Dirt extends Element {
 
     /** Variable who will use for seek sprite **/
     private final static String STRING = "dirt";
 
 
-    /** constructor of dirt */
+    /**
+     * Instantiate a new dirt
+     * @param positon
+     * 		The position to set the new dirt
+     * @param mine
+     * 		The mine where set the new dirt
+     */
     public Dirt(Position positon, Mine mine){
         super(positon, STRING, mine);
         behaviour = new Fix(this);

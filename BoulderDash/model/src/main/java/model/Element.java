@@ -17,20 +17,20 @@ public class Element implements IElement {
 	/** The sprite of the element  */
 	private Image Sprite;
 	/** The move behaviour of the element */
-	protected BehaviourMove behaviour;
+	BehaviourMove behaviour;
 	/** The mine that contains the element */
 	private Mine mine;
 	/** The sprite's name of the element */
 	private String SpriteName;
 	/** Direction of the element */
-	protected Direction direction;
+	Direction direction;
 
 	/**
 	 * Instantiates a new Element
 	 * @param position
 	 * 		Position of the Element
 	 */
-    public Element(Position position, String sprite, Mine mine){
+	Element(Position position, String sprite, Mine mine){
     	this.position = position;
     	this.SpriteName = sprite;
     	this.Sprite = loadSprite(this.SpriteName);
@@ -40,7 +40,7 @@ public class Element implements IElement {
     /**
      * Get the sprite in the database
      * @param sprite
-     * 		The sprit's name to load
+     * 		The sprite's name to load
      * @return the sprite's image
      */
     public static Image loadSprite(String sprite){
@@ -52,7 +52,7 @@ public class Element implements IElement {
 
 
 		if(result == null){
-			System.out.println("eereur");
+			System.out.println("error");
 		}
 		
 		return result;
@@ -96,7 +96,6 @@ public class Element implements IElement {
 
     /**
      * Sets the sprite of the element
-     * @param the sprite
      */
     @Override
     public void setSprite(String sprite){

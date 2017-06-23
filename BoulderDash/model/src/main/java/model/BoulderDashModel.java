@@ -25,7 +25,8 @@ public class BoulderDashModel extends Observable implements IBoulderDashModel {
 	
 	/**
 	 * Instantiates the BoulderDashModel.
-	 * @throws Exception 
+	 * @throws Exception
+	 * 		Mine exception
 	 */
 	public BoulderDashModel() throws Exception{
 		this.mine = new Mine(this);
@@ -85,7 +86,9 @@ public class BoulderDashModel extends Observable implements IBoulderDashModel {
 	
 	/**
 	 * Add a diamond for the hero
-	 * @throws Exception 
+	 * @throws Exception
+	 * 		Destroy Exception
+	 *
 	 */
 	@Override
 	synchronized public void getDiamond(IElement element) throws Exception{
@@ -99,7 +102,8 @@ public class BoulderDashModel extends Observable implements IBoulderDashModel {
 	
 	/**
 	 * Get the number of diamond get by the hero
-	 * @throws Exception 
+	 * @throws Exception
+	 * 		Destroy Exception
 	 */
 	@Override
 	public int diamondCounter() throws Exception{
@@ -130,7 +134,7 @@ public class BoulderDashModel extends Observable implements IBoulderDashModel {
 	 * Gets the mine
 	 * @return the mine of the model
 	 */
-	public Mine getMine() {
+	private Mine getMine() {
 		return mine;
 	}
 

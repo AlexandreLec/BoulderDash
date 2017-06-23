@@ -6,11 +6,12 @@ package model;
  * @version 1.0
  */
 
-public interface IExplosion {
+interface IExplosion {
 
 	/**
 	* Instantiates the IExplosion
-	 * @throws Exception 
+	 * @throws Exception
+	 * 		destroy element exception
 	*/
 	void explosion() throws Exception;
 

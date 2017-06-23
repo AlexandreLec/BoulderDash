@@ -14,7 +14,7 @@ import org.junit.Test;
 public class ElementTest {
 	
 	/** The tested Element */
-	protected Element actual;
+    protected Element actual;
 	/** The behaviour of the tested Element */
 	protected BehaviourMove behaviour;
 	/** The mine of the tested element */

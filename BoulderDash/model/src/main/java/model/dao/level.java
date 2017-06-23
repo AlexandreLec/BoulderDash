@@ -8,11 +8,22 @@ public class level extends AbstractDAO {
 	
 	/** The sql example by id. */
     private static String sqlExampleById   = "{call getLevel(?)}";
-	
+
+	/**
+	 * constructor
+	 */
 	public level(){
 		
 	}
-	
+
+	/**
+	 * Call the a statement who charge the level ask and return the correct level
+	 * @param name
+	 * 		Name of the level want to be call
+	 * @return level who was chose
+	 * @throws SQLException
+	 * 		throws a SQL Exception
+	 */
 	public static String getLevel(final String name) throws SQLException {
 	      final CallableStatement callStatement = prepareCall(sqlExampleById);
 	      callStatement.setString(1, name);

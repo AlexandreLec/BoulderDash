@@ -16,7 +16,7 @@ import model.IBoulderDashModel;
  * @author Jean-Francois LHOMME
  * @version 1.0
  */
-public class GamePanel extends JPanel implements Observer {
+class GamePanel extends JPanel implements Observer {
 	
 	
 	/**
@@ -33,9 +33,11 @@ public class GamePanel extends JPanel implements Observer {
 	}
 
 	/**
-	 * the methode create from Observable
+	 * the method create from Observable
 	 * @param o
+	 * 		observable name
 	 * @param arg
+	 * 		object name to update
 	 */
 	@Override
 	public void update(Observable o, Object arg) {
@@ -45,6 +47,8 @@ public class GamePanel extends JPanel implements Observer {
 	
 	/**
 	 * allows to paint the component on the frame
+	 * @param g
+	 * 		name the graphic
 	 */
 	public void paintComponent(Graphics g){
 		

@@ -14,17 +14,23 @@ import view.IView;
 
 public class BoulderDashPerformer implements IOrderPerformer{
 
-    public IBoulderDashModel ActualModel;
-    public IView ActualView;
-    
+	/** The model */
+    private IBoulderDashModel ActualModel;
+    /** The view */
+    private IView ActualView;
+    /** The hero */
     private IElement hero;
+    /** The enemy */
     private IElement enemy;
+    /** The gravity */
     private IElement gravity;
 
     /**
      * Create constructor
       * @param BoulderDashModel
+     *      Use for set the actual model
      * @param view
+     *      Use for set the actual view
      */
 	public BoulderDashPerformer(IBoulderDashModel BoulderDashModel, IView view) {
 
@@ -32,11 +38,15 @@ public class BoulderDashPerformer implements IOrderPerformer{
         ActualView = view;
     }
 
+	/**
+	 * Instantiate a controller only
+	 */
     public BoulderDashPerformer() {}
 
 	/**
      * Principal method use for get back initial position of some element
       * @throws Exception
+     *      Game loop exception
      */
 	public void play() throws Exception {
        ActualView.start(this.ActualModel, this);
@@ -48,7 +58,8 @@ public class BoulderDashPerformer implements IOrderPerformer{
 
 	/**
 	 * create a loop and a thread for enemy and gravity
-	 * @throws Exception 
+	 * @throws Exception
+     *      thread exception
 	 */
 	private void gameLoop() throws Exception {
 		while(this.hero != null){
@@ -59,12 +70,13 @@ public class BoulderDashPerformer implements IOrderPerformer{
 	}
 	
 	/**
-	 * @throws Exception 
+	 * @throws Exception
+	 * 		Thread Exception
 	 * @see IOrderPerformer
 	 */
 	@Override
 	public void OrderPerform(Order order) throws Exception {
-		
+
 		if (order == Order.DOWN){
 			this.hero.setDirection(Direction.DOWN);
 	    }
@@ -83,19 +95,14 @@ public class BoulderDashPerformer implements IOrderPerformer{
     }
 
     /**
-     * Sets the ViewSystem
-     * @param viewSystem
-     */
-    public void setViewSystem(IView viewSystem) {}
-
-    /**
-     * Metho use when we want end the game
+     * Method use when we want end the game
      * @throws Exception
+	 * 		Exception not enough diamond
      */
 	public void EndGame(int diamond) throws Exception{
 
             if (diamond < 10)
-                throw new Exception("Not enought diamond");
+                throw new Exception("Not enough diamond");
             else
                 this.ActualModel.setGame(false);
     }

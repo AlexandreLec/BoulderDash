@@ -10,14 +10,15 @@ import view.BoulderDashView;
  * @author Alexandre LECOMTE
  * @version 1.0
  */
-public abstract class Main {
+abstract class Main {
 
     /**
      * The main method.
      *
      * @param args
-     *            the arguments
-     * @throws Exception 
+     *      the arguments
+     * @throws Exception
+     *      print the stack of exception
      */
     public static void main(final String[] args) throws Exception {
     	

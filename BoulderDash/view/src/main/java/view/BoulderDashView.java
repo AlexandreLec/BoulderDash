@@ -4,7 +4,7 @@ import controller.IOrderPerformer;
 import model.IBoulderDashModel;
 
 /**
- * <h1>The class BouilderDashView</h1>
+ * <h1>The class BoulderDashView</h1>
  *
  * @author Arnaud Rigaut
  * @version 1.2
@@ -20,9 +20,11 @@ public class BoulderDashView implements Runnable, IView {
 	public BoulderDashView(){}
 
     /**
-     * Set the curent model and take the actual order
+     * Set the current model and take the actual order
      * @param model
+	 * 		Use for set the actual model
      * @param order
+     *      Use for set the order perform
      */
 	public void start(IBoulderDashModel model, IOrderPerformer order) {
         this.OrderPerformer = order;
@@ -34,6 +36,7 @@ public class BoulderDashView implements Runnable, IView {
     /**
      * @see IView
      * @param message
+     *      the message to display
      */
 	@Override
 	public void displayMessage(String message) {

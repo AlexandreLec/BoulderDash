@@ -13,12 +13,13 @@ import controller.Order;
 
 public class EventPerformer implements IEventPerformer {
 	
-	IOrderPerformer orderPerformer;
+	private IOrderPerformer orderPerformer;
 
 
 	/**
 	 * Instantiate EventPerformer
 	 * @param orderPerformer
+	 * 		Set what order is perform
 	 */
 	public EventPerformer(IOrderPerformer orderPerformer){
 		this.orderPerformer = orderPerformer;
@@ -28,9 +29,11 @@ public class EventPerformer implements IEventPerformer {
 	/**
 	 * do a action in function of what command type by the player
 	 * @param keycode
+	 * 		the key code of the order
 	 * @throws Exception
+	 * 		Order perform exception
 	 */
-	public void keyCodeToUserOrder(int keycode) throws Exception{
+    private void keyCodeToUserOrder(int keycode) throws Exception{
 		switch(keycode){
 			case KeyEvent.VK_DOWN :
 				this.orderPerformer.OrderPerform(Order.DOWN);
@@ -55,7 +58,9 @@ public class EventPerformer implements IEventPerformer {
 	/**
 	 * @see IEventPerformer
 	 * @param keyCode
+	 * 		The key code of the event
 	 * @throws Exception
+	 * 		the exception of key code
 	 */
 	@Override
 	public void eventPerform(KeyEvent keyCode) throws Exception {

@@ -13,19 +13,27 @@ public class ExitGate extends Element{
 
     /** create DP singleton */
     private static ExitGate EXITGATE;
-
-    /** constructor of ExitGate */
-    private ExitGate(Position positon, Mine mine){
-        super(positon, STRING, mine);
+    
+    /**
+     * constructor of exitGate
+     * @param position
+     *      the position of the gate
+     * @param mine
+     *      the actual mine
+     */
+    private ExitGate(Position position, Mine mine){
+        super(position, STRING, mine);
         behaviour = new Fix(this);
     }
 
 
     /**
-     *
+     * Get the exitGate instance
      * @param position
+     *      get the Exit Gate position
      * @param mine
-     * @return
+     *      Get the actual mine
+     * @return EXITGATE
      */
     public static ExitGate getInstance(Position position, Mine mine){
 		if(EXITGATE == null){

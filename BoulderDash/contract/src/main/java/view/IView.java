@@ -6,7 +6,7 @@ import model.IBoulderDashModel;
 /**
  * <h1>The Interface IView.</h1>
  *
- * @author Jean-Aymeric DIET jadiet@cesi.fr
+ * @author Charles Leleux charles.leleux@viacesi.fr
  * @version 1.0
  */
 public interface IView {
@@ -18,6 +18,14 @@ public interface IView {
      *            the message
      */
     void displayMessage(String message);
-    
+
+
+    /**
+     * start the game view
+     * @param model
+     *      Get actual Model
+     * @param order
+     *      Get the order
+     */
     void start(IBoulderDashModel model, IOrderPerformer order);
 }

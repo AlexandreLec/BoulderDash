@@ -51,23 +51,41 @@ public interface IBoulderDashModel {
 
 	/**
 	 * Add a diamond to the hero
-	 * @throws Exception 
+	 * @throws Exception
+	 * 		exception from destroyElement
 	 */
 	void getDiamond(IElement element) throws Exception;
 
 	/**
 	 * Get the number of diamond get by the hero
 	 * @return the number of diamonds collected
-	 * @throws Exception 
+	 * @throws Exception
+	 * 		Exception "Hero is dead"
 	 */
 	int diamondCounter() throws Exception;
 
+	/**
+	 * Get the hero element
+	 * @return the hero
+	 */
 	IElement getHero();
 
+	/**
+	 * Try to read and write on a array list
+	 * @return array list of enemy element
+	 */
 	CopyOnWriteArrayList<IElement> getEnemy();
 
+	/**
+	 * Try to read and write on a array list
+	 * @return array list of gravity element
+	 */
 	CopyOnWriteArrayList<IElement> getGravity();
 
+	/**
+	 * Use for set get the game over moment
+	 * @return a picture Game Over
+	 */
 	Image getGameOver();
 
 	void observerDelete(Observer o);

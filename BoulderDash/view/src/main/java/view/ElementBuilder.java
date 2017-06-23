@@ -15,12 +15,15 @@ import model.IElement;
  */
 
 public class ElementBuilder implements IElementBuilder {
-	
-	 private IBoulderDashModel model;
+
+
+    /** crate a variable model come from IBoulderDashModel*/
+    private IBoulderDashModel model;
 
     /**
      * instantiate BoulderDashModel
      * @param BoulderDashModel
+	 * 		Set the actual model
      */
 	public ElementBuilder(IBoulderDashModel BoulderDashModel){
 
@@ -28,20 +31,21 @@ public class ElementBuilder implements IElementBuilder {
 	}
 
 
-    /**
-     * method use for draw the visual of our mine. Set in a double enter tab all element.
-     * If an element "null" exist, replace it by a black rectangle who sizes is 32*32.
-     * @param graphics
-     * @param obs
-     * @throws Exception
-     */
+	/**
+	 * method use for draw the visual of our mine. Set in a double enter tab all element.
+	 * If an element "null" exist, replace it by a black rectangle who sizes is 32*32.
+	 * @param graphics
+	 * 		Set the graphics where to draw
+	 * @param obs
+	 * 		Use the observer
+	 */
 	private void drawMine(Graphics graphics, ImageObserver obs){
 		
 		IElement[][] actual = model.getElements();
 		 
 		for (int x = 0; x < 50; x++) {
 			for (int y = 0; y < 30; y++) {
-				
+
 				if(model.getHero() == null){
 					return;
 				}
@@ -55,11 +59,13 @@ public class ElementBuilder implements IElementBuilder {
 
     /**
      * place in a graphics who name's g2d, all element
-     * After add some features in our program. In particulary the number of diamond get by the hero
+     * After add some features in our program. In particularly the number of diamond get by the hero
      * @param element
+	 * 		The element to draw
      * @param graphics
+	 * 		The graphics where draw
      * @param obs
-     * @throws Exception
+	 * 		Use an observer
      */
 	private void drawElement(IElement element, Graphics graphics, ImageObserver obs) {
 		
@@ -81,8 +87,9 @@ public class ElementBuilder implements IElementBuilder {
     /**
      * @see IElementBuilder
      * @param graphics
+	 * 		Use a graphics to draw
      * @param obs
-     * @throws Exception
+	 * 		Use the observer
      */
 	@Override
 	public void applyModelToGraphic(Graphics graphics, ImageObserver obs) {

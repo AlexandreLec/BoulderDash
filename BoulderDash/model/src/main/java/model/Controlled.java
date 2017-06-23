@@ -12,6 +12,7 @@ public class Controlled extends BehaviourMove {
 	/**
 	 * Instantiate a new controlled move
 	 * @param element
+	 * 		element to controlled
 	 */
 	public Controlled(Element element) {
 		super(element);
@@ -45,6 +46,7 @@ public class Controlled extends BehaviourMove {
 	/**
 	 * Check and if it's possible move to the left
 	 * @throws Exception
+	 * 		Behaviour Exception
 	 */
 	private void goLeft() throws Exception{
 		
@@ -72,6 +74,7 @@ public class Controlled extends BehaviourMove {
 	/**
 	 * Check and if it's possible move to the right
 	 * @throws Exception
+	 * 		position exception
 	 */
 	private void goRight() throws Exception{
 		
@@ -99,6 +102,7 @@ public class Controlled extends BehaviourMove {
 	/**
 	 * Check and if it's possible move to the up
 	 * @throws Exception
+	 * 		position exception
 	 */
 	private void goUp() throws Exception{
 		
@@ -122,6 +126,7 @@ public class Controlled extends BehaviourMove {
 	/**
 	 * Check and if it's possible move to the down
 	 * @throws Exception
+	 * 		position exception
 	 */
 	private void goDown() throws Exception{
 		

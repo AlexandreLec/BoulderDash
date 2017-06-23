@@ -7,12 +7,18 @@ package model;
  * @version 1.0
  */
 
-public class Wall extends Element{
+ class Wall extends Element{
 
     /** Variable who will use for seek sprite **/
     private final static String STRING = "wall";
 
-    /** constructor of ExitGatee */
+    /**
+     * Instantiate a new wall
+     * @param position
+     *      the position of the wall
+     * @param mine
+     *      the actual mine
+     */
     public Wall(Position positon, Mine mine){
         super(positon, STRING, mine);
         behaviour = new Fix(this);

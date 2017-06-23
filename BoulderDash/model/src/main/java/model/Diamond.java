@@ -12,17 +12,22 @@ public class Diamond extends Element implements IGet, IKill {
 
     /**
      * Constructor of Diamond
-      * @param positon
+      * @param position
+     *      Find diamond position
+     *  @param mine
+     *      Get the actual mine
      */
-    public Diamond(Position positon, Mine mine){
-        super(positon, STRING, mine);
+    public Diamond(Position position, Mine mine){
+        super(position, STRING, mine);
         behaviour = new Gravity(this);
     }
 
     /**
      * @see IGet
      * @param hero
-     * @throws Exception 
+     *      Get the hero element
+     * @throws Exception
+     *      Destroy element exception
      */
     @Override
     public void get(Hero hero) throws Exception {
@@ -33,6 +38,7 @@ public class Diamond extends Element implements IGet, IKill {
     /**
      * @see IKill
      * @param element
+     *      Get element able to be kill
      */
     @Override
     public void kill(Element element) {

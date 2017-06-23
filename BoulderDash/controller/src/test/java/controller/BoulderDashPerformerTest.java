@@ -31,14 +31,14 @@ public class BoulderDashPerformerTest {
     /**
      * Test if we can't end the game in case of diamondCounter is <10
      * @throws Exception
-     * 		Exception in case of not enough diamond to exit
+     *      excepted number of diamond
      */
     @Test
     public void testEndGameNoDiamond() throws Exception {
         try {
         	this.controller.EndGame(8);
         }catch (final Exception e){
-            final String excepted = "Not enought diamond";
+            final String excepted = "Not enough diamond";
             assertEquals(excepted, e.getMessage());
         }
     }

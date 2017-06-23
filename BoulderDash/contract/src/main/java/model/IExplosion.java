@@ -10,7 +10,8 @@ public interface IExplosion {
 
 	/**
 	* Instantiates the IExplosion
-	 * @throws Exception 
+	 * @throws Exception
+	 * 		Destroy element exception
 	*/
 	public void explosion() throws Exception;
 
