@@ -15,6 +15,7 @@ public interface IEventPerformer {
 	/**
 	 * method use for transform and send the command set by the player
 	 * @param keyCode
+     *      key code of the command
 	 * @throws Exception
 	 * 		key code exception
 	 */
