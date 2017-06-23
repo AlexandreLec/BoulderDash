@@ -8,18 +8,22 @@ package model;
  */
 public class Hero extends Element implements IExplosion{
 
-	
+	/** The sprite of the hero */
 	private static String SPRITE = "up";
+	/** The hero */
 	private static Hero hero;
-	
+	/** The timeout of the hero */
 	private int timeout;
+	/** The number of diamonds of the hero */
 	private int diamonds;
+	/** The hero's direction */
 	private Direction direction;
-
-
-    /**
-     * Instantiates the hero
-     */
+	
+	/**
+	 * Instantiate a new Hero
+	 * @param position
+	 * @param mine
+	 */
     private Hero(Position position, Mine mine){
 		super(position, SPRITE,mine);
 		behaviour = new Controlled(this);
@@ -34,6 +38,10 @@ public class Hero extends Element implements IExplosion{
 
 	/**
 	 * method use for create an instance of hero
+	 * @param position
+	 * 		The position to set
+	 * @param mine
+	 * 		The mine to set
 	 * @return return a new hero
 	 */
 	static public Hero getInstance(Position position, Mine mine){
@@ -44,6 +52,10 @@ public class Hero extends Element implements IExplosion{
 		return hero;
 	}
 	
+	/**
+	 * Get the instance of the hero
+	 * @return the hero
+	 */
 	static public Hero getInstance(){
 		return hero;
 	}
@@ -59,6 +71,7 @@ public class Hero extends Element implements IExplosion{
     /**
      * method use for set a SPRITE for the hero
      * @param sprite
+     * 		the sprite name
      */
 	public static void setSPRITE(String sprite) {
 		SPRITE = sprite;
@@ -70,15 +83,12 @@ public class Hero extends Element implements IExplosion{
      */
 	public int getDiamonds() {
 		return diamonds;
-
-	
-		
-		
 	}
 
     /**
      * setDiamond on the map
      * @param diamonds
+     * 		The number of diamond to set
      */
 	public void setDiamonds(int diamonds) {
 		this.diamonds = diamonds;
@@ -96,6 +106,7 @@ public class Hero extends Element implements IExplosion{
     /**
      * define the time as we want
      * @param timeout
+     * 		set the timeout of the hero
      */
 	public void setTimeout(int timeout) {
 		this.timeout = timeout;
@@ -109,18 +120,18 @@ public class Hero extends Element implements IExplosion{
 		return direction;
 	}
 
-
     /**
      * with the direction get before, set the direction of the hero
      * @param direction
+     * 		The direction to set
      */
 	public void setDirection(Direction direction) {
 		this.direction = direction;
 	}
 
-
     /**
      * @throws Exception 
+     * 		The exception
      * @see IExplosion
      */
 	@Override

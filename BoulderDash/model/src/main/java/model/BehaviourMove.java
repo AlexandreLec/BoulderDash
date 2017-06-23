@@ -51,7 +51,6 @@ public class BehaviourMove implements IBehaviourMove {
 	 * @throws Exception
 	 * 		position exception
 	 */
-
 	@Override
 	synchronized public void moveLeft() throws Exception{
 		

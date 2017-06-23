@@ -10,11 +10,15 @@ public class Enemy extends Element {
 
     /** Variable who will use for seek sprite **/
     private static String spriteName = "enemy";
-    
+    /** The mine of the enemy */
     static Mine mine;
 	
     /**
-     * create constructor
+     * Instantiate a new Enemy
+     * @param position
+     * 		The position to set
+     * @param mine
+     * 		The mine to set
      */
     public Enemy(Position position, Mine mine){
     	super(position, setSpriteNameAlea(), mine);
@@ -25,6 +29,7 @@ public class Enemy extends Element {
 
     /**
      * set a sprite for one enemy. This sprite is choose randomly
+     * @return the string
      */
     private static String setSpriteNameAlea(){
     	
@@ -56,6 +61,7 @@ public class Enemy extends Element {
 	/**
 	 * Set the name of the enemy's sprite
 	 * @param spriteName
+	 * 		The name of the sprite
 	 */
 	public void setSpriteName(String spriteName) {
 		Enemy.spriteName = spriteName;

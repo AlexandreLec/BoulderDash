@@ -21,15 +21,17 @@ public class Mine {
 	private IElement[][] elements;
 	/** The model that contain the mine */
 	private BoulderDashModel model;
-	/**  */
+	/** The list of the enemy */
 	private CopyOnWriteArrayList<IElement> enemy;
-	
+	/** The list of the gravitable element */
 	private CopyOnWriteArrayList<IElement> gravity;
-	
+	/** The hero */
 	private IElement hero;
 
 	/**
-	 * Instantiates the constructor
+	 * Instantiates a new Mine
+	 * @param model
+	 * 		The model
 	 * @throws Exception
 	 *		BuildMine exception
 	 */
@@ -56,7 +58,6 @@ public class Mine {
 				char element = currentLevel.charAt(i);
 					
 				i++; 
-				System.out.print(element);
 				
 				switch(element){
 					case 'o':

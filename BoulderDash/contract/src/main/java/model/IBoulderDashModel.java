@@ -51,6 +51,8 @@ public interface IBoulderDashModel {
 
 	/**
 	 * Add a diamond to the hero
+	 * @param element
+	 * 		The diamond to get
 	 * @throws Exception
 	 * 		exception from destroyElement
 	 */
@@ -88,12 +90,30 @@ public interface IBoulderDashModel {
 	 */
 	Image getGameOver();
 
+	/**
+	 * Remove an observer
+	 * @param o
+	 * 		The observer to delete
+	 */
 	void observerDelete(Observer o);
 
+	/**
+	 * Get if the game is running or not
+	 * @return true or false
+	 */
 	boolean isGame();
 
+	/**
+	 * Set the status of the game
+	 * @param game
+	 * 		The status to set true or false
+	 */
 	void setGame(boolean game);
 
+	/**
+	 * Get the score
+	 * @return the score
+	 */
 	int getScore();
 
 

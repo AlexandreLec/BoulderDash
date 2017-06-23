@@ -12,7 +12,7 @@ import org.junit.Test;
  * @author Alexandre Lecomte
  * @version 1.0
  */
-public class BehaviourMoveTest {
+public abstract class BehaviourMoveTest {
 	
 	/** The tested element */
 	protected IElement element;
@@ -32,6 +32,7 @@ public class BehaviourMoveTest {
 	/**
 	 * Instantiate an element before each test
 	 * @throws Exception
+	 * 	The exception
 	 */
 	@Before
 	public void setUp() throws Exception {}

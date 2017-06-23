@@ -28,6 +28,7 @@ public class HeroTest extends ElementTest {
 	/**
 	 * Check the single instantiation of the hero
 	 * @throws Exception 
+	 * 		Exception in case of position out of range
 	 */
 	@Test
 	public void getInstance() throws Exception {

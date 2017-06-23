@@ -16,13 +16,19 @@ public class Gravity extends BehaviourMove {
 	private boolean motion = false;
 	
 	/**
-     * Instantiates the Gravity
-     */
+	 * Instantiate a new gravity behaviour movement
+	 * @param element
+	 * 		The element
+	 */
 	public Gravity(Element element) {
 			super(element);
 	}
 	
-	
+	/**
+	 * Launch the gravity for all the gravitable element
+	 * @throws Exception
+	 * 		The exception
+	 */
 	public void Gravit() throws Exception{
 		Iterator<IElement> iterator = this.element.getMine().getGravity().iterator();
 		while (iterator.hasNext()) {

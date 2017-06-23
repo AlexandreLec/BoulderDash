@@ -98,11 +98,13 @@ public class BoulderDashPerformer implements IOrderPerformer{
 	    this.hero.getBehaviour().move();
     }
 
-    /**
-     * Method use when we want end the game
-     * @throws Exception
+	/**
+	 * Method use when we want end the game
+	 * @param diamond
+	 * 		the number of diamond collected
+	 * @throws Exception
 	 * 		Exception not enough diamond
-     */
+	 */
 	public void EndGame(int diamond) throws Exception{
 
             if (diamond < 10)

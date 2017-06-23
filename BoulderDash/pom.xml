@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>fr.exia</groupId>
   <artifactId>boulderdash</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0.0-STABLE</version>
   <packaging>pom</packaging>
   <name>boulderdash</name>
   <description>Base project to start BoulderDash software</description>
@@ -27,6 +27,9 @@
     <module>view</module>
     <module>main</module>
   </modules>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
   <reporting>
     <plugins>
       <plugin>
@@ -51,10 +54,15 @@
           <aggregate>true</aggregate>
         </configuration>
       </plugin>
+      <plugin>
+         <groupId>org.apache.maven.plugins</groupId>
+         <artifactId>maven-project-info-reports-plugin</artifactId>
+         <version>2.7</version>
+     </plugin>
      <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-report-plugin</artifactId>
-        <version>2.20</version>
+        <version>2.7.2</version>
       </plugin>
     </plugins>
   </reporting>

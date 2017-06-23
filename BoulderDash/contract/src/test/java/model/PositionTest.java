@@ -3,7 +3,6 @@ package model;
 import static org.junit.Assert.*;
 
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 /**
  * <h1>The class test PositionTest</h1>
@@ -17,10 +16,6 @@ public class PositionTest {
 	 */
     private Position actual;
 	
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-	}
-
 	/**
 	 *  Instantiate a position before each test
 	 * @throws Exception
@@ -32,7 +27,7 @@ public class PositionTest {
 	}
 	
 	/**
-	 * Test if Xmax is not < 0 in case of new position instantiation
+	 * Test if Xmax is not inferior to 0 in case of new position instantiation
 	 */
 	@Test
 	public void testXmaxMin(){
@@ -47,7 +42,7 @@ public class PositionTest {
 	}
 	
 	/**
-	 *  Test if Ymax is not > 0 in case of new position instantiation
+	 *  Test if Ymax is not superior to 0 in case of new position instantiation
 	 */
 	@Test
 	public void testYmaxMin(){
@@ -62,7 +57,7 @@ public class PositionTest {
 	}
 	
 	/**
-	 * Test if X is not < 0 in case of new position instantiation
+	 * Test if X is not inferior to 0 in case of new position instantiation
 	 */
 	@Test
 	public void testXMin(){
@@ -77,7 +72,7 @@ public class PositionTest {
 	}
 	
 	/**
-	 * Test if X is not > Xmax in case of new position instantiation
+	 * Test if X is not superior to Xmax in case of new position instantiation
 	 */
 	@Test
 	public void testXMax(){
@@ -92,7 +87,7 @@ public class PositionTest {
 	}
 	
 	/**
-	 * Test if Y is not < 0 in case of new position instantiation
+	 * Test if Y is not inferior to 0 in case of new position instantiation
 	 */
 	@Test
 	public void testYMin(){
@@ -107,7 +102,7 @@ public class PositionTest {
 	}
 	
 	/**
-	 * Test if Y is not > Ymax in case of new position instantiation
+	 * Test if Y is not superior to Ymax in case of new position instantiation
 	 */
 	@Test
 	public void testYMax(){
@@ -202,7 +197,7 @@ public class PositionTest {
 	}
 
 	/**
-	 * Test if the x set is not > Xmax 
+	 * Test if the x set is not superior to Xmax 
 	 */
 	@Test
 	public void testSetXmax() {
@@ -217,7 +212,7 @@ public class PositionTest {
 	}
 
 	/**
-	 * Test if the y set is not > Ymax 
+	 * Test if the y set is not superior to Ymax 
 	 */
 	@Test
 	public void testSetYmax() {
@@ -232,7 +227,7 @@ public class PositionTest {
 	}
 	
 	/**
-	 * Test if the x set is not < 0 
+	 * Test if the x set is not inferior to 0 
 	 */
 	@Test
 	public void testSetXmin() {
@@ -247,7 +242,7 @@ public class PositionTest {
 	}
 
 	/**
-	 * Test if the y set is not < 0 
+	 * Test if the y set is not inferior to 0 
 	 */
 	@Test
 	public void testSetYmin() {

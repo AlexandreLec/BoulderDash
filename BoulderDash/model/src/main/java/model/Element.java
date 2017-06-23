@@ -80,6 +80,7 @@ public class Element implements IElement {
     
     /**
      * Get the element's mine
+     * @return the mine
      */
     public Mine getMine(){
     	return this.mine;

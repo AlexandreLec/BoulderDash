@@ -11,7 +11,7 @@ import org.junit.Test;
  * @author Alexandre Lecomte
  * @version 1.1
  */
-public class ElementTest {
+public abstract class ElementTest {
 	
 	/** The tested Element */
     protected Element actual;
@@ -20,6 +20,11 @@ public class ElementTest {
 	/** The mine of the tested element */
 	protected Mine mine;
 
+	/**
+	 * Execute before each test
+	 * @throws Exception
+	 * 		Exception
+	 */
 	@Before
 	public void setUp() throws Exception {
 	}
@@ -36,7 +41,8 @@ public class ElementTest {
 	
 	/**
 	 * Check if the element has a position
-	 * @throws Exception 
+	 * @throws Exception
+	 * 		The exception 
 	 */
 	@Test
 	public void testGetPosition() throws Exception {
@@ -60,6 +66,7 @@ public class ElementTest {
 	/**
 	 * Check if the setter position work correctly
 	 * @throws Exception 
+	 * 		The exception
 	 */
 	@Test
 	public void testSetPosition() throws Exception {
