@@ -33,6 +33,7 @@ public class Diamond extends Element implements IGet, IKill {
     public void get(Hero hero) throws Exception {
     	hero.setDiamonds(hero.getDiamonds()+1);
     	this.getMine().destroyElement(this);
+    	
     }
 
     /**

@@ -64,8 +64,11 @@ public class Controlled extends BehaviourMove {
 		}
 		else if (left.getClass() == model.Diamond.class){
 			this.element.getMine().getModel().getDiamond(left);
+			this.element.getMine().destroyElement(left);
 			this.element.getBehaviour().moveLeft();
-		}
+			
+			}
+		
 		else if (left.getClass() == model.ExitGate.class){
 			System.exit(0);
 		}
@@ -92,11 +95,14 @@ public class Controlled extends BehaviourMove {
 		}
 		else if (right.getClass() == model.Diamond.class){
 			this.element.getMine().getModel().getDiamond(right);
+			this.element.getMine().destroyElement(right);
 			this.element.getBehaviour().moveRight();
+			
 		}
 		else if (right.getClass() == model.ExitGate.class){
 			System.exit(0);
 		}
+		
 	}
 	
 	/**
@@ -116,7 +122,9 @@ public class Controlled extends BehaviourMove {
 		}
 		else if (up.getClass() == model.Diamond.class){
 			this.element.getMine().getModel().getDiamond(up);
+			this.element.getMine().destroyElement(up);
 			this.element.getBehaviour().moveUp();
+			
 		}
 		else if (up.getClass() == model.ExitGate.class){
 			System.exit(0);
@@ -140,7 +148,9 @@ public class Controlled extends BehaviourMove {
 		}
 		else if (down.getClass() == model.Diamond.class){
 			this.element.getMine().getModel().getDiamond(down);
+			this.element.getMine().destroyElement(down);
 			this.element.getBehaviour().moveDown();
+			
 		}
 		else if (down.getClass() == model.ExitGate.class){
 			System.exit(0);
