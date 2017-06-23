@@ -188,7 +188,7 @@ public class Mine {
 	}
 
 	/**
-	 * try to synchronise thread
+	 * try to synchronize thread
 	 * @param gravity
 	 * 		element affect by  gravity
 	 */

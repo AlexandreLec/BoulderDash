@@ -27,7 +27,7 @@ public class Diamond extends Element implements IGet, IKill {
      * @param hero
      *      Get the hero element
      * @throws Exception
-     *      Destroy element execption
+     *      Destroy element exception
      */
     @Override
     public void get(Hero hero) throws Exception {

@@ -21,7 +21,7 @@ public interface IBehaviourMove {
 	void moveDown() throws Exception;
 
 	/**
-	 * Method use for move all ennemy in the same time
+	 * Method use for move all enemy in the same time
 	 * @throws Exception
 	 *		iteration exception
 	 */

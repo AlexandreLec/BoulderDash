@@ -26,7 +26,7 @@ public class Hero extends Element implements IExplosion{
 	}
 
     /**
-     * Create the stopwatch and decrease the time
+     * Create the chess-clock and decrease the time
      */
 	public void startTimeOut(){
 		
