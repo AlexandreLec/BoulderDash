@@ -70,14 +70,14 @@ public class ElementBuilder implements IElementBuilder {
 	private void drawElement(IElement element, Graphics graphics, ImageObserver obs) {
 		
 		Graphics2D g2d = (Graphics2D) graphics ;
-		g2d.drawImage(element.getSprite(),element.getPosition().getX()*32,element.getPosition().getY()*32,32,32,obs);
+		g2d.drawImage(element.getSprite(),element.getPosition().getX()*25,element.getPosition().getY()*25,25,25,obs);
 
 		Font fonte = new Font("TimeRoman", Font.BOLD, 32);
 		g2d.setFont(fonte);
 		g2d.setColor(Color.BLACK);
 
 		try {
-			g2d.drawString("Diamond : "+String.valueOf(this.model.diamondCounter()), 32, 956);
+			g2d.drawString("Diamond : "+String.valueOf(this.model.diamondCounter()), 32, 750);
 		} catch (Exception e) {
 			g2d.drawString("Diamond :", 32, 956);
 		}
