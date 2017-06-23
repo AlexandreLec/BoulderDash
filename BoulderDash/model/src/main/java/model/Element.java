@@ -96,7 +96,6 @@ public class Element implements IElement {
 
     /**
      * Sets the sprite of the element
-     * @param the sprite
      */
     @Override
     public void setSprite(String sprite){

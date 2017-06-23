@@ -37,9 +37,7 @@ public class EnemyTest extends ElementTest {
 
     /**
      * Check if the enemy can kill an element
-     * @param element
-     * 		The element to kill
-     * @throws Exception 
+     * @throws Exception
      */
     @Test
     public void testKill() throws Exception {
