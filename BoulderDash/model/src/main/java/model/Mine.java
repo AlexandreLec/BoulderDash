@@ -161,7 +161,7 @@ public class Mine {
 		
 		for (IElement e : this.gravity) {
 			if (e.equals(element)) {
-				this.enemy.remove(e);
+				this.gravity.remove(e);
 			}
 		}
 		
@@ -172,7 +172,7 @@ public class Mine {
 
 	/**
 	 * Method for add an enemy
-	 * @param enemy
+	 * @param enemy.
 	 * 		Name of enemy to add
 	 */
 	public void addEnemy(IElement enemy) {
