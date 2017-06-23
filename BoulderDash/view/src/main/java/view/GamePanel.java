@@ -28,9 +28,7 @@ public class GamePanel extends JPanel implements Observer {
 	
 	public GamePanel(IElementBuilder builder, IBoulderDashModel model){
 		
-		
 		this.elementBuilder = builder;
-		
 		repaint();
 	}
 
@@ -41,6 +39,7 @@ public class GamePanel extends JPanel implements Observer {
 	 */
 	@Override
 	public void update(Observable o, Object arg) {
+
 		repaint();
 	}
 	
@@ -48,14 +47,21 @@ public class GamePanel extends JPanel implements Observer {
 	 * allows to paint the component on the frame
 	 */
 	public void paintComponent(Graphics g){
-
-		try {
-			this.elementBuilder.applyModelToGraphic(g, this);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
 		
-		//g.drawImage(elementBuilder.getModel().getGameOver(), 20, 20, this);
+		
+		if(this.elementBuilder.getModel().isGame()){
+			try {
+				this.elementBuilder.applyModelToGraphic(g, this);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		if(!this.elementBuilder.getModel().isGame()) {
+			this.elementBuilder.getModel().observerDelete(this);
+			int score = this.elementBuilder.getModel().getScore();
+			JOptionPane.showMessageDialog(null, "End of the Game\n Score : "+String.valueOf(score));
+			System.exit(0);
+		}
 
 	}
 }

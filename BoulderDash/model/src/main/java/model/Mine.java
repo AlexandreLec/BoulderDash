@@ -176,7 +176,7 @@ public class Mine {
 		return gravity;
 	}
 
-	synchronized public void addGravity(IElement gravity) {
+	public void addGravity(IElement gravity) {
 		this.gravity.add(gravity);
 	}
 	

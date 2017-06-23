@@ -36,15 +36,18 @@ public class ElementBuilder implements IElementBuilder {
      * @throws Exception
      */
 	private void drawMine(Graphics graphics, ImageObserver obs){
-
-		System.out.println("Refresh");
 		
 		IElement[][] actual = model.getElements();
 		 
 		for (int x = 0; x < 50; x++) {
 			for (int y = 0; y < 30; y++) {
-					
-				drawElement(actual[x][y],graphics, obs);
+				
+				if(model.getHero() == null){
+					return;
+				}
+				else{
+					drawElement(actual[x][y],graphics, obs);
+				}
 					
 			}
 		}
@@ -62,7 +65,6 @@ public class ElementBuilder implements IElementBuilder {
 		
 		Graphics2D g2d = (Graphics2D) graphics ;
 		g2d.drawImage(element.getSprite(),element.getPosition().getX()*32,element.getPosition().getY()*32,32,32,obs);
-
 
 		Font fonte = new Font("TimeRoman", Font.BOLD, 32);
 		g2d.setFont(fonte);
@@ -85,10 +87,6 @@ public class ElementBuilder implements IElementBuilder {
 	@Override
 	public void applyModelToGraphic(Graphics graphics, ImageObserver obs) {
 		drawMine(graphics, obs);
-	}
-
-	public void gameOver(){
-		
 	}
 
     /**

@@ -14,7 +14,6 @@ public class Hero extends Element implements IExplosion{
 	
 	private int timeout;
 	private int diamonds;
-	private int score;
 	private Direction direction;
 
 
@@ -63,22 +62,6 @@ public class Hero extends Element implements IExplosion{
      */
 	public static void setSPRITE(String sprite) {
 		SPRITE = sprite;
-	}
-
-    /**
-     * method use for get the score
-     * @return score
-     */
-	public int getScore() {
-		return score;
-	}
-
-    /**
-     * set the score default and change according to the game
-     * @param score
-     */
-	public void setScore(int score) {
-		this.score = score;
 	}
 
     /**
@@ -139,6 +122,7 @@ public class Hero extends Element implements IExplosion{
 	@Override
 	synchronized public void explosion() throws Exception {
 		this.getMine().destroyElement(Hero.hero);
+		this.getMine().getModel().setGame(false);
 		Hero.hero = null;
 	}
 }

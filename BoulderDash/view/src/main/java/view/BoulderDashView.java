@@ -7,7 +7,7 @@ import model.IBoulderDashModel;
  * <h1>The class BouilderDashView</h1>
  *
  * @author Arnaud Rigaut
- * @version 1.0
+ * @version 1.2
  */
 
 public class BoulderDashView implements Runnable, IView {
@@ -16,13 +16,8 @@ public class BoulderDashView implements Runnable, IView {
 	private IElementBuilder elementBuilder;
 	private IOrderPerformer OrderPerformer;
 	private IBoulderDashModel model;
-	private boolean message;
-
-
-	public BoulderDashView(){
-		this.message = true;
-	}
-
+	
+	public BoulderDashView(){}
 
     /**
      * Set the curent model and take the actual order
@@ -42,7 +37,6 @@ public class BoulderDashView implements Runnable, IView {
      */
 	@Override
 	public void displayMessage(String message) {
-		this.message = false;
 	}
 
 

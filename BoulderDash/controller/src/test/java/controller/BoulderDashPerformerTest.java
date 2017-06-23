@@ -1,9 +1,6 @@
 package controller;
 
-import model.Position;
-import org.junit.Assert;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -18,14 +15,12 @@ import static org.junit.Assert.*;
 
 public class BoulderDashPerformerTest {
 
-    @BeforeClass
-    public static void setUpBeforeClass() throws Exception {
-
-    }
-
+	/** The controller to test */
+	private BoulderDashPerformer controller;
+	
     @Before
     public void setUp() throws Exception {
-
+    	this.controller = new BoulderDashPerformer();
     }
 
     /**
@@ -33,10 +28,9 @@ public class BoulderDashPerformerTest {
      * @throws Exception
      */
     @Test
-    public void endGame() throws Exception {
+    public void testEndGameNoDiamond() throws Exception {
         try {
-
-            fail("Should throw exception when diamondCounter < 10");
+        	this.controller.EndGame(8);
         }catch (final Exception e){
             final String excepted = "Not enought diamond";
             assertEquals(excepted, e.getMessage());

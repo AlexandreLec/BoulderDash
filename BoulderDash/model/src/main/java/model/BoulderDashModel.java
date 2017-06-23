@@ -6,9 +6,6 @@ import java.util.Observer;
 
 import java.util.concurrent.CopyOnWriteArrayList;
 
-
-import model.dao.level;
-
 /**
  * <h1>The Class BoulderDashModel</h1>
  *
@@ -21,6 +18,10 @@ public class BoulderDashModel extends Observable implements IBoulderDashModel {
 	private Mine mine;
 	/** The game over image*/
 	private Image gameOver;
+	/** True if the game is running, false in case of game over or win */
+	private boolean game; 
+	
+	private int score;
 	
 	/**
 	 * Instantiates the BoulderDashModel.
@@ -29,6 +30,7 @@ public class BoulderDashModel extends Observable implements IBoulderDashModel {
 	public BoulderDashModel() throws Exception{
 		this.mine = new Mine(this);
 		this.gameOver = Element.loadSprite("gameover");
+		this.game = true;
 	}
 
 	/**
@@ -59,7 +61,7 @@ public class BoulderDashModel extends Observable implements IBoulderDashModel {
 	 * 		element to add in the list
 	 */
 	@Override
-	public void addElement(IElement element){
+	synchronized public void addElement(IElement element){
 		this.mine.setElement(element.getPosition().getX(), element.getPosition().getY(), element);
 	}
 	
@@ -69,7 +71,7 @@ public class BoulderDashModel extends Observable implements IBoulderDashModel {
 	 * 		element to remove of the list
 	 */
 	@Override
-	public void removeElement(IElement element){
+	synchronized public void removeElement(IElement element){
 		this.mine.setElement(element.getPosition().getX(), element.getPosition().getY(), null);
 	}
 		
@@ -106,9 +108,7 @@ public class BoulderDashModel extends Observable implements IBoulderDashModel {
 		if(hero == null)
 			throw new Exception("Hero is dead");
 		
-		return hero.getDiamonds();
-
-		
+		return this.score = hero.getDiamonds();
 	}
 	
 	@Override
@@ -117,12 +117,12 @@ public class BoulderDashModel extends Observable implements IBoulderDashModel {
 	}
 	
 	@Override
-	public CopyOnWriteArrayList<IElement> getEnemy(){
+	synchronized public CopyOnWriteArrayList<IElement> getEnemy(){
 		return this.getMine().getEnemy();
 	}
 	
 	@Override
-	public CopyOnWriteArrayList<IElement> getGravity(){
+	synchronized public CopyOnWriteArrayList<IElement> getGravity(){
 		return this.getMine().getGravity();
 	}
 
@@ -147,10 +147,34 @@ public class BoulderDashModel extends Observable implements IBoulderDashModel {
 	public void observerAdd(Observer o) {
 		addObserver(o);
 	}
+	
+	@Override
+	public void observerDelete(Observer o){
+		this.deleteObserver(o);
+	}
 
 	@Override
 	public Image getGameOver() {
 		return gameOver;
+	}
+
+	@Override
+	public boolean isGame() {
+		return game;
+	}
+
+	@Override
+	public void setGame(boolean game) {
+		this.game = game;
+	}
+
+	@Override
+	public int getScore() {
+		return score;
+	}
+
+	public void setScore(int score) {
+		this.score = score;
 	}
 
 }

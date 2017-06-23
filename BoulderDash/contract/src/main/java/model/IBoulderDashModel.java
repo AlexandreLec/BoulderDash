@@ -70,5 +70,13 @@ public interface IBoulderDashModel {
 
 	Image getGameOver();
 
+	void observerDelete(Observer o);
+
+	boolean isGame();
+
+	void setGame(boolean game);
+
+	int getScore();
+
 
 }
