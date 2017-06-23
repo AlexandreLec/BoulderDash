@@ -171,7 +171,7 @@ public class Mine {
 	}
 
 	/**
-	 * Metho for add an enemy
+	 * Method for add an enemy
 	 * @param enemy
 	 * 		Name of enemy to add
 	 */
@@ -188,7 +188,7 @@ public class Mine {
 	}
 
 	/**
-	 * try to synchronise thread
+	 * try to synchronize thread
 	 * @param gravity
 	 * 		element affect by  gravity
 	 */

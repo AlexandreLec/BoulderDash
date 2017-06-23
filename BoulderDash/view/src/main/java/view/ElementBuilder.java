@@ -59,7 +59,7 @@ public class ElementBuilder implements IElementBuilder {
 
     /**
      * place in a graphics who name's g2d, all element
-     * After add some features in our program. In particulary the number of diamond get by the hero
+     * After add some features in our program. In particularly the number of diamond get by the hero
      * @param element
 	 * 		The element to draw
      * @param graphics

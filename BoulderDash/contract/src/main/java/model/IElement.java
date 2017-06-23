@@ -33,7 +33,7 @@ public interface IElement {
     /**
      * Sets the sprite of the element
      * @param sprite
-     *      strite want to apply
+     *      sprite want to apply
      */
     void setSprite(String sprite);
     
