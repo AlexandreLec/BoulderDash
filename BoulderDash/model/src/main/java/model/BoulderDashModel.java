@@ -25,7 +25,8 @@ public class BoulderDashModel extends Observable implements IBoulderDashModel {
 	
 	/**
 	 * Instantiates the BoulderDashModel.
-	 * @throws Exception 
+	 * @throws Exception
+	 * 		Mine exception
 	 */
 	public BoulderDashModel() throws Exception{
 		this.mine = new Mine(this);
@@ -85,7 +86,8 @@ public class BoulderDashModel extends Observable implements IBoulderDashModel {
 	
 	/**
 	 * Add a diamond for the hero
-	 * @throws Exception 
+	 * @throws Exception
+	 *
 	 */
 	@Override
 	synchronized public void getDiamond(IElement element) throws Exception{

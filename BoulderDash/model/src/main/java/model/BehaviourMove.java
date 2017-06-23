@@ -19,6 +19,7 @@ public class BehaviourMove implements IBehaviourMove {
 	/**
 	 * @see IBehaviourMove
 	 * @throws Exception
+	 * 		behaviour exception
 	 */
 	@Override
 	public void move() throws Exception {
@@ -26,11 +27,10 @@ public class BehaviourMove implements IBehaviourMove {
 		
 	}
 
-
 	/**
 	 * @see IBehaviourMove
-	 * @return position
-	 * @throws Exception 
+	 * @throws Exception
+	 *		position Exception
 	 */
 	@Override
 	synchronized public void moveRight() throws Exception{
@@ -48,9 +48,10 @@ public class BehaviourMove implements IBehaviourMove {
 
 	/**
 	 * @see IBehaviourMove
-	 * @return position
-	 * @throws Exception 
+	 * @throws Exception
+	 * 		position exception
 	 */
+
 	@Override
 	synchronized public void moveLeft() throws Exception{
 		
@@ -68,8 +69,8 @@ public class BehaviourMove implements IBehaviourMove {
 
 	/**
 	 * @see IBehaviourMove
-	 * @return position
-	 * @throws Exception 
+	 * @throws Exception
+	 *		position exception
 	 */
 	@Override
 	synchronized public void moveUp() throws Exception{
@@ -88,8 +89,8 @@ public class BehaviourMove implements IBehaviourMove {
 
 	/**
 	 * @see IBehaviourMove
-	 * @return position
-	 * @throws Exception 
+	 * @throws Exception
+	 * 		position exception
 	 */
 	@Override
 	synchronized public void moveDown() throws Exception{
@@ -109,6 +110,7 @@ public class BehaviourMove implements IBehaviourMove {
 	/**
 	 * @see IBehaviourMove
 	 * @throws Exception
+	 * 		position exception
 	 */
 	@Override
 	public void moveAll() throws Exception {
@@ -119,6 +121,7 @@ public class BehaviourMove implements IBehaviourMove {
 	/**
 	 * @see IBehaviourMove
 	 * @throws Exception
+	 * 		position exception
 	 */
 	@Override
 	public void Gravit() throws Exception{
