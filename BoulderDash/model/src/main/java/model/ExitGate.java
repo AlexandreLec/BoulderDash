@@ -13,7 +13,7 @@ public class ExitGate extends Element{
 
     /** create DP singleton */
     private static ExitGate EXITGATE;
-
+    
     /**
      * constructor of exitGate
      * @param position
@@ -23,7 +23,7 @@ public class ExitGate extends Element{
      */
     private ExitGate(Position position, Mine mine){
         super(position, STRING, mine);
-        behaviour = new Fixe(this);
+        behaviour = new Fix(this);
     }
 
 

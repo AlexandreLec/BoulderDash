@@ -14,13 +14,16 @@ import view.IView;
 
 public class BoulderDashPerformer implements IOrderPerformer{
 
+	/** The model */
     private IBoulderDashModel ActualModel;
+    /** The view */
     private IView ActualView;
-    
+    /** The hero */
     private IElement hero;
+    /** The enemy */
     private IElement enemy;
+    /** The gravity */
     private IElement gravity;
-    private Order order;
 
     /**
      * Create constructor
@@ -35,6 +38,9 @@ public class BoulderDashPerformer implements IOrderPerformer{
         ActualView = view;
     }
 
+	/**
+	 * Instantiate a controller only
+	 */
     public BoulderDashPerformer() {}
 
 	/**
@@ -87,13 +93,6 @@ public class BoulderDashPerformer implements IOrderPerformer{
 	    this.hero.getBehaviour().move();
 
     }
-
-    /**
-     * Sets the ViewSystem
-     * @param viewSystem
-	 * 		the actual view
-     */
-    public void setViewSystem(IView viewSystem) {}
 
     /**
      * Method use when we want end the game

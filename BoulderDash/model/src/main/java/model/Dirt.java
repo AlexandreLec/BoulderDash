@@ -13,9 +13,15 @@ class Dirt extends Element {
     private final static String STRING = "dirt";
 
 
-    /** constructor of dirt */
-    public Dirt(Position position, Mine mine){
-        super(position, STRING, mine);
-        behaviour = new Fixe(this);
+    /**
+     * Instantiate a new dirt
+     * @param positon
+     * 		The position to set the new dirt
+     * @param mine
+     * 		The mine where set the new dirt
+     */
+    public Dirt(Position positon, Mine mine){
+        super(positon, STRING, mine);
+        behaviour = new Fix(this);
     }		
 }

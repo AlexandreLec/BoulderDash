@@ -12,9 +12,15 @@ package model;
     /** Variable who will use for seek sprite **/
     private final static String STRING = "wall";
 
-    /** constructor of ExitGate */
-    public Wall(Position position, Mine mine){
-        super(position, STRING, mine);
-        behaviour = new Fixe(this);
+    /**
+     * Instantiate a new wall
+     * @param position
+     *      the position of the wall
+     * @param mine
+     *      the actual mine
+     */
+    public Wall(Position positon, Mine mine){
+        super(positon, STRING, mine);
+        behaviour = new Fix(this);
     }
 }
