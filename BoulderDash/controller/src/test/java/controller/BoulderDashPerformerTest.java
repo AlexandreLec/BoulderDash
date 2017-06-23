@@ -3,9 +3,6 @@ package controller;
 import org.junit.Before;
 import org.junit.Test;
 
-import model.Direction;
-import model.IElement;
-
 import static org.junit.Assert.*;
 
 /**
@@ -20,9 +17,12 @@ public class BoulderDashPerformerTest {
 
 	/** The controller to test */
 	private BoulderDashPerformer controller;
-	/**  */
-	private IElement hero;
 	
+	/**
+	 * Instantiate a new controller before each test
+	 * @throws Exception
+	 * 		Exception in case of build mine failed
+	 */
     @Before
     public void setUp() throws Exception {
     	this.controller = new BoulderDashPerformer();
@@ -41,18 +41,6 @@ public class BoulderDashPerformerTest {
             final String excepted = "Not enough diamond";
             assertEquals(excepted, e.getMessage());
         }
-    }
-    
-    /**
-     * @throws Exception 
-     * 
-     */
-    @Test
-    public void testOrderPerformRight() throws Exception{
-    	
-    	Direction expected = Direction.RIGHT;
-    	this.controller.OrderPerform(Order.DOWN);
-    	assertEquals(expected,this.hero.getDirection());
     }
 
 }

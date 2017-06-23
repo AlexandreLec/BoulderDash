@@ -12,11 +12,18 @@ import model.IBoulderDashModel;
 
 public class BoulderDashView implements Runnable, IView {
 	
+	/** Allow to perform an element to the controller */
 	private IEventPerformer eventPerformer;
+	/** Print the different model's element on the screen */
 	private IElementBuilder elementBuilder;
+	/** The controller */
 	private IOrderPerformer OrderPerformer;
+	/** The model, principal data of the game */
 	private IBoulderDashModel model;
 	
+	/**
+	 * Instantiate a new View
+	 */
 	public BoulderDashView(){}
 
     /**

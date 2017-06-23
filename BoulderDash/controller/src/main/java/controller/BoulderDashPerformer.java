@@ -95,9 +95,7 @@ public class BoulderDashPerformer implements IOrderPerformer{
 	    if (order == Order.LEFT){
 	       	this.hero.setDirection(Direction.LEFT);
 	    }
-	       
 	    this.hero.getBehaviour().move();
-
     }
 
     /**

@@ -37,19 +37,15 @@ public class EventPerformer implements IEventPerformer {
 		switch(keycode){
 			case KeyEvent.VK_DOWN :
 				this.orderPerformer.OrderPerform(Order.DOWN);
-				//System.out.println("DOWN");
 				break;
 			case KeyEvent.VK_UP :
 				this.orderPerformer.OrderPerform(Order.UP);
-				//System.out.println("UP");
 				break;
 			case KeyEvent.VK_RIGHT :
 				this.orderPerformer.OrderPerform(Order.RIGHT);
-				//System.out.println("RIGHT");
 				break;
 			case KeyEvent.VK_LEFT :
 				this.orderPerformer.OrderPerform(Order.LEFT);
-				//System.out.println("LEFT");
 				break;
 		}
 	}
