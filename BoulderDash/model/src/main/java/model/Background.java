@@ -12,7 +12,7 @@ public class Background extends Element {
 	
 	public Background(Position position, Mine mine) {
 		super(position, STRING, mine);
-		behaviour = new Fixe(this);
+		behaviour = new Fix(this);
 	}
 
 }

@@ -20,6 +20,8 @@ public class HeroTest extends ElementTest {
 	@Before
 	public void setUp() throws Exception {
 		this.actual = Hero.getInstance(new Position(1,1,10,10), this.mine);
+		this.actual.getPosition().setX(1);
+		this.actual.getPosition().setY(1);
 		this.behaviour = new Controlled(actual);
 	}
 	
@@ -27,12 +29,12 @@ public class HeroTest extends ElementTest {
 	 * Check the single instantiation of the hero
 	 * @throws Exception 
 	 */
-	//@Test
-	//public void getInstance(Position position) throws Exception {
+	@Test
+	public void getInstance() throws Exception {
 		
-		/*Element expected = Hero.getInstance(new Position(3,1,10,10));
+		Element expected = Hero.getInstance(new Position(5,3,10,10), this.mine);
 		
-		assertSame(expected,this.actual);*/
-	//}
+		assertEquals(expected,this.actual);
+	}
 
 }

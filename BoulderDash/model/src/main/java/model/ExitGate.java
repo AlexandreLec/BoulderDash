@@ -17,7 +17,7 @@ public class ExitGate extends Element{
     /** constructor of ExitGate */
     private ExitGate(Position positon, Mine mine){
         super(positon, STRING, mine);
-        behaviour = new Fixe(this);
+        behaviour = new Fix(this);
     }
 
 

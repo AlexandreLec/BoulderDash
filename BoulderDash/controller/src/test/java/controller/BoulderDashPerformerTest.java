@@ -3,6 +3,9 @@ package controller;
 import org.junit.Before;
 import org.junit.Test;
 
+import model.Direction;
+import model.IElement;
+
 import static org.junit.Assert.*;
 
 /**
@@ -17,6 +20,8 @@ public class BoulderDashPerformerTest {
 
 	/** The controller to test */
 	private BoulderDashPerformer controller;
+	/**  */
+	private IElement hero;
 	
     @Before
     public void setUp() throws Exception {
@@ -26,6 +31,7 @@ public class BoulderDashPerformerTest {
     /**
      * Test if we can't end the game in case of diamondCounter is <10
      * @throws Exception
+     * 		Exception in case of not enough diamond to exit
      */
     @Test
     public void testEndGameNoDiamond() throws Exception {
@@ -35,6 +41,16 @@ public class BoulderDashPerformerTest {
             final String excepted = "Not enought diamond";
             assertEquals(excepted, e.getMessage());
         }
+    }
+    
+    /**
+     * 
+     */
+    @Test
+    public void testOrderPerformRight(){
+    	
+    	//Direction expected = Direction.RIGHT;
+    	//assertEquals(expected,);
     }
 
 }

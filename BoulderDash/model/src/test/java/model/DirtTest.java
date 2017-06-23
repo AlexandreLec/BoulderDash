@@ -17,7 +17,7 @@ public class DirtTest extends ElementTest {
 	@Before
 	public void setUp() throws Exception {
 		this.actual = new Dirt(new Position(1,1,10,10), this.mine);
-		this.behaviour = new Fixe(actual);
+		this.behaviour = new Fix(actual);
 	}
 	
 }

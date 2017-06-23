@@ -16,6 +16,6 @@ public class Dirt extends Element {
     /** constructor of dirt */
     public Dirt(Position positon, Mine mine){
         super(positon, STRING, mine);
-        behaviour = new Fixe(this);
+        behaviour = new Fix(this);
     }		
 }

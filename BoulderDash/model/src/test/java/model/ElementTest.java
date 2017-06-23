@@ -17,7 +17,7 @@ public class ElementTest {
 	protected Element actual;
 	/** The behaviour of the tested Element */
 	protected BehaviourMove behaviour;
-	
+	/** The mine of the tested element */
 	protected Mine mine;
 
 	@Before
@@ -47,8 +47,6 @@ public class ElementTest {
 		
 		assertEquals(expected.getX(), this.actual.getPosition().getX());
 		assertEquals(expected.getY(), this.actual.getPosition().getY());
-		assertEquals(expected.getMaxX(), this.actual.getPosition().getMaxX());
-		assertEquals(expected.getMaxY(), this.actual.getPosition().getMaxY());
 	}
 	
 	/**

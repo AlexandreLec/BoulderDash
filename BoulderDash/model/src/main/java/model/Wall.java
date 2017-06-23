@@ -15,6 +15,6 @@ public class Wall extends Element{
     /** constructor of ExitGatee */
     public Wall(Position positon, Mine mine){
         super(positon, STRING, mine);
-        behaviour = new Fixe(this);
+        behaviour = new Fix(this);
     }
 }

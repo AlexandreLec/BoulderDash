@@ -7,9 +7,9 @@ package model;
  * @version 1.0
  */
 
-public class Fixe extends BehaviourMove {
+public class Fix extends BehaviourMove {
 
-	public Fixe(Element element) {
+	public Fix(Element element) {
 		super(element);
 	}
 
