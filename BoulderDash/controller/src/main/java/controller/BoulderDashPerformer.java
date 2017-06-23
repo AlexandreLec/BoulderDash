@@ -51,7 +51,11 @@ public class BoulderDashPerformer implements IOrderPerformer{
 	public void play() throws Exception {
        ActualView.start(this.ActualModel, this);
        this.hero = this.ActualModel.getHero();
-       this.enemy = this.ActualModel.getEnemy().get(1);
+       
+       if(!this.ActualModel.getEnemy().isEmpty()){
+    	   this.enemy = this.ActualModel.getEnemy().get(1);
+       }
+ 
        this.gravity = this.ActualModel.getGravity().get(1);
        this.gameLoop();
 	}
@@ -63,7 +67,9 @@ public class BoulderDashPerformer implements IOrderPerformer{
 	 */
 	private void gameLoop() throws Exception {
 		while(this.hero != null){
-			this.enemy.getBehaviour().moveAll();
+			if(!this.ActualModel.getEnemy().isEmpty()){
+				this.enemy.getBehaviour().moveAll();
+		    }
 			this.gravity.getBehaviour().Gravit();
 			Thread.sleep(100);
 		}

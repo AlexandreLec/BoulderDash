@@ -48,7 +48,7 @@ public class Mine {
 	 */
 	private void buildMine() throws Exception{
 		
-		String currentLevel = loadLevel("level3");
+		String currentLevel = loadLevel("level4");
 		int i = 0;
 		for(int y = 0 ;y<Mine.HEIGHT; y++){
 			for (int x = 0; x<Mine.WIDTH;x++){

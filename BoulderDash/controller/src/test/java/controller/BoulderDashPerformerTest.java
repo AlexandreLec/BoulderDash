@@ -44,13 +44,15 @@ public class BoulderDashPerformerTest {
     }
     
     /**
+     * @throws Exception 
      * 
      */
     @Test
-    public void testOrderPerformRight(){
+    public void testOrderPerformRight() throws Exception{
     	
-    	//Direction expected = Direction.RIGHT;
-    	//assertEquals(expected,);
+    	Direction expected = Direction.RIGHT;
+    	this.controller.OrderPerform(Order.DOWN);
+    	assertEquals(expected,this.hero.getDirection());
     }
 
 }
